@@ -2,12 +2,16 @@ package nlp.models;
 
 public class NGramConstants {
 	private final int noOfBots = 2;
-	private final int n = 4;
+	private final int n = 2;
 	private final int noOfCrossFolds = 5;
-	private final int authorDataLength = 1300;
-	private final String inputFilePrefix = "sample_data/Bot";
-	private final String trainFilePrefix = "train/";
-	private final String testFilePrefix = "test/";
+	private final int authorDataLength = 500;
+	private final String inputFilePrefixTweet = "data/tweet/TwBot";
+	private final String trainFilePrefixNgram = "train/ngram/";
+	private final String testFilePrefixNgram = "test/ngram/";
+	private final String trainFilePrefixBow = "train/bow/";
+	private final String testFilePrefixBow = "test/bow/";
+	private final String trainFilePrefixPos = "train/pos/";
+	private final String testFilePrefixPos = "test/pos/";
 	
 	public int getNoOfBots() {
 		return noOfBots;
@@ -25,15 +29,31 @@ public class NGramConstants {
 		return noOfCrossFolds;
 	}
 	
-	public String getInputFilePrefix() {
-		return inputFilePrefix;
+	public String getInputFilePrefixTweet() {
+		return inputFilePrefixTweet;
 	}
 	
-	public String getTrainFilePrefix() {
-		return trainFilePrefix;
+	public String getTrainFilePrefixNgram() {
+		return trainFilePrefixNgram;
 	}
 	
-	public String getTestFilePrefix() {
-		return testFilePrefix;
+	public String getTestFilePrefixNgram() {
+		return testFilePrefixNgram;
+	}
+	
+	public String getTrainFilePrefixBow() {
+		return trainFilePrefixBow;
+	}
+	
+	public String getTestFilePrefixBow() {
+		return testFilePrefixBow;
+	}
+
+	public String getTrainFilePrefixPos() {
+		return trainFilePrefixPos;
+	}
+	
+	public String getTestFilePrefixPos() {
+		return testFilePrefixPos;
 	}
 }
