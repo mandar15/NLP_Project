@@ -9,17 +9,20 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import nlp.utilities.Constants;
+import nlp.utilities.Parser;
+
 public class NGramUtils {
 	private Parser bots[];
-	private NGramConstants constants;
+	private Constants constants;
 
 	public NGramUtils() throws FileNotFoundException, IOException {
-		constants = new NGramConstants();
+		constants = new Constants();
 
 		int noOfBots = constants.getNoOfBots();
 		int authorDataLength = constants.getAuthorDataLength();
 
-		String fileNamePrefix = constants.getInputFilePrefix();
+		String fileNamePrefix = constants.getInputFilePrefixTweet();
 
 		bots = new Parser[noOfBots];
 		for (int i = 0; i < noOfBots; i++) {
@@ -94,14 +97,14 @@ public class NGramUtils {
 			tempFeatureVector.put(feature, 0);
 		}
 
-		String output = constants.getTrainFilePrefix();
+		String output = constants.getTrainFilePrefixNgram();
 		output += testNo + ".trn";
 
 		FileWriter trainingFileWriter = new FileWriter(output);
 		BufferedWriter trainingBufferedWriter = new BufferedWriter(
 				trainingFileWriter);
 
-		output = constants.getTestFilePrefix() + testNo + ".tst";
+		output = constants.getTestFilePrefixNgram() + testNo + ".tst";
 		FileWriter testFileWriter = new FileWriter(output);
 		BufferedWriter testBufferedWriter = new BufferedWriter(testFileWriter);
 
