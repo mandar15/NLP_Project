@@ -5,7 +5,7 @@ import java.io.IOException;
 
 import nlp.utilities.Constants;
 
-public class POSMain {
+public class PosMain {
 
 	public static void main(String args[]) throws IOException{
 		Constants constObj = new Constants();
