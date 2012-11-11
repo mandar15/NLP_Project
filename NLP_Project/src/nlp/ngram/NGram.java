@@ -12,12 +12,16 @@ public class NGram {
 		
 		Constants constants = new Constants();
 		NGramUtils nGramUtils = new NGramUtils();
-		
-		for(int test = 0; test < 1; test++)
+		int test = 0;
+		for(int i = 0; i < constants.getNoOfBots(); i++)
 		{
-			Map<String, Integer> featureVector = nGramUtils.generateFeatureVector(test);
-			nGramUtils.createTrainAndTestFiles(test, featureVector);
-		}
-		
+			for(int j = i + 1; j < constants.getNoOfBots(); j++)
+			{
+				Map<String, Integer> featureVector = nGramUtils.generateFeatureVector(test, i, j);
+				nGramUtils.populateTrainingFile(featureVector, test, i, j);
+				nGramUtils.populateTestFile(featureVector, test, i, j);
+				System.out.println("Generated Files for Bot combo: (" + i + ", " + j + ")");
+			}
+		}		
 	}
 }
