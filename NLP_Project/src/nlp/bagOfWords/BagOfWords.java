@@ -5,9 +5,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Set;
 import java.util.SortedSet;
+import java.util.StringTokenizer;
 import java.util.TreeSet;
 
 import weka.core.tokenizers.*;
@@ -78,18 +78,20 @@ public class BagOfWords {
 	
 	private void generate_features(int start, int offset, int author1, int author2) throws Exception 
 	{
-		int j;
-		int feature_number = 1, frequency, document=-1;
+		int j; 
+		int feature_number = 1, frequency, document=-1, fnum;
 		String word;
 		
 		String []data = bots[author1-1].getData();
+		StringTokenizer tokens;
 			
 		for(j=start;j<start+offset;j++)
 		{
-			tokenize(data[j]);
-			while(ngt.hasMoreElements())
+			tokens = new StringTokenizer(data[j]," ");
+		
+			while(tokens.hasMoreElements())
 			{
-				word = (String) ngt.nextElement();
+				word = tokens.nextToken();
 				if(!features.containsKey(word))
 				{
 					features.put(word, feature_number);
@@ -101,21 +103,24 @@ public class BagOfWords {
 				{
 					if(document != j)
 					{
-						frequency = Integer.parseInt(document_frequency.get(feature_number-1).toString());
+						fnum = Integer.parseInt(features.get(word).toString());
+						frequency = Integer.parseInt(document_frequency.get(fnum).toString());
 						frequency++;
-						document_frequency.put(feature_number-1, frequency);
+						document_frequency.put(fnum, frequency);
+						document = j;
 					}
 				}
 			}
 		}
+		document = -1;
 		String[] data1 = bots[author2-1].getData();
 		
 		for(j=start;j<start+offset;j++)
 		{
-			tokenize(data1[j]);
-			while(ngt.hasMoreElements())
+			tokens = new StringTokenizer(data1[j]," ");
+			while(tokens.hasMoreElements())
 			{
-				word = (String) ngt.nextElement();
+				word = tokens.nextToken();
 				if(!features.containsKey(word))
 				{
 					features.put(word, feature_number);
@@ -127,9 +132,11 @@ public class BagOfWords {
 				{
 					if(document != j)
 					{
-						frequency = Integer.parseInt(document_frequency.get(feature_number-1).toString());
+						fnum = Integer.parseInt(features.get(word).toString());
+						frequency = Integer.parseInt(document_frequency.get(fnum).toString());
 						frequency++;
-						document_frequency.put(feature_number-1, frequency);
+						document_frequency.put(fnum, frequency);
+						document = j;
 					}
 				}
 			}
@@ -149,13 +156,15 @@ public class BagOfWords {
 		int i, feature_number, feature_frequency;
 		
 		HashMap<Integer,Integer> feature_vector = new HashMap<Integer, Integer>();
+		StringTokenizer tokens;
 		
 		for(i=start; i<start+offset; i++)
 		{
-			tokenize(data[i]);
-			while(ngt.hasMoreElements())
+			tokens = new StringTokenizer(data[i]," ");
+			
+			while(tokens.hasMoreElements())
 			{
-				word = (String) ngt.nextElement();
+				word = tokens.nextToken();
 				if(features.containsKey(word))
 				{
 					feature_number = Integer.parseInt(features.get(word).toString());
@@ -201,16 +210,18 @@ public class BagOfWords {
 		}
 		line = line + "\n";
 		if(flag)
-		output_file.write(line.getBytes());
+		{
+			output_file.write(line.getBytes());
+		}
 	}
 
 	void generate_data() throws Exception
 	{
-		int i,j;
-		
-		for(i=1;i<10;i++)
+		int i,j; 
+		int noofBots = constants.getNoOfBots();
+		for(i=1;i<noofBots;i++)
 		{
-			for(j = i+1; j<=10; j++)
+			for(j = i+1; j<=noofBots; j++)
 			{
 				generate_training_data(i,j);
 				generate_testing_data(i,j);
@@ -230,6 +241,7 @@ public class BagOfWords {
 //		bow.generate_features();
 		
 		bow.generate_data();
+		
 
 	}
 
