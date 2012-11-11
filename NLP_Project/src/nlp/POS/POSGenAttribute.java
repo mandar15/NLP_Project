@@ -1,15 +1,15 @@
 package nlp.POS;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import opennlp.tools.cmdline.postag.POSModelLoader;
 import opennlp.tools.postag.POSModel;
@@ -53,18 +53,19 @@ public class POSGenAttribute {
 	    POSTaggerME tagger = new POSTaggerME(model);
 	    
 		for(int i = start; i < end ; i++){
-			Map<String,Integer> frequencyHm = getFrequency(i, tagger);
+			Map<Integer,Integer> frequencyHm = getFrequency(i, tagger);
 			if(frequencyHm == null)
 				System.out.println("hm null " + i );
 			//bw.write(subStr);
-			Iterator<String> iter = frequencyHm.keySet().iterator();
+			Set<Integer> keys = frequencyHm.keySet();
+			List<Integer> keyList = new ArrayList<Integer>(keys);
+			Collections.sort(keyList);
 			String result = fileNum + " " ;
 			
-			while(iter.hasNext()){
-				String keyVal = iter.next();
-				Integer indexVal = attributes.indexOf(keyVal);
-				Integer frequencyVal = frequencyHm.get(keyVal);
-				result = result.concat((indexVal+1) + ":" + frequencyVal);
+			for(Integer j : keyList){
+				
+				Integer frequencyVal = frequencyHm.get(j);
+				result = result.concat((j+1) + ":" + frequencyVal);
 				result = result + " ";
 			}
 			//System.out.println(result);
@@ -76,18 +77,19 @@ public class POSGenAttribute {
 		
 	}
 	
-	public Map<String, Integer> getFrequency(int i, POSTaggerME tagger) {
+	public Map<Integer, Integer> getFrequency(int i, POSTaggerME tagger) {
 		// TODO Auto-generated method stub
-		HashMap<String, Integer> hm = new HashMap<String,Integer>();
+		HashMap<Integer, Integer> hm = new HashMap<Integer,Integer>();
 		
 		String [] splitData = data[i].split(" ");
 		String[] tags = tagger.tag(splitData);
 		
 		for(int k = 0; k < tags.length ; k++){
-			if(hm.containsKey(tags[k])){
-				hm.put(tags[k], hm.get(tags[k]) + 1);
+			Integer indexVal = attributes.indexOf(tags[k]);
+			if(hm.containsKey(indexVal)){
+				hm.put(indexVal, hm.get(indexVal) + 1);
 			}else{
-				hm.put(tags[k], 1);
+				hm.put(indexVal, 1);
 			}
 		}
 		return hm;
