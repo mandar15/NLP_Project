@@ -3,6 +3,7 @@ package nlp.dataCollection;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.DataInputStream;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -22,13 +23,13 @@ public class BlogSentTokenizer {
         SentenceDetector sentDetector = new SentenceDetectorME(sModel);        
         
         //change the following path to the place where the raw blog data is on your Disk
-        int bgBotStartNo = 1;
-        int rawBotStartNo = 24;
-        int rawBotEndNo = 33;
-        String rawBotPath = "/media/Masters/blog/raw/Bot"; 
-        String bgBotPath = "/media/Masters/blog/processed_data/Bot";
-        
-        for(int i = rawBotStartNo; i <= rawBotEndNo; i++, bgBotStartNo++) {
+        int bgBotStartNo = 11;
+        int rawBotStartNo = 1;
+        int rawBotEndNo = 14;
+        String rawBotPath = "/home/pragya/Desktop/NLP folder/blogs/blogsData/Bot"; 
+        String bgBotPath = "/home/pragya/Desktop/NLP folder/blogs/blogsData1/Bot";
+        //int outFileIndex = 1;
+        for(int i = rawBotStartNo; i <= rawBotEndNo; i++) {
     		FileInputStream fileInputStream = new FileInputStream(rawBotPath + i);
     		DataInputStream fileDataInputStream = new DataInputStream(fileInputStream);
     		BufferedReader fileBufferredReader =  new BufferedReader(new InputStreamReader(fileDataInputStream));    			
@@ -37,22 +38,32 @@ public class BlogSentTokenizer {
     		BufferedWriter bufferedWriter = new BufferedWriter(writer);
         	
     		String para = "";
+    		int count = 1;
     		while((para = fileBufferredReader.readLine()) != null) {
     			String lines[] = sentDetector.sentDetect(para);
     			
     			for(String line : lines) {
-    				if(!line.equals("\n")) {
+    				if(!line.equals("\n") && count <= 200) {
     					writer.write(line + "\n");
+    					count++;
     				}
-    				else if(line.endsWith("\n")) {
+    				else if(line.endsWith("\n") && count <= 200) {
     					writer.write(line);	
+    					count++;
     				}
     				
     			}
     		}
-    		    		
+   		
     		fileBufferredReader.close();
     		bufferedWriter.close();
+    		
+    		if(count < 200){
+    			File delFile = new File(bgBotPath + bgBotStartNo);
+    			delFile.delete();
+    			bgBotStartNo--;
+    		}
+    		bgBotStartNo++;
         }        
 	}
 }

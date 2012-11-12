@@ -1,0 +1,200 @@
+I have just finished reading Percy Jackson: Heroes of Olympus book 3: The Mark of Athena and i was suprised that Rick Riordan is planning to have two more books on this series which will be released in 2013 and 2014.
+The forth book is called The House of Hades and it will be released around October 2013 and the fifth book will be released on Fall 2014, but Rick hasn't released the title yet.
+It was another great novel about Roman and Greek mythologies by Riordan following the successful Percy Jackson series which is now has been brought to movies.
+The second movie will be released next year
+I have just returned from attending my colleague's wedding party in Klaten.
+It was held in a good date, 10-11-2012, a very rare date.
+No wonder there were so many wedding parties held today.
+The trip to Klaten was so bad.
+It's very crowded and i got stucked for some time so we came a little bit late at the location.
+Plus, we didn't get the best place for parking because they ran out of space, so we had to find another parking area near the mosque.
+In the middle of the event, rain started to drop and it was raining so hard.
+I was worried because i brought my wife with me.
+Luckily, the rain stopped just before we went back.
+Around 8.40 PM, we decided to leave because we had to go back to Jogja, so we left the area and go back to our parking area and travel back to Jogja.
+The trip only took about 15-20 minutes, because the road was so empty, not so many cars around.
+Congratulations to Lukas and Shintia for your marriage :)
+I must say that i'm impressed how VMWare worked up their products to be compatible with recent Linux kernel releases and it doesn't make their users searched for patches in the wild just to make it work under Linux.
+Yesterday, i removed my old installation of VMWare Workstation 8.0.4 and decided to try on VMWare Workstation 9.0.1, the latest maintenance release from VMWare that should be compatible with Linux Kernel 3.5.
+On my surprise, this version is also working well with the recent version Linux Kernel 3.6.x
+(i used 3.6.6)
+and it doesn't need any patches at all.
+It simply work out of the box.
+Good job to VMWare :)
+According to Go/NoGo status meeting, Fedora 18 will be delayed once again and this time, it will be two weeks delays instead of the usual one week.
+Because of this delay, the final release of Fedora 18 will be on January 2013 instead in December 2012.
+This means, we won't be able to see Fedora 18 shipping this year.
+The good point about this delay is that Fedora people can do more testing on preparing the Secure Boot mechanism which should be first implemented in Fedora.
+Let's just hope it goes well as planned or else people will be quite disappointed by Fedora's decision about it.
+VMWare has released a bugfix release for VMWare Workstation and VMWare Player.
+There are two new features added on this release:
+Support for Ubuntu 12.10 as a host and guest.
+Solaris 11 has been added to guest OS list.
+Meanwhile, a list of bug fixed on this release are also staggering:
+When powering on a virtual machine with Binary Translation on a SMEP-capable CPU, Workstation no longer causes the host to reset.
+If you run Windows 8 hosts on IvyBridge processors, VMware strongly recommends that you update your installation of Workstation.
+Several security vulnerabilities have been addressed, including updating third party libraries.
+The Workstation plug-in for Visual Studio has been updated to work with Visual Studio 2012.
+For host systems with more than 4GB of memory, Workstation will use more of the available memory to run virtual machines.
+The ability to mount a .vmdk
+file as a drive by right-clicking the file in File Explorer has been restored.
+Streaming a virtual machines has been fixed.
+Occasionally, certain elements in the Windows 8 user interface were incorrectly displayed.
+This has been fixed.
+After disconnecting certain USB devices from a virtual machine, Workstation would prevent devices from being reconnected without restarting the virtual machine.
+A more comprehensive error handling code has been added to prevent this problem from occurring.
+To improve application startup performance, the data being collected as part of the optional User Experience Improvement Program will no longer be aggregated on every launch of Workstation.
+Remotely retrieving the IP address of an Ubuntu virtual machine with an IPv6 address assigned failed unless an IPv4 address was also assigned to the virtual machine.
+This no longer occures.
+With IPv6 disabled on the host, the Linux version of Workstation is now able to share virtual machines.
+When you import an OVA file of a virtual machine running the Datacenter version of Windows Server, the network adapter failed to be configured correctly.
+This is now fixed.
+Closing Workstation in the middle of a cut and paste operation no longer causes the Workstation user interface to crash.
+After unsharing a virtual machine configured to use client-side devices, you can now reconfigure the device settings to use local devices.
+Easy Install on the Linux version of Workstation now recognize all compatible operating systems.
+The VMware monitor has been updated to work with Linux kernel 3.5.
+On the Linux version of Workstation, entering a permanent license key after using an evaluation key now removes the days remaining evaluation indicator.
+The network adapter configuration screen now correctly preserves the Custom network settings.
+You can now remove a Network if network settings changes are pending.
+The Use physical drive radio button for a floppy device was disabled when connecting to a shared virtual machine or remote virtual machine a on host without a physical floppy device.
+This is now fixed.
+Animated cursors are now displayed correctly in a virtual machine.
+I will download the Linux version as well, but i may not going to test it on my primary machine as i still need the stabilitity of VMWare for my class at work.
+KDE has released a monthly update KDE 4.9.3 which focused on bug fixing and translations updates.
+The list of bug fixed is quite big, 86 and several key components that gets the most update are Kate editor and Kontact email and groupware client.
+For detailed information about those bug fixes, please head on to their bug tracker.
+There's one bug that were found out after the package has been released and that is qyoto won't be build against cmake 2.8.10 (Bug 309652), but there's a suggested patch for  this bug report, even though it's not yet committed to the repository.
+Expect KDE packages for Slackware soon enough from Eric Hameleers
+Greg has released several stable Linux Kernel releases while he was in LinuxConf.
+One of them (3.6.x
+branch) contains an important fix about EXT4 corruption bug which caused a chaos in Open Source world.
+No worries, since the bug can only be triggered by some use of uncommon options and it's only intended for developers.
+I have upgraded my kernel to Linux Kernel 3.6.6 on my desktop and workstation and i'm planning to do so with my laptop tomorrow as wel
+We (me and my wife) decided to have some refreshing together to Amplaz to buy some items for daily needs.
+While in there, we looked at the theather and we saw the queue was so long, so we didn't have a thought of going to watch a movie.
+After finishing our shopping, we were going to have lunch there, but then we saw the queue line has dropped compared with in the morning, so i took a chance to see whether i could get tickets to Skyfall.
+Lucky me, there were still some tickets left for 3 PM show, so i puchased it with my credit card because we could have 50% discount.
+So finally we did watch Skyfall even though it was unplanned at the beginning.
+I don't want to give spoilers, since the movie is quite new, so i'll just stop here :)
+I was unable to write a blog post yesterday because i had to go to the hospital at night.
+My condition dropped and the doctor even suggested me to be hospitalized, but i refused it.
+I prefer to have a lab check first and decide what to do next.
+My schedule this semester is so tight and i guess it started during the mid test where i went abroad and then when i came back, i marked the student's exam and then preparing all of the daily stuffs again.
+It consumes a lot of energy and when my condition is not very fit, i still forced it to give a lecture in the class yesterday.
+So, since last night, after seeing the doctor, i went to bed early because i do need a total rest, since the day before, i couldn't sleep at all and that worsen my condition.
+This morning, i'm feeling better after having a better sleep, even though i still woke up every few hours.
+It's not the best sleep condition though.
+Ubuntu is now planning to change how it works with quality assurance process for next Ubuntu release: 13.04.
+They plan to create a more streamlined, continuous development for future versions of Ubuntu Linux, but they removed the alpha releases and will have one Beta release only prior the final release.
+In most Software Engineering terms, Alpha is intended for private testing conducted by the team, while the Beta is more like a public testing.
+While i can agree that they removed the Alpha release since they can do it in their daily jobs and also by the use of automated testing, but what i can't understand is that they will have only 1 Beta release and no RC releases at all?
+Beta release is the first public release.
+This means, that ordinary users will have their first chance to taste what will next Ubuntu release would be prior deciding whether to upgrade or stick with the current version.
+With the habbit of introducing new and big changes on every releases, Ubuntu is taking a big risk (IMHO) for Ubuntu 13.04.
+Less release means less feedback from the users and you know what happened when you can't satisfy your users?
+They will leave and pick another distributions that works better.
+By the way, Ubuntu is now dropped to third popular distro based on Distrowatch's HPD index.
+The second position is now taken by Mageia, while the top position still LinuxMint.
+I think by the time Ubuntu 13.04 gets released, they might be overlapped by Fedora.
+One of my student mentioned me on Twitter that Precise Repository (Ubuntu 12.04) is missing from UKDW Repository.
+I checked my configuration and i just realized that i accidentally edit the wrong release version.
+I was supposed to remove Oneiric since i have completed Quantal synching, but i deleted Precise.
+Since i have a policy of supporting N and N-1 release, i had to resync all of the Precise repository from scratch.
+So far, i have completed backports, proposed, security, and updates branch.
+What's left is the main precise branch which is the biggest one.
+I think i still have to wait for 2-3 days to complete this process if there's no obstacle in the middle of the process.
+For those who are using Windows application in Linux platform, you might have known about CrossOver.
+It's the commercial software created by CodeWeavers, Inc based on the Wine project which is open source.
+After successfully running Lame Duck challenge back in 2008, they are back with another giveaway by giving a free, fully functional copy of either CrossOver Mac or CrossOver Linux.
+Each copy comes complete with 12 months of support and product upgrades.
+All you have to do is to visit CodeWeavers’ Flock The Vote promotional web site and download the application starting Wednesday, Oct. 31, 2012, beginning at 00:00 Central Time (-5 GMT).
+This offer will continue for 24 hours, from 00:00 to 23:59, Oct. 31, 2012.
+There is no need to panic if you are using EXT4 and you are afraid of data corruption bug that does exist in several Linux Kernel releases.
+The bug reported can only be triggered by some special combination of options that are spesifically designed for developers since it's not yet fully tested and it's not enabled by default.
+You can rest assured that this bug only happened on single user (the original reporter) and not affecting other people.
+You can read the detailed article in The H.
+Anyway, the bug is now fixed in Linux Kernel 3.6.4
+which was released yesterday by Greg.
+I accidentally checked on Kernel.org and found out that Linux Kernel 3.6.4
+has been released by Greg.
+I downloaded this source and compiled it both on my desktop and workstation and now, i'm ready to test this shiny Linux Kernel release.
+I'm still using Linux Kernel 3.6 for now and even though .4
+didn't brings fixes for EXT4 corruption bug that was introduced in Linux Kernel 3.6.2
+and still exists in 3.6.3,
+i think it's about time to upgrade to this stable release and hopefully it really stable for production machines.
+Luckily, i don't have to worry about NVidia and VMWare patches, since it's not a major upgrade and things should work out of the box with those two products.
+There's only one way to find out: reboot :)
+Starting tomorrow, everything will be back to normal activities again as the mid test week has finally over and we will continue with the second half semester until the end of this year.
+There will be six weeks in total plus two weeks of final test which will be conducted in mid December.
+I have marked all the exams and all i have to do now is to distribute the results back to the students.
+It's so good to have all the work completed and having a nice vacation in these two weeks of time.
+I don't think there will be a good chance like this anymore in December as i will be busy preparing my first baby.
+Wish me and my family for our first baby :)
+Yesterday i talked about performing a maintenance of my Windows and of the actions i performed since yesterday was defragmenting my hard drive, including my 2 TB external hard drive this morning and guess what?
+The process hasn't ended until i posted this blog post.
+It's still on 37% and it has been running for almost half day already.
+I know the risk of doing this, but it has been defragmented so badly, so i need to take care of it before it's getting worse.
+Since most of the contents are big files, i'm hoping that when those files are moved, they will be continuous and the process can be completed successfully and it will be faster in access performance.
+It's been some time since i defragged my Windows XP system.
+These system has been used since few years ago and even though it's deteriorating, it's still usable for me as i don't tend to install/remove many applications on this system.
+I used this machine mainly to backup and setup my iOS-based devices, since there isn't iTunes in Linux system.
+Since we have a long holiday this week due to national holiday, i'm planning to start a maintainance process for my Windows XP.
+I have clean up some spaces by using the Disk Cleanup utility and now, i'm defragging all of my partitions one by one.
+Since it will take some time to complete, i will just leave it while i'm sleeping and it should be completed by tomorrow morning.
+Performing a maintenance process regularly will ensure that your system stays in good performance for daily usage.
+This is not only for Windows system, but for all distributions.
+Finally, after battling for one week, finally the Quantal Quetzal repository is now completed and operational.
+Since i have a two release policy, this will also deleted the 11.04 (Oneiric Oncelot) repository on my server to save some space.
+Why did it took so long to complete the repository?
+Well, it doesn't have a privilege of high dedicated bandwidth to download the repository.
+The bandwidth is shared with the other users in the campus, so in will be fast enough at night and during office hour, the connection will be slower than usual.
+I have also limited to 32 and 64 bit version only which should be downloaded, not all of them.
+I have also preffered to download the binary packages only, excluding the source since it can reduce the size of one release to nearly half of the total space needed.
+Welcome Quantal and thank you Oneiric.
+It's time to let you go from this server.....
+Starting from today until tomorrow, i will be on Seven Habbits training which is taken from Stephen Covey's Seven Habbits of JHighly Effective People book.
+I completed the first day and i still have one home work which i think i will make it by tomorrow morning as i'm tempted to sleep for now.
+It's been a tiring day for me, but at least i got something in return.
+I got some new knowledge about improving myself (i have read most of the book's content and it's already included in the Project Management's course which i taught nearly every semester), but i also got a great news about my first baby which is expected in late December or early January.
+It will be a baby girl :)
+After resting last night, i woke up this morning to start a new activity in the office and some of the test results has been distributed to my office room since yesterday, so i took it home and start working on it.
+I have completed one of two exams with some help from my wife.
+I still have two exams left, but since one of them was conducted this evening, so i will take it next Monday as i have two days workshop starting tomorrow and the day after while on Friday, it's national holiday, so i'm off.
+The result is quite expected and i'm happy with it.
+Since this is a course for early year students, i'm expecting a strong start with strong motivation to pursuit their target in the end of their study and this is just the beginning of it.
+I have returned from my long journey from Malaysia and also Jakarta for the last seven days.
+It's been a wonderful journey and it would be a perfect one, except that i had some problems with the airport staffs, both in KLIA and also in Jakarta.
+That's the only complaints i had during my trip.
+Anyway, everything is fine and i'm glad we can safely arrived at home and get some rest.
+We really do need it right now, so i won't write more and get some sleep right now.
+We were having dinner in Jalan Alor, the famous place to find a lot of Chinese food and then suddenly the rain started to drop and it was a little bit of chaos when the waiter was preparing for the pole and the big umbrella.
+Just few seconds and the umbrella was set up and everything back to normal again.
+People keep talking again just like there was no rain at all.
+One of my student sent me a message via Facebook last night and asked me whether i have uploaded one of the material for mid test exam.
+I was shocked at that moment because i totally forgot to upload  it just before i'm leaving.
+Since i had no access to my desktop at home because i switched it off, my option would be my workstation at the office which is still running.
+Luckily, i still left my TeamViewer session running on this machine, so i can remote my workstation from my iPad to convert the material to PDF format and then and upload them after logging in to the machine using iSSH application.
+That was so exciting, but really interesting to see many things can be done by iPad.
+Thanks to it, i can still be able to work remotely.
+Linus Torvalds has released Linux Kernel 3.7 RC 1, which means he has closed the merge window for Linux Kernel 3.7.
+This also means that there are no new features will be added in the future until 3.7 gets finalized around December.
+Linux Kernel 3.7 will have a 64 bit ARM support and thus enabling ARM developers to build the kernel using the same kernel source code.
+Many other new and interesting new features has been well written in The H. Let's hope that Linux can release this version just before the end of this year as a Christmas gift.
+Starting today until next week, i will be considered "offline" from Internet (unless there's a proper Internet connection) since i will be having a short vacation with my family.
+I'm not really sure that i can find a good Internet connection on the place where i will be going, but if they do, i will probably focusing on replying email.
+I don't think there will be something surprising next week, but suppose there is, i may be late of knowing it and pardon me if i don't write it on my blog :)
+Greg has just released Linux Kernel 3.6.2
+along with other stable kernel releases that he maintained (3.0.46, 3.4.14,
+3.5.7).
+He also noted that for Linux Kernel 3.5.x
+branch, Linux Kernel 3.5.7 is the last release and he didn't plan to make another release and suggest people to move on to Linux Kernel 3.6.
+I remembered that when Slackware 14.0 was still in development, some people suggest that Slackware should use Linux Kernel 3.5.x
+as their base kernel, but Patrick decided to stay with Linux Kernel 3.2.x
+and somehow his intuition has been proven to be correct.
+Linux Kernel 3.5.x is no longer supported by upstream developers, so if there's a serious problem in the kernel, Pat would have to upgrade to Linux Kernel 3.6 to get this problem fixed or he would have to apply patches to the Linux Kernel package, something that he rarely do.
+He wanted to make the package in Slackware bit-to-bit identical with the upstream source.
+Somehow, i will skip this version and i will be watching and waiting for Linux Kernel 3.6.3
+instead since when i watched the ChangeLog, i didn't see interesting bug fixes.
+For those who are learning on Cryptography, you can try the online version of CrypTool.
+It has a lot of content that can be used to learn more about cryptography, including Ciphers (classic, stream, block, symmetric, asymmetric, etc), Coding methods (ASCII, Bacon, Base64, Code39, Huffman, Morse), Analysis Tool (Autocorrelation, Frequency analysis, n-gram analysis), and several highlights that are related to Cryptography in overall.
+If you prefer to have a multiplatform application, you can try to use JCrypTool.
