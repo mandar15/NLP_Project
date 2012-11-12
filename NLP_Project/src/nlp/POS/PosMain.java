@@ -12,8 +12,8 @@ public class PosMain {
 		
 		POSGenAttribute obj = new POSGenAttribute();
 		
-		for(int i =1; i <= 20; i++){
-			for(int j = i + 1; j <= 20; j++){
+		for(int i =1; i <= 5; i++){
+			for(int j = i + 1; j <= 5; j++){
 				if( i == j)
 					continue;
 				obj.readFilePopulateTags("data/tweet/TwBot" + i, 0 , 400);
