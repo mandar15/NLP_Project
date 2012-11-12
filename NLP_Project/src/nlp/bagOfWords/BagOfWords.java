@@ -54,25 +54,32 @@ public class BagOfWords {
 		ngt.tokenize(str);
 	}	
 	
-	void generate_training_data(int author1, int author2) throws Exception
+	void generate_training_data(int author1, int author2, int cross, int skip_start, int interval) throws Exception
 	{
-		String train_file = constants.getTrainFilePrefixBow() + "bow." + author1 + "_" + author2 + ".trn";
+		String train_file = constants.getTrainFilePrefixBow() + "bow." + cross + "." + author1 + "_" + author2 + ".trn";
 		FileOutputStream output_file = new FileOutputStream(train_file);
 		
-		int start = 40, offset = 160;
-		generate_features(start, offset, author1, author2);
-		generate_feature_set(author1, output_file, start, offset);
-		generate_feature_set(author2, output_file, start, offset);
-		
+		//int start = 100, offset = 400;
+		int start = 0, cross_val = constants.getNoOfCrossFolds();//, offset = 160; //int offset = 40;
+		int i;
+		for(i=0, start=0;i<cross_val;i++, start+=interval)
+		{
+			if(start!=skip_start)
+			{
+				generate_features(start, interval, author1, author2);
+				generate_feature_set(author1, output_file, start, interval);
+				generate_feature_set(author2, output_file, start, interval);
+			}
+		}
 		output_file.close();
 	}
 	
-	void generate_testing_data(int author1, int author2) throws Exception
+	void generate_testing_data(int author1, int author2, int cross, int start, int interval) throws Exception
 	{
-		String test_file = constants.getTestFilePrefixBow() + "bow." + author1 + "_" + author2 + ".tst";
+		String test_file = constants.getTestFilePrefixBow() + "bow." + cross + "." + author1 + "_" + author2 + ".tst";
 		FileOutputStream output_file = new FileOutputStream(test_file);
-		int start = 0, offset = 40;
-		generate_feature_set(author1, output_file, start, offset);
+		//int start = 0, offset = 100;
+		generate_feature_set(author1, output_file, start, interval);
 		
 		output_file.close();
 	}
@@ -217,20 +224,23 @@ public class BagOfWords {
 		}
 	}
 
-	void generate_data() throws Exception
+	void generate_data(int noofLines) throws Exception
 	{
-		int i,j; 
+		int i,j, k, skip_start, cross_val = constants.getNoOfCrossFolds(), interval = noofLines/cross_val; 
 		int noofBots = constants.getNoOfBots();
 		for(i=1;i<noofBots;i++)
 		{
 			for(j = i+1; j<=noofBots; j++)
 			{
-				generate_training_data(i,j);
-				generate_testing_data(i,j);
-				generate_testing_data(j,i);
-				
-				features.clear();
-				document_frequency.clear();
+				for(k=1,skip_start = 0; k<=cross_val; skip_start+=interval, k++)
+				{
+					generate_training_data(i,j,k,skip_start, interval);
+					generate_testing_data(i,j,k,skip_start, interval);
+					generate_testing_data(j,i,k,skip_start, interval);
+						
+					features.clear();
+					document_frequency.clear();
+				}
 			}
 		}
 	}
@@ -242,7 +252,7 @@ public class BagOfWords {
 //		bow.generate_testing_data(1,2);
 //		bow.generate_features();
 		
-		bow.generate_data();
+		bow.generate_data(200);
 		
 
 	}
