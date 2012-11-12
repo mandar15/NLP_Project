@@ -23,11 +23,11 @@ public class BlogSentTokenizer {
         SentenceDetector sentDetector = new SentenceDetectorME(sModel);        
         
         //change the following path to the place where the raw blog data is on your Disk
-        int bgBotStartNo = 11;
-        int rawBotStartNo = 1;
-        int rawBotEndNo = 14;
-        String rawBotPath = "/home/pragya/Desktop/NLP folder/blogs/blogsData/Bot"; 
-        String bgBotPath = "/home/pragya/Desktop/NLP folder/blogs/blogsData1/Bot";
+        int bgBotStartNo = 1;
+        int rawBotStartNo = 24;
+        int rawBotEndNo = 33;
+        String rawBotPath = "/media/Masters/blog/raw/Bot"; 
+        String bgBotPath = "/media/Masters/blog/processed_data/Bot";
         //int outFileIndex = 1;
         for(int i = rawBotStartNo; i <= rawBotEndNo; i++) {
     		FileInputStream fileInputStream = new FileInputStream(rawBotPath + i);

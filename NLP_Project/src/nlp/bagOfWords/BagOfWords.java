@@ -35,7 +35,7 @@ public class BagOfWords {
 		int noOfBots = constants.getNoOfBots();
 		int authorDataLength = constants.getAuthorDataLength();
 
-		String fileNamePrefix = constants.getInputFilePrefixTweet();
+		String fileNamePrefix = constants.getInputFilePrefixBlog();
 
 		bots = new Parser[noOfBots];
 		for (int i = 0; i < noOfBots; i++) 
@@ -59,9 +59,10 @@ public class BagOfWords {
 		String train_file = constants.getTrainFilePrefixBow() + "bow." + author1 + "_" + author2 + ".trn";
 		FileOutputStream output_file = new FileOutputStream(train_file);
 		
-		generate_features(100, 400, author1, author2);
-		generate_feature_set(author1, output_file, 100, 400);
-		generate_feature_set(author2, output_file, 100, 400);
+		int start = 40, offset = 160;
+		generate_features(start, offset, author1, author2);
+		generate_feature_set(author1, output_file, start, offset);
+		generate_feature_set(author2, output_file, start, offset);
 		
 		output_file.close();
 	}
@@ -70,8 +71,8 @@ public class BagOfWords {
 	{
 		String test_file = constants.getTestFilePrefixBow() + "bow." + author1 + "_" + author2 + ".tst";
 		FileOutputStream output_file = new FileOutputStream(test_file);
-		
-		generate_feature_set(author1, output_file, 0, 100);
+		int start = 0, offset = 40;
+		generate_feature_set(author1, output_file, start, offset);
 		
 		output_file.close();
 	}
@@ -160,6 +161,7 @@ public class BagOfWords {
 		
 		for(i=start; i<start+offset; i++)
 		{
+			//System.out.println(data[i]);
 			tokens = new StringTokenizer(data[i]," ");
 			
 			while(tokens.hasMoreElements())

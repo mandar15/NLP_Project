@@ -1,17 +1,19 @@
 package nlp.utilities;
 
 public class Constants {
-	private final int noOfBots = 5;
+	private final int noOfBots = 20;
 	private final int n = 3;
 	private final int noOfCrossFolds = 5;
-	private final int authorDataLength = 500;
+	private final int authorDataLength = 200;
 	private final String inputFilePrefixTweet = "data/tweet/TwBot";
-	private final String trainFilePrefixNgram = "train/ngram/";
-	private final String testFilePrefixNgram = "test/ngram/";
-	private final String trainFilePrefixBow = "train/bow/";
-	private final String testFilePrefixBow = "test/bow/";
-	private final String trainFilePrefixPos = "train/pos/";
-	private final String testFilePrefixPos = "test/pos/";
+	private final String inputFilePrefixBlog = "data/blog/Bot";
+	private final String dataSetType = "blog";
+	private final String trainFilePrefixNgram = "train/" + dataSetType + "/ngram/";
+	private final String testFilePrefixNgram = "test/" + dataSetType + "/ngram/";
+	private final String trainFilePrefixBow = "train/" + dataSetType + "/bow/";
+	private final String testFilePrefixBow = "test/" + dataSetType + "/bow/";
+	private final String trainFilePrefixPos = "train/" + dataSetType + "/pos/";
+	private final String testFilePrefixPos = "test/" + dataSetType + "/pos/";
 	
 	public int getNoOfBots() {
 		return noOfBots;
@@ -31,6 +33,10 @@ public class Constants {
 	
 	public String getInputFilePrefixTweet() {
 		return inputFilePrefixTweet;
+	}
+	
+	public String getInputFilePrefixBlog() {
+		return inputFilePrefixBlog;
 	}
 	
 	public String getTrainFilePrefixNgram() {
