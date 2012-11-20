@@ -22,9 +22,12 @@ public class POSGenAttribute {
 
 	public static ArrayList<String> attributes = new ArrayList<String>();
 	public static String data[] = null;
-	public static String fileNum;
+	//public static String fileNum;
 	
 	//public static Integer fileNum = 0;
+	public ArrayList<String> getAttributesList(){
+		return attributes;
+	}
 	
 	public void readFilePopulateTags(String fileName, int start, int end) throws IOException{
 		Parser parserObj = new Parser();
@@ -48,7 +51,7 @@ public class POSGenAttribute {
 		Parser parserObj = new Parser();
 		parserObj.readFile(inFile);
 		data = parserObj.getData();
-		fileNum = inFile.substring(16);
+		String fileNum = inFile.substring(16);
 		POSModel model = new POSModelLoader().load(new File("external_jars/en-pos-maxent.bin"));
 	    POSTaggerME tagger = new POSTaggerME(model);
 	    
