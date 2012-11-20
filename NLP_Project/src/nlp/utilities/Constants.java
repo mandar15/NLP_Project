@@ -62,4 +62,8 @@ public class Constants {
 	public String getTestFilePrefixPos() {
 		return testFilePrefixPos;
 	}
+	
+	public String getDataSetType() {
+		return dataSetType;
+	}
 }
