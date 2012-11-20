@@ -1,200 +1,634 @@
-I have just finished reading Percy Jackson: Heroes of Olympus book 3: The Mark of Athena and i was suprised that Rick Riordan is planning to have two more books on this series which will be released in 2013 and 2014.
-The forth book is called The House of Hades and it will be released around October 2013 and the fifth book will be released on Fall 2014, but Rick hasn't released the title yet.
-It was another great novel about Roman and Greek mythologies by Riordan following the successful Percy Jackson series which is now has been brought to movies.
-The second movie will be released next year
-I have just returned from attending my colleague's wedding party in Klaten.
-It was held in a good date, 10-11-2012, a very rare date.
-No wonder there were so many wedding parties held today.
-The trip to Klaten was so bad.
-It's very crowded and i got stucked for some time so we came a little bit late at the location.
-Plus, we didn't get the best place for parking because they ran out of space, so we had to find another parking area near the mosque.
-In the middle of the event, rain started to drop and it was raining so hard.
-I was worried because i brought my wife with me.
-Luckily, the rain stopped just before we went back.
-Around 8.40 PM, we decided to leave because we had to go back to Jogja, so we left the area and go back to our parking area and travel back to Jogja.
-The trip only took about 15-20 minutes, because the road was so empty, not so many cars around.
-Congratulations to Lukas and Shintia for your marriage :)
-I must say that i'm impressed how VMWare worked up their products to be compatible with recent Linux kernel releases and it doesn't make their users searched for patches in the wild just to make it work under Linux.
-Yesterday, i removed my old installation of VMWare Workstation 8.0.4 and decided to try on VMWare Workstation 9.0.1, the latest maintenance release from VMWare that should be compatible with Linux Kernel 3.5.
-On my surprise, this version is also working well with the recent version Linux Kernel 3.6.x
-(i used 3.6.6)
-and it doesn't need any patches at all.
-It simply work out of the box.
-Good job to VMWare :)
-According to Go/NoGo status meeting, Fedora 18 will be delayed once again and this time, it will be two weeks delays instead of the usual one week.
-Because of this delay, the final release of Fedora 18 will be on January 2013 instead in December 2012.
-This means, we won't be able to see Fedora 18 shipping this year.
-The good point about this delay is that Fedora people can do more testing on preparing the Secure Boot mechanism which should be first implemented in Fedora.
-Let's just hope it goes well as planned or else people will be quite disappointed by Fedora's decision about it.
-VMWare has released a bugfix release for VMWare Workstation and VMWare Player.
-There are two new features added on this release:
-Support for Ubuntu 12.10 as a host and guest.
-Solaris 11 has been added to guest OS list.
-Meanwhile, a list of bug fixed on this release are also staggering:
-When powering on a virtual machine with Binary Translation on a SMEP-capable CPU, Workstation no longer causes the host to reset.
-If you run Windows 8 hosts on IvyBridge processors, VMware strongly recommends that you update your installation of Workstation.
-Several security vulnerabilities have been addressed, including updating third party libraries.
-The Workstation plug-in for Visual Studio has been updated to work with Visual Studio 2012.
-For host systems with more than 4GB of memory, Workstation will use more of the available memory to run virtual machines.
-The ability to mount a .vmdk
-file as a drive by right-clicking the file in File Explorer has been restored.
-Streaming a virtual machines has been fixed.
-Occasionally, certain elements in the Windows 8 user interface were incorrectly displayed.
-This has been fixed.
-After disconnecting certain USB devices from a virtual machine, Workstation would prevent devices from being reconnected without restarting the virtual machine.
-A more comprehensive error handling code has been added to prevent this problem from occurring.
-To improve application startup performance, the data being collected as part of the optional User Experience Improvement Program will no longer be aggregated on every launch of Workstation.
-Remotely retrieving the IP address of an Ubuntu virtual machine with an IPv6 address assigned failed unless an IPv4 address was also assigned to the virtual machine.
-This no longer occures.
-With IPv6 disabled on the host, the Linux version of Workstation is now able to share virtual machines.
-When you import an OVA file of a virtual machine running the Datacenter version of Windows Server, the network adapter failed to be configured correctly.
-This is now fixed.
-Closing Workstation in the middle of a cut and paste operation no longer causes the Workstation user interface to crash.
-After unsharing a virtual machine configured to use client-side devices, you can now reconfigure the device settings to use local devices.
-Easy Install on the Linux version of Workstation now recognize all compatible operating systems.
-The VMware monitor has been updated to work with Linux kernel 3.5.
-On the Linux version of Workstation, entering a permanent license key after using an evaluation key now removes the days remaining evaluation indicator.
-The network adapter configuration screen now correctly preserves the Custom network settings.
-You can now remove a Network if network settings changes are pending.
-The Use physical drive radio button for a floppy device was disabled when connecting to a shared virtual machine or remote virtual machine a on host without a physical floppy device.
-This is now fixed.
-Animated cursors are now displayed correctly in a virtual machine.
-I will download the Linux version as well, but i may not going to test it on my primary machine as i still need the stabilitity of VMWare for my class at work.
-KDE has released a monthly update KDE 4.9.3 which focused on bug fixing and translations updates.
-The list of bug fixed is quite big, 86 and several key components that gets the most update are Kate editor and Kontact email and groupware client.
-For detailed information about those bug fixes, please head on to their bug tracker.
-There's one bug that were found out after the package has been released and that is qyoto won't be build against cmake 2.8.10 (Bug 309652), but there's a suggested patch for  this bug report, even though it's not yet committed to the repository.
-Expect KDE packages for Slackware soon enough from Eric Hameleers
-Greg has released several stable Linux Kernel releases while he was in LinuxConf.
-One of them (3.6.x
-branch) contains an important fix about EXT4 corruption bug which caused a chaos in Open Source world.
-No worries, since the bug can only be triggered by some use of uncommon options and it's only intended for developers.
-I have upgraded my kernel to Linux Kernel 3.6.6 on my desktop and workstation and i'm planning to do so with my laptop tomorrow as wel
-We (me and my wife) decided to have some refreshing together to Amplaz to buy some items for daily needs.
-While in there, we looked at the theather and we saw the queue was so long, so we didn't have a thought of going to watch a movie.
-After finishing our shopping, we were going to have lunch there, but then we saw the queue line has dropped compared with in the morning, so i took a chance to see whether i could get tickets to Skyfall.
-Lucky me, there were still some tickets left for 3 PM show, so i puchased it with my credit card because we could have 50% discount.
-So finally we did watch Skyfall even though it was unplanned at the beginning.
-I don't want to give spoilers, since the movie is quite new, so i'll just stop here :)
-I was unable to write a blog post yesterday because i had to go to the hospital at night.
-My condition dropped and the doctor even suggested me to be hospitalized, but i refused it.
-I prefer to have a lab check first and decide what to do next.
-My schedule this semester is so tight and i guess it started during the mid test where i went abroad and then when i came back, i marked the student's exam and then preparing all of the daily stuffs again.
-It consumes a lot of energy and when my condition is not very fit, i still forced it to give a lecture in the class yesterday.
-So, since last night, after seeing the doctor, i went to bed early because i do need a total rest, since the day before, i couldn't sleep at all and that worsen my condition.
-This morning, i'm feeling better after having a better sleep, even though i still woke up every few hours.
-It's not the best sleep condition though.
-Ubuntu is now planning to change how it works with quality assurance process for next Ubuntu release: 13.04.
-They plan to create a more streamlined, continuous development for future versions of Ubuntu Linux, but they removed the alpha releases and will have one Beta release only prior the final release.
-In most Software Engineering terms, Alpha is intended for private testing conducted by the team, while the Beta is more like a public testing.
-While i can agree that they removed the Alpha release since they can do it in their daily jobs and also by the use of automated testing, but what i can't understand is that they will have only 1 Beta release and no RC releases at all?
-Beta release is the first public release.
-This means, that ordinary users will have their first chance to taste what will next Ubuntu release would be prior deciding whether to upgrade or stick with the current version.
-With the habbit of introducing new and big changes on every releases, Ubuntu is taking a big risk (IMHO) for Ubuntu 13.04.
-Less release means less feedback from the users and you know what happened when you can't satisfy your users?
-They will leave and pick another distributions that works better.
-By the way, Ubuntu is now dropped to third popular distro based on Distrowatch's HPD index.
-The second position is now taken by Mageia, while the top position still LinuxMint.
-I think by the time Ubuntu 13.04 gets released, they might be overlapped by Fedora.
-One of my student mentioned me on Twitter that Precise Repository (Ubuntu 12.04) is missing from UKDW Repository.
-I checked my configuration and i just realized that i accidentally edit the wrong release version.
-I was supposed to remove Oneiric since i have completed Quantal synching, but i deleted Precise.
-Since i have a policy of supporting N and N-1 release, i had to resync all of the Precise repository from scratch.
-So far, i have completed backports, proposed, security, and updates branch.
-What's left is the main precise branch which is the biggest one.
-I think i still have to wait for 2-3 days to complete this process if there's no obstacle in the middle of the process.
-For those who are using Windows application in Linux platform, you might have known about CrossOver.
-It's the commercial software created by CodeWeavers, Inc based on the Wine project which is open source.
-After successfully running Lame Duck challenge back in 2008, they are back with another giveaway by giving a free, fully functional copy of either CrossOver Mac or CrossOver Linux.
-Each copy comes complete with 12 months of support and product upgrades.
-All you have to do is to visit CodeWeavers’ Flock The Vote promotional web site and download the application starting Wednesday, Oct. 31, 2012, beginning at 00:00 Central Time (-5 GMT).
-This offer will continue for 24 hours, from 00:00 to 23:59, Oct. 31, 2012.
-There is no need to panic if you are using EXT4 and you are afraid of data corruption bug that does exist in several Linux Kernel releases.
-The bug reported can only be triggered by some special combination of options that are spesifically designed for developers since it's not yet fully tested and it's not enabled by default.
-You can rest assured that this bug only happened on single user (the original reporter) and not affecting other people.
-You can read the detailed article in The H.
-Anyway, the bug is now fixed in Linux Kernel 3.6.4
-which was released yesterday by Greg.
-I accidentally checked on Kernel.org and found out that Linux Kernel 3.6.4
-has been released by Greg.
-I downloaded this source and compiled it both on my desktop and workstation and now, i'm ready to test this shiny Linux Kernel release.
-I'm still using Linux Kernel 3.6 for now and even though .4
-didn't brings fixes for EXT4 corruption bug that was introduced in Linux Kernel 3.6.2
-and still exists in 3.6.3,
-i think it's about time to upgrade to this stable release and hopefully it really stable for production machines.
-Luckily, i don't have to worry about NVidia and VMWare patches, since it's not a major upgrade and things should work out of the box with those two products.
-There's only one way to find out: reboot :)
-Starting tomorrow, everything will be back to normal activities again as the mid test week has finally over and we will continue with the second half semester until the end of this year.
-There will be six weeks in total plus two weeks of final test which will be conducted in mid December.
-I have marked all the exams and all i have to do now is to distribute the results back to the students.
-It's so good to have all the work completed and having a nice vacation in these two weeks of time.
-I don't think there will be a good chance like this anymore in December as i will be busy preparing my first baby.
-Wish me and my family for our first baby :)
-Yesterday i talked about performing a maintenance of my Windows and of the actions i performed since yesterday was defragmenting my hard drive, including my 2 TB external hard drive this morning and guess what?
-The process hasn't ended until i posted this blog post.
-It's still on 37% and it has been running for almost half day already.
-I know the risk of doing this, but it has been defragmented so badly, so i need to take care of it before it's getting worse.
-Since most of the contents are big files, i'm hoping that when those files are moved, they will be continuous and the process can be completed successfully and it will be faster in access performance.
-It's been some time since i defragged my Windows XP system.
-These system has been used since few years ago and even though it's deteriorating, it's still usable for me as i don't tend to install/remove many applications on this system.
-I used this machine mainly to backup and setup my iOS-based devices, since there isn't iTunes in Linux system.
-Since we have a long holiday this week due to national holiday, i'm planning to start a maintainance process for my Windows XP.
-I have clean up some spaces by using the Disk Cleanup utility and now, i'm defragging all of my partitions one by one.
-Since it will take some time to complete, i will just leave it while i'm sleeping and it should be completed by tomorrow morning.
-Performing a maintenance process regularly will ensure that your system stays in good performance for daily usage.
-This is not only for Windows system, but for all distributions.
-Finally, after battling for one week, finally the Quantal Quetzal repository is now completed and operational.
-Since i have a two release policy, this will also deleted the 11.04 (Oneiric Oncelot) repository on my server to save some space.
-Why did it took so long to complete the repository?
-Well, it doesn't have a privilege of high dedicated bandwidth to download the repository.
-The bandwidth is shared with the other users in the campus, so in will be fast enough at night and during office hour, the connection will be slower than usual.
-I have also limited to 32 and 64 bit version only which should be downloaded, not all of them.
-I have also preffered to download the binary packages only, excluding the source since it can reduce the size of one release to nearly half of the total space needed.
-Welcome Quantal and thank you Oneiric.
-It's time to let you go from this server.....
-Starting from today until tomorrow, i will be on Seven Habbits training which is taken from Stephen Covey's Seven Habbits of JHighly Effective People book.
-I completed the first day and i still have one home work which i think i will make it by tomorrow morning as i'm tempted to sleep for now.
-It's been a tiring day for me, but at least i got something in return.
-I got some new knowledge about improving myself (i have read most of the book's content and it's already included in the Project Management's course which i taught nearly every semester), but i also got a great news about my first baby which is expected in late December or early January.
-It will be a baby girl :)
-After resting last night, i woke up this morning to start a new activity in the office and some of the test results has been distributed to my office room since yesterday, so i took it home and start working on it.
-I have completed one of two exams with some help from my wife.
-I still have two exams left, but since one of them was conducted this evening, so i will take it next Monday as i have two days workshop starting tomorrow and the day after while on Friday, it's national holiday, so i'm off.
-The result is quite expected and i'm happy with it.
-Since this is a course for early year students, i'm expecting a strong start with strong motivation to pursuit their target in the end of their study and this is just the beginning of it.
-I have returned from my long journey from Malaysia and also Jakarta for the last seven days.
-It's been a wonderful journey and it would be a perfect one, except that i had some problems with the airport staffs, both in KLIA and also in Jakarta.
-That's the only complaints i had during my trip.
-Anyway, everything is fine and i'm glad we can safely arrived at home and get some rest.
-We really do need it right now, so i won't write more and get some sleep right now.
-We were having dinner in Jalan Alor, the famous place to find a lot of Chinese food and then suddenly the rain started to drop and it was a little bit of chaos when the waiter was preparing for the pole and the big umbrella.
-Just few seconds and the umbrella was set up and everything back to normal again.
-People keep talking again just like there was no rain at all.
-One of my student sent me a message via Facebook last night and asked me whether i have uploaded one of the material for mid test exam.
-I was shocked at that moment because i totally forgot to upload  it just before i'm leaving.
-Since i had no access to my desktop at home because i switched it off, my option would be my workstation at the office which is still running.
-Luckily, i still left my TeamViewer session running on this machine, so i can remote my workstation from my iPad to convert the material to PDF format and then and upload them after logging in to the machine using iSSH application.
-That was so exciting, but really interesting to see many things can be done by iPad.
-Thanks to it, i can still be able to work remotely.
-Linus Torvalds has released Linux Kernel 3.7 RC 1, which means he has closed the merge window for Linux Kernel 3.7.
-This also means that there are no new features will be added in the future until 3.7 gets finalized around December.
-Linux Kernel 3.7 will have a 64 bit ARM support and thus enabling ARM developers to build the kernel using the same kernel source code.
-Many other new and interesting new features has been well written in The H. Let's hope that Linux can release this version just before the end of this year as a Christmas gift.
-Starting today until next week, i will be considered "offline" from Internet (unless there's a proper Internet connection) since i will be having a short vacation with my family.
-I'm not really sure that i can find a good Internet connection on the place where i will be going, but if they do, i will probably focusing on replying email.
-I don't think there will be something surprising next week, but suppose there is, i may be late of knowing it and pardon me if i don't write it on my blog :)
-Greg has just released Linux Kernel 3.6.2
-along with other stable kernel releases that he maintained (3.0.46, 3.4.14,
-3.5.7).
-He also noted that for Linux Kernel 3.5.x
-branch, Linux Kernel 3.5.7 is the last release and he didn't plan to make another release and suggest people to move on to Linux Kernel 3.6.
-I remembered that when Slackware 14.0 was still in development, some people suggest that Slackware should use Linux Kernel 3.5.x
-as their base kernel, but Patrick decided to stay with Linux Kernel 3.2.x
-and somehow his intuition has been proven to be correct.
-Linux Kernel 3.5.x is no longer supported by upstream developers, so if there's a serious problem in the kernel, Pat would have to upgrade to Linux Kernel 3.6 to get this problem fixed or he would have to apply patches to the Linux Kernel package, something that he rarely do.
-He wanted to make the package in Slackware bit-to-bit identical with the upstream source.
-Somehow, i will skip this version and i will be watching and waiting for Linux Kernel 3.6.3
-instead since when i watched the ChangeLog, i didn't see interesting bug fixes.
-For those who are learning on Cryptography, you can try the online version of CrypTool.
-It has a lot of content that can be used to learn more about cryptography, including Ciphers (classic, stream, block, symmetric, asymmetric, etc), Coding methods (ASCII, Bacon, Base64, Code39, Huffman, Morse), Analysis Tool (Autocorrelation, Frequency analysis, n-gram analysis), and several highlights that are related to Cryptography in overall.
-If you prefer to have a multiplatform application, you can try to use JCrypTool.
+Jo, there definitely are secrets that are common to long-lasting and passionate relationships.
+In fact, there are eight of them that when practiced regularly become the habits of passionate relationships.
+We don’t have room here to cover them all so let’s look at just one of the eight habits and a couple of exercises that you can use to make your relationship last and get even better.
+And if you are interested in this type of fresh information to help you in your love life be sure to sign up for my FREE Dating Tips & Relationship Advice Newsletter.
+SECRET #1: The Habit of Care-Full Communication
+No I didn’t misspell “careful.”
+I spelled the word “careful” with two “L”s because when a couple’s words and actions are full of care, they are more likely to be the lucky ones who stay in love.
+In fact, the love researcher, Dr. John Gottman, has observed this in  thousands of happy couples.
+His research, as well as that published by my husband and I, find loving couples liberally use four insurance factors when they communicate with one another:
+Affection
+Appreciation
+Respect
+Validation
+In-love partners, whether they have been together one month or 25 years, maintain a ratio of 5 of these positives to 1 negative interaction (like a criticism or a complaint) in their relationship.
+This ratio of positive and loving behaviors coupled with acts of kindness provide a bedrock of connection and win-win teamwork.
+Below are two exercises that will help you and your partner cultivate the care-full communication that leads to a happy and passionate relationship.
+It is especially important to practice these exercises if things are rocky between you.
+Relationships can end in a heartbeat.
+The Five to One Process
+Exercise #1:
+Read over this exercise with your partner.
+For the next hour or so when you are talking or hanging out together, try to act the way you usually do.
+But take two notebooks and each one of you write down the number of positive or negative words/gestures you yourself are making toward your partner.
+Take another hour and deliberately double the positives.
+After this, discuss the experience together.
+You may find yourselves rolling with laughter.
+This is good!
+Not taking things so seriously will set you both free of your negative patterns.
+Exercise #2:
+On your own, track the number of positive word/gestures you put out to your partner.
+Now, double the amount.
+Now triple it, and watch what happens.
+If you keep it up, eventually you will get positives coming back to you.
+Practice giving and receiving them!
+It is very critical to create care-full communication with your partner.
+Attention to and practice of this skill will go a long way to creating a passionate relationship.
+Otherwise you risk losing it all.
+Many studies that compare single people with couples as to their quality of life and general health and happiness come to conflicting conclusions.
+Some say that couples are happier and healthier while others report that singles are just as well off.
+On top of that common sense tells you that bad coupling and marriages aren’t going to be good for either party’s well-being.
+In fact, many writers have flat out said that marriage is toxic to women.
+I think the key to understanding these confusing results is the variable of couple satisfaction.
+Most studies have simply not measured the couple’s happiness as part of their experiments or surveys.
+Of those that did, here’s the overview: Bad or unsatisfactory coupling or marriages may contribute to health and psychological problems while good coupling may protect you from certain diseases or help you to recover faster.
+But before we get into the research I’d like you to have fresh information like this blog delivered to you free each week.
+Just sign up for my Dating Tips & Relationship Advice Newsletter.
+It’s loaded with useful and provocative info on dating and relationships.
+So sign up it’s free.
+We can’t go into all of the research so here are the findings from a few of the major studies.
+A study of long-term coupling in which the partners were unhappy, showed that women more than men were likely to suffer from high blood pressure and obesity.
+Others have shown that poor coupling or marital quality was associated with depression, worsened physical health, poor sleep and metabolic problems.
+We’ve also already shown that once a woman is divorced or separated that her economic, health and general well-being are all adversely affected.
+In other words, there is a severe penalty for being in a bad relationship that never-coupling singles don’t pay.
+In fact, singles with strong social support have been found to be nearly as well off as women in good relationships.
+That’s because social support and love are probably the key drivers behind many of the positive findings in comparison studies of singles, married, living together and divorced women.
+So what about women in satisfying relationships?
+In comparison studies, they had the least atherosclerosis in their arteries and lived much longer if they did have heart disease.
+They had fewer doctor visits, lower blood pressure than singles or women in unhappy relationships.
+Studies of long-term couples showed that they report fewer headaches and back pain.
+Happy couples healed twice as fast from flesh wounds than those who demonstrated hostility toward each other.
+In fMRI studies of the brain, men and women in long-term relationships showed activation in the areas of the brain associated with dopamine, that is, the passion centers, as if they were newly coupled.
+There is no question then that the social support of a loving partner contributes to having a healthier, longer and happier life.
+Bottom Line: Coupling by itself is not an answer to all of life’s problems.
+Being single today combined with a strong social network of family and friends, is a very viable alternative to even a healthy relationship.
+But is a good marriage toxic to women?
+No.
+If you do decide to couple, choose someone who is a good match, someone who is devoted to you and committed to handling the inevitable bumps and potholes that you will face on your journey.
+Because if it does not go well and you separate, the research suggests that you will suffer more than if you had never married.
+On the other hand, a good relationship is worth creating and working on because it can have other many positive effects on your health and well-being.
+If you would like my Love Mentors to help you create a great love relationship sign up for a free love mentoring session at http://lovein90days.com/coaching/.
+You can have coaching from a trained Love Mentor who is also married.
+Each one has a long background in transformational work and is closely supervised by me.
+Most importantly, each Mentor is gifted and can help you move forward to the love relationship you really want!
+Just go to www.lovein90days.com/coaching/ to get your own personal FREE session by phone or Skype ASAP.
+Today’s relationship tip  blog is written by one of our expert Love Mentors®, Karen Holland.
+Karen shares five relationship  tips for how to communicate about a touchy subject (without triggering a fight).
+1. Soften Your Start Up! — If you go on the attack (or you start with a manipulative comment to get a certain outcome), you will get met with resistance or defensiveness.
+And wind up mired in conflict.
+Examples of how to soften start up:“Honey,something’s been bothering me.
+Can we talk for a moment?”
+“I know when we’ve talked about this in the past it hasn’t gone well, but I’d like it to be different this time.”
+“Hey, is now a good time to bring something up?
+I’ve been bothered about something and just thought we should clear the air.”
+Before we go on to the next four tips I want you to take advantage of Dr. Diana’s FREE support.
+Sign up now for her Dating Tips and Relationship Advice Newsletter.
+It’s got fresh information you need now to make your relationship that much better.
+Click here to start today.
+2. Use non-verbal gestures to keep the connection while you talk.
+Lightly touch knees, hug, hold hands, offer a glass of water, help each other if in the middle of a task, etc.
+This can be really soothing to someone who gets anxious when there’s tension between you.
+Also, it might be better to talk side by side rather than face to face.
+3. Try making a repair in the middle of the conversation if you see the conversation is not going in the right direction.
+Repairs might be something like: - “Oh!
+I didn’t mean to say it that way, can I start again?” - “Wow, I really messed that up right now.
+I’m really sorry.” - “I don’t like how this is going.
+I’m afraid we’re going to start yelling like we always do. – Can we start over more calmly?”
+- Humor or gentle teasing (especially poking fun at yourself) is a great way to ease tension.
+4. Don’t resist when your partner is sharing a concern or complaint.
+If you resist, it persists!!
+You won’t allow your partner to get over his/her frustration or feel heard if you keep resisting what s/he is saying (by being defensive, criticizing in return, withdrawing from the conversation, etc.).
+You don’t have to agree with them, but it goes a long way to validate what they’re saying.
+Examples of ways to validate and not resist: “Okay, I can see what you mean…” “Okay, I really got what you said and how you feel about that… You feel this…” “I know, I see your point…” “Yes, I know, I do that sometimes” “It must be hard feeling that way…”
+5. Don’t talk when you’re moderately to extremely upset or angry.
+This is a critical relationship tip!
+While it’s completely normal and healthy to get upset with each other, it does no good to talk about your issues when you’re too upset to talk well.
+Signs up being too upset to talk: -Racing pulse -Flushed cheeks -Tight chest, jaw, fists or arms -Eyesight narrowing -Stomach churning – Crying uncontrollably -Yelling or feeling like you want to scream, throw, hit – Being lost in thoughts, past arguments or rehearsing your point of view over and over.
+Here’s an exercise I teach my love mentees to master tip #4.
+It really makes a difference when they want their partner to listen and understand.
+Even hard-headed guys actually go for this.
+Practice Making Requests and No Resistance
+Write down a common complaint (take it easy) and practice sharing it with your partner.
+Pick an A and a B.
+A – Start with sharing your feelings about it and then make a request.
+Remember to be soft, don’t attack, blame or criticize.
+B – Validate and don’t resist what s/he is saying (remember, say things like “I see what you mean” or “Yes, I know I do that…”
+Switch
+The point of this exercise is not to resolve issues but to share and learn that you can listen without resistance and bring up concerns without going on the attack.
+What happens when we look in a mirror?
+We say “You’re so fat!” “Look at that wrinkle!” “You are definitely getting old!”
+All these things and much worse.
+Can you imagine saying to your best friend, “You are a mess!
+Your rear end is as big as a house!”
+We would never say these kinds of things to a friend.
+But when it comes to ourselves, it is a whole different story.
+Imagine turning the loving attention and appreciation you give to your friends and family over to yourself.
+Imagine if you could stop the negative self-talk about being too old, too fat, too whatever.
+Imagine how it would feel to appreciate yourself for a change not defensively, not in reaction to negativity, but with real self-love.
+The kind we want from a lover but never learned to give ourselves.
+Inside each one of us is an innocent, lovable self, just waiting to be discovered.
+If you are quiet long enough and sit with yourself, you will discover a beautiful ineffable essence that Kahlil Gibran calls, “a fragment of the Divine.”
+And I’ll show you how to find that fragment within because doing so is a key secret in creating self-love.
+And it’s the type of knowledge I share weekly in my Dating Tips & Relationship Advice Newsletter.
+So sign up right now.
+It’s free.
+I know this whole business of self-love may be hard to relate to–like an impossible task for YOU–because of the negative chatter in your head about yourself or that the feelings of fear and anxiety can be overwhelming at times.
+So for those of you who are single or in unsatisfying relationships today’s step in our journey together is this: Fall in love with yourself and then you will find the love you seek.
+When you treat yourself well, you will choose partners who love you.
+As within, so without.
+This is one of the ultimate secrets for attracting a terrific partner.
+Well Dr. Diana, you are wondering, how do I overcome my usual self-pity party and learn to create self-love?
+In our love mentoring program we teach four powerful techniques for discovering and honoring your highest self, what I call the Diamond Self.
+My own mission has been to help others develop their Diamond Self because that is the royal road to Love.
+So here is one SUPER POWERFUL way to start building that magical part of yourself so that you can begin attracting more love.
+This process will take only 15 minutes or so but it will change your life.
+Think back to when you were an infant, toddler or young child–when you were all smiles, alive and in the moment.
+You were born with innocence, natural curiosity and joy in the world.
+The original you was a fully present, adorable little being, in touch with all of her blissful feelings and naturally assertive and self-expressed.
+When you were that sweet child running around, what did you enjoy?
+Was it the running around, or cooking on your Fisher Price play stove?
+Maybe it was sitting still staring at a bumble bee.
+Were you a big talker or a chubby witness who sat on your potty throne and took it all in?
+Did you love to finger paint?
+Think back and remember that early time when you were free to play and explore the world.
+What were you like?
+This is a time before you were boxed in by your parents’ and society’s expectations, fears, and neuroses.
+Before you were ignored, shamed or told you were bad.
+Before the limitations and fears set in.
+Chances are all those early traits are still with you, in their grown-up manifestations.
+And they are all utterly you and OK.
+In fact, they are charming, even captivating.
+But they may be entirely hidden.
+I have an old photo of myself from that innocent first era, before I closed down my heart and got shy to the point of being mute.
+It shows a cherubic three year-old in a beloved park where I used love to race around and climb all the rocks.
+I am sitting in the dirt, grinning wide-eyed at the camera, posing with joy and confidence, an impish tomboy in my dirty polka-dot dress.
+I keep the picture by my computer and look at it with great appreciation almost every day.
+That is me.
+In fact, when I watched myself on The Today Show recently, I giggled outright because I caught the tomboy imp in a dress staring back at me from the TV set.
+Now take out a photo of yourself as a toddler or baby–you in all your innocence – that child who was born whole, perfect and beautiful.
+Put it near your computer or somewhere else where you can look at it several times a day.
+As you look at it, notice how wonderful, incredible, truly lovable that child is.
+For one second at a time, glance at the photo and prize that child who is you.
+Love moderately: long love doth so; Too swift arrives as tardy as too slow.
+~Shakespeare
+When it comes to dating, the Bard got it right.
+Moderation is key.
+It keeps you from moving too quickly or too slowly when you’re getting to know new men and what they bring to your table.
+And the most powerful way to achieve moderation is by dating more than one guy at a time.
+On my Soulmate Dating Program, you avoid that pressured decision to sleep with a guy and its aftermath: a Flame Out that usually kills the relationship.
+Instead you date a number of men at the same time without having sex with any of them.
+By not seeing any one man too often, you find the men who are really into you and who will stay the course.
+Plus, you break out of your prison of deadly dating patterns and maneuver more skillfully in the dating world.
+In my experience, this dating program is the best way to find your Soulmate.
+Although the idea of finding, much less juggling, a few guys may sound challenging — if not downright impossible!
+— let me reassure you: it won’t be once you begin using all the tools I teach you.
+To help you do that on an ongoing basis please sign up today for my FREE Dating Tips & Relationship Advice Newsletter.
+It’s chock-full of fresh information about online dating, flirting, how to rekindle passion in a relationship and great sex secrets for you.
+Click here to get started now.
+Why It Works
+There are three sound biological reasons why the Soulmate Dating Program rocks!
+First of all, it helps you avoid the number one mistake that single women make: the addictive moth-to-a-flame over-involvement with some new guy who is supposedly the “One,” which I call the Flame-Out Deadly Dating Pattern.
+This is because romantic love is a real addiction.
+It is like using cocaine or heroin, which means reason goes out the window.
+When we “fall in love” our brains make large quantities of dopamine and norepinephrine, which also happens when you take speed!
+These brain chemicals create the excited, exhilarated and focused state that allows us to have eight-hour dates and remember every detail about what our new hottie did and said.
+These speed-like chemicals also can drive up our levels of testosterone, which increases libido and desire.
+Second, when we fall in love, serotonin levels fall and resemble the levels found in people with obsessive-compulsive disorders.
+So we tend to ruminate, fantasize and obsess about our new (drug-like) boyfriends.
+The new love is in our thoughts all day and in our dreams at night.
+Your brain says, focus on him, focus on him, focus on him.
+Once this process takes you over, you become like a craving coke addict.
+You lose touch with reality, seeing only the positives.
+You lose self-control.
+Instead you are locked on the target, the fix–hotwired and ready to do outrageous things, sometimes self-destructive things, whatever it takes to be with him.
+One look, one sweet word is all it takes.
+Even if you don’t really know him.
+Even if it is not in your best interests.
+And as you continue to spend more time together the addiction intensifies.
+If you move too quickly into the pulsing rush of love, you put yourself at risk for an agonizing withdrawal if this man rejects you.
+Then sleeplessness, crying jags, over- or under eating, obsessive and upsetting thoughts, all mess with your brain chemistry even further.
+The Soulmate Dating Program safeguards you against all these dangers of love addiction.
+On this program you will see the new hottie less often and have a measured coming together.
+You will be less likely to lock on to him with a singular focus that puts you at risk.
+In this way you elegantly avoid getting physiologically and emotionally devastated if it turns out that he is a player or all wrong for you.
+Last but not least, the Soulmate Program also stops you from having sex prematurely.
+Why is this so important?
+Simple biology.
+When you have sex with someone, your body drives up the levels of oxytocin both during the whole sexual act and after you leave the scene.
+Oxytocin, which has been called the cuddle, bonding, or tend-and-befriend hormone, creates a strong biological attachment.
+This means that your body may automatically start the attachment process with almost anyone you bed, whether or not you want to be in a relationship with him!
+Add that chemical to any dopamine surges and you’re desperately waiting for his text, email or phone call.
+Jumping into bed too soon means you open yourself to premature infatuation, dependency and a kind of pseudo-intimacy that almost always backfires.
+Then, caught in the chemical soup of dopamine and oxytocin, you will likely lose yourself.
+Dating more than one guy at the same time helps clarify what you want and need in a man, because you can easily and instantly compare and contrast.
+So if you want to fast forward your Soulmate Program I urge you to sign up for a free 40-minute Love Mentoring session with one of my gifted Love Mentors today.
+Today’s blog about creating great sex and passionate relationships is written by one of our expert Love Mentors®, Karen Holland.
+If you would like a free 40-minute love mentoring session with a seasoned pro like Karen, click here .
+“You always say no when I want to have sex!”  “Well, you never tell me you love me or even give me a hug when I come home!
+Why would I want to have sex with you!?” Sound familiar?
+Perhaps in your own relationship you’re caught up in the bind that Rick and Donna used to be caught up in.
+Rick couldn’t understand why Donna lost all her desire for him and felt very frustrated and lonely.
+Donna didn’t feel loved or appreciated and certainly didn’t want to do that with him!
+She was lonely too.
+When they came to see me, their marriage was on the brink.
+They needed help fast.
+We talked about what it means to make love “outside the bedroom.”
+I gave them three tools for developing emotional intimacy plus a few exercises to heat up their sex life as well as deepen their emotional connection.
+But before we get to the three rules of passion I want you to sign up right here for Dr. Diana’s Dating Tips and Relationship Advice Newsletter.
+It’s free and full of wisdom.
+Each letter contains gems like how to rekindle your passion, how to stop fighting quickly, how to get a commitment and how to find your soulmate.
+Click here to get started.
+Rule #1: Learn what you and your partner need.
+Rick learned that warmth, words of appreciation and lots of physical affection made Donna feel closer to him.
+Then, to his delight, he saw that giving a good foot rub and a few kisses in just the right spot could drive Donna wild.
+Donna got that Rick needed a sexual connection to feel closer to her.
+But to provide that, she had to learn simple strategies to reconnect to the irresistible sexy woman that she was during their courtship.
+Now, they can’t keep their hands off each other!
+Rule #2: Be willing to let go of the bind that keeps you stuck, feeling lonely and unfulfilled.
+Willingness to change.
+Sounds easy but it’s actually hard.
+We all want to be right and maintain our position even if it means no sex, no passion, no nothing in the bedroom.
+Sometimes we have to hit bottom and admit defeat to get to willingness.
+And then comes the change part which is no picnic either.
+The good news with Rick and Donna was that they were desperate and headed for a breakup.
+They were very willing to get out of their bind and really change how they treated each other both in and out of the bedroom.
+Of course, they had help which leads to our final rule.
+Rule #3: Get coaching to help you get unstuck.
+Your relationship is too important to let it slide down the tubes!
+If you try to bring things together and it is not working, get help, like Rick and Donna did.
+With a little guidance, you too can get unstuck and start having a lot more great sex with your partner!
+And you can go from a state of loneliness to sharing a passionate connection.
+Thank you, Karen, for your wise words.
+If you would like a free 40-minute love mentoring session with a seasoned pro like Karen, click here .
+Wishing you love,
+Dr. Diana
+And don’t forget to tune into Karen and fellow Love Mentor® Jim Delpino as they are interviewed on “How to be an Enticing, Irresistible Sexual Goddess with Your Clothes On” on our  free Love in 90 Days- Blogtalk radio show!
+To listen, Click Here!
+In this free relationship advice for women seminar you will discover how to. . .
+Keep a man interested in getting to know you without sleeping with him too soon
+Become a powerful seductress and turn him and yourself on
+Know what men really want from women in the bedroom and beyond
+Build a man’s desire and become completely irresistible
+Know if a man’s really interested, or if you’re just another notch in his belt
+Hold onto yourself, learn to powerfully observe the quality of a man and build the foundation for a deeply sexy, loving relationship!
+It all started when you saw him or her looking at the hottie.
+And your jealousy just amped up from there.
+You may have made jabbing accusations, started a yelling match, sulked or made your partner pay in the bedroom.
+You felt justified, righteous; worried and sure that your partner was in the wrong.
+What you really wanted was reassurance and love–the glorious unconditional kind.
+Sometimes you got it.
+Sometimes you didn’t.
+Sound familiar?
+Most of us have had a few incidents with the green-eyed monster called jealousy.
+We all know that jealousy can cause painful heartbreak, scads of worry and out-of-control outbursts.
+It has even destroyed many relationships.
+So here I’ve described four common problem situations along with four pieces of dating advice that will not only moderate spurts of jealousy but might actually help improve your relationship.
+But before I get to them I want you to take advantage of my free ongoing support.
+You can learn EXACTLY how to turn your relationship around and if you’re single how to find and attract your soulmate by subscribing to my FREE Dating Tips & Relationship Advice Newsletter! Click Here to get started now.
+Dating Situation 1
+Let’s say your partner spends what seems to be an awfully long time laughing at some cutie’s jokes.
+That worried jealous feeling in your gut can serve to show you that your partner is desirable to you.
+We have a tendency to devalue anyone who wants to be in a club that would have us as a member.
+Plus after awhile of being in a relationship, the sparks tend to die down.
+So seeing someone validate your partner’s attractiveness is a good thing.
+It fans the sparks you still have for your partner.
+That flash of green in your eyes is a sign that you still care about and want him or her.
+The Fix
+When you feel jealous, realize that it is a sign of how much you care for your partner.
+Make a point of being affectionate and caring.
+Tell them just how special and great they are.
+Chances are, they will focus even more attention on you and forget about anyone else.
+Dating Situation 2
+He’s talking to a hot girl and the waves of insecurities and negative self-talk roll over you until you’re practically drowning in them.
+She has such thin thighs….my
+thighs are fat….
+She is so bubbly…and I am boring.
+He is smooth, knows what to say….
+I never seem to make her happy.
+The Fix
+Begin to observe the ticker-tape of negative beliefs and worries about yourself when you become jealous.
+This is very important because if you notice these ideas you can actually change them.
+Begin a program of modifying your inner dialogue whenever you compare yourself negatively with others.
+As the 12 step programs say: Compare and despair.
+Journal about the negative self-talk that jealousy brings up for you.
+For every negative statement, write a positive one.
+For example, if you write, “I have ugly acne,” add a sentence like, “My eyes are a gorgeous blue.”
+This will actually help you rewire your brain circuitry in a positive way!
+Dating Situation 3
+If you see your partner paying attention to some well-kept, in-shape person, you may be jealous and angry.
+But also it’s an opportunity for you to reevaluate your priorities like going to the gym more regularly.
+If you see your partner flirting with a good-looking gal or guy, you may worry that they are headed for the nearest bedroom.
+What do these worries mean about you not your partner?
+The Fix
+Notice what qualities make you jealous.
+Is it the fact that the other person has a great bod?
+Is it their sensuality?
+Make a plan to work on yourself so that you develop some of those same qualities.
+For example, decide to work on your moves in bed instead of letting your partner go wanting in that department.
+Be proactive by renting some sexy movies, buying some sexy lingerie or making up a fantasy he/she would enjoy.
+Dating Situation 4
+Your partner is paying someone a lot of attention, listening attentively or making eye contact.
+You think: I need more of that.
+More attention, more compliments, more affection, more sex.
+The Fix
+Work on making it happen.
+When you are feeling jealous, think about what you might need from your partner.
+And use positive and straight talk to ask for it, both in and out of bed.
+For example, you might say, “Honey, I would love it if you would rub my shoulders and tell me how sexy my neck is.”
+If you are feeling loved and grounded in your relationship you are less likely to become jealous.
+If you are fresh from a night of passion and “I love you” you are the hottie and another person cannot compete!
+Of course, some of us have chronic and major struggles with jealousy.
+If you have the same scenario playing out over and over again where anger and fighting keeps erupting you may have a serious problem with the green-eyed monster.
+This often occurs if your partner has cheated on you in the past or if you are terribly insecure about your attractiveness to your partner.
+The type of saga may drag on with one lover after another.
+It results from picking players or people who are not into you or provoking good partners into unfaithfulness with your constant accusations.
+Serious and chronic jealousy is a type of paranoia that destroys love.
+The best fix for that type of problem is to go into love mentoring or individual/couples therapy to work out the deeper issues.
+I get alot of emails that ask me for flirting tips that show a man that you’re interested without being too obvious.
+Here’s one from 48-year old Ellen in Phoenix: “I see Al at parties and he’s so attractive in a laid-back way.
+We always talk and laugh, but he never asks me out.
+How do I switch over from the buddy mode and show him I am interested?”
+Sometimes, as Ellen writes,  it’s hard to open the door with a guy who really interests you.
+You become shy, wonder exactly what to do, if he is really interested, if you will be rejected and feel bad.
+You worry and wait and then the evening is over and nothing happens.
+Home you go, alone with your disappointment.
+But there are some simple great flirting tips you can put into action to judge whether a terrific guy might be open to dating you; flirting moves that give a clear green signal, an opening for him to ask you out.
+You can try one or more of these flirting tips and see what happens.
+And if you want to learn all of my flirting tips and how to bust through shyness be sure to sign up for my free Dating Tips and Relationship Advice Newsletter.
+Click here and start today.
+Flirting is defined by a kind of teasing quality, where one offers, then takes the offer off the table, and then offers again.
+Flirting puts you in the great feminine/masculine dance.
+To amp up your flirting, I want you to also dress yourself in line with an identity you create using an affirmation like I am sexy, beautiful and irresistibly attractive.
+So here are 8 simple flirting tips to can try out:
+1.  Make warm eye contact
+2. Smile and lick your lips
+3.  Gently touch his arm
+4.  Look him up and down,  look away, look back
+5.  Touch your lips, neck or chest.
+6.  Suggestively play with your hair, clothing or an object like a straw in a glass
+7.  Whisper in his ear.
+8.  If you know him already, give him a fun nickname
+And remember, have fun with the guy.
+Men love women who are fun to be with.
+It is so easy to let yourself be quiet, shy or invisible with the ones you are really interested in.
+It is easy to be in a rut, alone and LONELY, and yet not doing anything about it!!! Get yourself into action.
+You do not want to be stuck in a net of inaction, a net that stops you from finding that COMPANIONSHIP, CARE, ROMANCE and SOULMATE LOVE that you really want.
+If you find that you’re stuck and not able to bust through shyness with the guys you’re attracted to, ask for help.
+There’s no shame in getting help in one of the most important areas of life.
+If you broke your arm you’d get help right?
+Well, if you’re tired of being alone or in disappointing relationships, be good to yourself and ask for help.
+The best type of help is a Love Mentor, a person who you look up to, who is like a loving benefactor to you.
+This is a person who gives you COURAGE to go beyond your fears.
+A person who will help you figure out what to do and where to go, who will get you to TAKE ACTION, to get out there and do what you need to do to meet and attract the great guys.
+This mentor might be an older family member, a twelve-step sponsor, a therapist or minister.
+Please make sure, however, that he or she has been successful in love.
+Your mentor can give you constructive advice and real input about your dead-end dating patterns, your appearance and the people you date.
+With that guidance, you will become very successful in dating and relationships.
+Surprisingly successful!
+If you don’t know anyone who fits the bill, I have good news for you!
+I’ve launched a personalized one-on-one dating and relationship Love Mentoring™ service.
+And for a limited time you can have a free 40-minute session by phone or Skype to kick off your new love life.
+Contact me at http://www.lovein90days.com/coaching/ to arrange your free 40-minute Love Mentoring session.
+Here is an email from 50-year old Julie, who has been working with one of my expert Love Mentors and recently overcame a long- standing dead-end dating pattern of being a Hermit:
+“I had a great date last night.
+His name is John.
+He took me to a lovely restaurant right near my house.
+We must have been there for at least 3 hours.
+We had non-stop conversation.
+He lives in Chicago.
+He is an entrepreneur.
+He owns 2 businesses.
+He is 6’2″.
+Plays tennis 2 hours a day.
+Skis Vermont and out west.
+Kiteboards and windsurfs in the summer.
+Has two girls 5 and 7. Loves to cook, bikes in warmer weather, coaches soccer.
+I was so pleasantly surprised to find someone so accomplished living in my backyard.
+Smart and funny.
+He is out of town this week.
+Asked me for a date on Saturday but I already have a date with another guy for Saturday so we are planning on getting together on Sunday.
+Sam, my date for Saturday, is very interesting.
+He also is self-employed owning a manufacturing business supplying the military electronics field.
+He is an avid outdoorsman; rode horses all of his life.
+He lives in Lake Forest.
+And I met him at a dance competition.
+I am so thankful to my mentor!
+I cannot tell you how nice it is to be meeting some new men.”
+Julie is having the time of her life and you (yes, you!) can too.
+Perhaps you’ve met the One, seen him come on like gangbusters, but then pull back for no apparent reason.
+So that all of a sudden, everything becomes murky, anxious and uncertain in terms of your relationship.
+Are you a couple or not?
+Has he met someone else?
+Why is he running hot and cold?
+Do you have a future together?
+Should you have “the talk” about where things stand?
+And you wonder, Is it me?
+Is it him?
+Why is this man emotionally unavailable and why do I mess with him?
+Maybe you tend to be involved with a guy for a few months and then he always falls away mysteriously, leaving you alone.
+Maybe you have been with a guy for 10 years who brings over the chicken soup when you are sick, is there whenever you need him, yet is completely unavailable for building a lasting relationship or family.
+Or maybe you are in a long term on-again, off-again relationship where one or the other of you periodically withdraws or sees other people.
+The whole thing can be very UNSETTLING and uncertain emotionally.
+I know.
+Have you ever been involved and in love with one man for months, or even years, only to find that he simply cannot or will not take that next step into living together or marriage?
+Instead he gets irritated, distant, angry or simply hits the highway if there is any talk of sharing a future together?
+If you have read this far I know that you have had at least one of these FRUSTRATING experiences with a guy.
+First thing is to get you ongoing support and making it work with him (if you want to) ASAP!
+So before we explore the minds of emotionally unavailable men take a moment and sign up for my free Dating Tips & Relationship Advice Newsletter.
+It will come to you weekly with the secrets you need to know about creating a committed and lasting relationship.
+Click here to sign up.
+The Mysteries of Emotionally Unavailable Men
+Men can be very tough, almost impossible to figure out!
+They often have their own peculiar dynamics and specific fears that are hidden.
+And if you are interested in a great guy and finding it hard to figure out what is going on, it is often best to have a second pair of “eyes’ on the situation.
+To help you read the guy’s smoke signals and understand how to proceed to make things work out with him.
+A wise person who can help you avoid making costly MISTAKES that are common in love.
+To help you get the relationship you really want.
+So if you are feeling down, or stuck in your love life or UNSURE of just how to handle a situation with a guy who continues to disappoint you or is emotionally unavailable: consider getting that “second pair of eyes or ears” to help you.
+There is a very unique opportunity for you right now because you can have one-on-one coaching from a trained Love Mentor®.
+Each one has a long background in transformational work and is closely supervised by me.
+The best news is, we can give you an introductory 40 minute one-on-one personalized session for FREE.
+Just Click Here to get your own session by phone or Skype ASAP.
+Fortunately, I’ve worked for over 25 years as a psychologist, clinical supervisor of therapists, and as a Love Mentor® and have heard just about every issue single guys have!
+I’ve logged thousands of hours in the trenches listening to men as they’ve completely opened up and explored their deepest issues, problems, needs and fears.
+Those private moments have given me a unique window into understanding guys’ fears about maturity, commitment, forming a couple or creating a family.
+I understand how their minds work–how men tend to view love relationships and all the different resistances they have toward choosing a woman for the long haul.
+And why they are emotionally unavailable?
+But even more important than knowing the WHYs has been figuring out out HOW to guide many men, (including hard-core commitment-phobes) through the process of making a true lasting commitment to a woman.
+And my Love Mentors want to share that know-how with you.
+So here’s a small part of all I’ve learned about the minds of men.
+The good news is that they, like us, for the most part want true love, even a soul mate and down deep they realize that they’d be happier, more content and more sexually fulfilled if they had a good relationship.
+The bad news is they are also scared, and they push real intimacy or commitment away.
+Often they equate dating with fun, sex and feeling good.
+Unfortunately, they also equate commitment with heavy responsibilities, a sexless life, and a boring existence filled with endless chores like taking out the garbage, being a chauffeur and changing diapers.
+Men fear being overwhelmed and taken over in an all-consuming couple that just leads to a dreadful life of providing, providing and more providing, ending in a quiet heart attack in the suburbs.
+They also fear that they simply cannot handle a woman’s emotional baggage, her fitful dramas or that they are not equipped to make a woman happy.
+These thoughts lead to even deeper, unconscious fears that they themselves will fail, be rejected, betrayed, hurt or abandoned.
+All these fears play out in a variety of ways that sabotage the development of real love and commitment and lead to his becoming emotionally unavailable.
+Men can be attracted to you, have mind-blowing sex with you, see you regularly and be caretaking to a fault and yet deny the fact that you are a couple!
+Or at the same time be secretly seeing another woman.
+They may fantasize about a future together with you and speak about those fantasies, but have not the slightest inclination to make it all come true.
+That’s why dating and creating a relationship with them can be so confusing and frustrating.
+So if you are stuck in your love life or UNSURE of just how to deal with a guy who you’re into but who has disappointed you, remember to sign up for my Dating Tips & Relationship Advice Newsletter.
+When summer fades away many of us suffer from a dip in our mood.
+As the sun loses strength and the air is cooler it may be a bit of a let down when you realize that winter and the holidays are just ahead.
+And we all know that the holidays can be tough when you are single.
+But there is also good news when the weather turns.
+I don’t just mean the amazing foliage, crunchy apples and fresh pumpkin pie.
+In my experience, it’s easier to meet your Soulmate in the Fall!
+There are three reasons for this.
+But before we get to them I want you to take a moment and take advantage of my free weekly support.
+You can learn much more about dating successfully so that you meet your soulmate by signing up for my free Dating Tips and Relationship Advice Newsletter.
+Now let’s look at how Fall may be the best time to meet your soulmate.
+First, singles, like all of us, raised in the rhythm of a school calendar, are conditioned to buy new wardrobes and give themselves a mini-makeover in the fall—so they feel more attractive and ready to go for it.
+Second, for around the first 20 years of our lives, including preschool and college, we are encouraged by our families to socialize in autumn as we enter a new grade with new peers.
+This form of conditioning tends to shape our behavior even when formal schooling ends.
+Finally, the fall is a signal that the holidays are coming up and nothing can be more depressing than facing another round of holidays alone.
+This realization mobilizes singles to roll up their sleeves and work more proactively on their dating, so there’s more love to go around.
+In fact, two studies have shown that dating in the fall can lead to increased romantic involvements later in the year.
+So, no matter what your age, Fall is a great time to network.
+The secret to falling back to real love is to take advantage of all the new connections by networking and meeting as many people as possible.
+My Dating Program of Three is a powerful strategy that has you date three people casually with no sex and is your ticket to a real relationship.
+Meet as many people as possible: use the Autumn dating advantage!
+You can learn much more about dating successfully and creating a love relationship that is just right for you by signing up for my free Dating Tips and Relationship Advice Newsletter.
+I get tons of emails asking me  about how to get a shy guy to come out of his shell.
+Well, with a shy guy you have to be more available and flirty, take the lead more often and maybe even give him the first kiss.
+Keep in mind, however, that he needs to be responding very positively to each of your moves.
+If he doesn’t, end the relationship because you don’t want to be stuck in a fantasy where you are crazy about someone who is truly not into you.
+This is the type of question I cover every week in my FREE Dating Tips and Relationship Advice Newsletter.
+So be sure to sign up now.
+Now here are eight flirting tips that will help bring a shy guy out of his shell:
+1. See him when he is in his element.
+If he plays sports, go watch.
+Be there as he finishes a marathon.
+If he is giving a talk, try to arrange to be in the audience.
+When a shy guy is in his element he will be at the height of his charisma and at a high point of self-confidence.
+Bottom line: he will be feeling very good about himself.
+And this means he will feel empowered to make a move on you if he is really interested.
+2. Compliment him.
+Notice something about him or what he is doing that you really like and praise it with a specific and sincere compliment.
+For example, That blog you wrote about going to Sicily was hysterically funny and made me want to go!
+This builds his self-esteem and will tend to get him to talk more about the topic.
+And it may even get him to show off a bit for you.
+3. Say his name a lot; give him a complimentary nickname.
+This indicates that you are noticing him and that he is important to you.
+He will bond more quickly with you when you use his name.
+Also, choose a complimentary nickname based on one of his qualities that you admire.
+For example, if he is into playing baseball, call him “Jeter.”
+This will get him to laugh and open up with you about his baseball experiences.
+4. Ask open-ended questions.
+Good examples are, “How did you get interested in (your job)?” “What brought you to live in the city?”  “How do you manage to train for a triathlon when you work full-time?”
+These kinds of questions will help a shy guy open up and talk about himself.
+And this will lead to him feeling known and being comfortable with you.
+5. Ask for help with something.
+Men love to help women.
+They are biologically wired that way!  Ask him to fix your computer, your car, your bike, your door—you name it.
+He will enjoy coming through for you and feel much more connected to you.
+Ask him questions about what he is doing—this will get him talking more.
+When he is in the “helper” role he is much more likely to share with you.
+6. Ask what he likes to eat or what sports, hobbies, or movies he likes.
+Once you find something in common, ask him if he’d like to do it some time.
+Shy guys can be very interested in you, but petrified to make the first move.
+It is very easy to open the door to a common interest by asking about food, hobbies or other fun activities.
+When you hit on something you both love, you will instantly become more bonded.
+It is easy, then to make the first move and ask about doing the activity together.
+This is a good litmus test that will show if he is interested or not.
+When you are opening the door that much, if he does not respond and make the date, chances are he is not into you.
+7. When leaving, say you’d like to see him again.
+This is an easy, non-threatening way to show that you are interested in him.
+If he responds positively, by smiling, nodding or saying “yes” he may be feeling some attraction to you.
+At that point, make sure he has your contact information!
+8. Make Physical Contact With Him
+If you’ve spent some time together, make physical contact with him.
+Being physical releases oxytocin, the bonding hormone so he may feel closer and start responding to you immediately.
+In addition, touching him gives him permission to make an affectionate gesture towards you later on—where he holds your hand, puts his arm around you or kisses you.
+So practice some or all of these flirting tips and you’ll be an expert at bringing out the best in guys.
+And to help you I want you take advantage of my free weekly ongoing support: You can learn EXACTLY how to find,attract and date great guys, find the One, deepen commitment and much much more by subscribing to my Dating Tips & Relationship Advice Newsletter.
+It’s absolutely FREE!  Click Here to get started now.
+Let’s face it: Dating is daunting.
+And when you’re in your 40s, 50s or 60s it may seem next to impossible.
+You might be coming out of a long-term marriage, or emerging from a period of time where you were consumed with raising children or caring for elderly parents — or, perhaps you still are responsible for children and/parents.
+Have your “dating muscles” atrophied?
+You might feel like you don’t have the slightest idea how to go about flirting, meeting the opposite sex, much less handling issues of sexually transmitted diseases.
+You might feel like your body is old or unattractive.
+Disrobing in front of a romantic partner?
+Definitely not.
+Plus, today’s dating world doesn’t remotely resemble the one you knew.
+To help you navigate through the online and off-line dating jungle be sure to sign up for my FREE Dating Tips & Relationship Advice Newsletter.
+Click here to sign up now.
+Here are some typical questions you over 40s and 50s ask me.
+How proactive are women supposed to be?
+Is the third-date rule (for having sex) still in effect?
+Just how do you handle an HIV discussion?
+Is online dating reliable, safe, or even effective?
+And all these questions and difficulties are magnified for female Boomers, who outnumber their male counterparts and also have to compete with younger women.
+Yet many women, have gone out there and had the fun and excitement of their teenage years all over again (and with the wisdom of the years, it’s even better!).
+A 54 year-old artist who is in our love mentoring program recently e-mailed me about her new boyfriend: Joe adores me.
+He tells me I am a treasure, a rare beauty.
+I make him feel alive after so many years of being dead.
+Joe loves my voice, my thoughts, my work.
+He bought riding boots and we went riding together.
+His 95-year-old mom in Miami wants to see my photo.
+Once you take the dating plunge, you may be very pleasantly surprised at the possibilities, especially in online dating.
+They often report that once they start, they feel more confident, more clear about what they want and therefore, more attractive!
+Female Boomers are more empowered and more affluent than ever before.
+The good news is that often, younger women cannot compete with them for a mature guy’s attention.
+The thirty-somethings are too active and demanding in terms of nightlife and other activities, whereas many men may prefer the seasoned wise companionship of a woman who has been there and done that.
+In other words, both male and female Boomers are in a position to pick and choose who they want to date.
+Here’s what Shirley, a 50-year-old divorcee who took advantage of a free 40-minute love mentoring session and went from being a hermit to dating two terrific guys:
+I just met another amazing guy.
+This one actually was suggested by Match.
+I winked.
+He e-mailed.
+I e-mailed back.
+He called me and we had a fabulous conversation.
+He was so easy to talk to.
+He seemed honest and sincere.
+I asked some pretty blunt questions that he happily answered in good detail.
+And he’s tall!
+He created a business and sold it in 2006 because he had plenty of money and wanted to do something else.
+On the other hand, Bill, the writer, is coming out this afternoon.
+We are going to the beach.
+Bill says that he has written a poem for me…
+So before we get to the six dating tips I want you to take advantage of my ongoing support by signing up for my FREE weekly Relationship Advice and Dating Tips Newsletter.
+You’ll be glad you did.
+The formula for successful Boomer dating
+Here are six love advice tips to help you succeed at dating.
+Take care of you.
+For the outer (and inner) you, start a regular exercise program.
+It is definitely the fountain of youth.
+Give yourself a makeover so that you look great in your own eyes.
+Get that trendy haircut, go shopping, try out those clothes that your friend wears that give him or her a sexy, attractive or powerful look.
+Don’t be shy to advertise.
+Then put out the word in your network that you are ready to date.
+Seventy-two percent of relationships come from a person’s network of friends, co-workers, and family.
+At first, don’t be picky — simply tell folks you are looking for a wonderful person.
+Go where the singles go.
+Go where the opposite sex (or same sex, if you prefer) is.
+If you like what you see, smile, make eye contact, give a sincere compliment or ask for some help.
+Sign up for on-going classes/activities that interest you and that have potential dates in them.
+For example, courses on finance, investing, sports and leadership; snowboarding/skiing; hiking; and cigar tasting usually have a lot of men in them.
+If you’re a mature male, women are attracted to growth, craft, cooking, or spiritual courses.
+If you’re not sure, ask the enroller about the ratio of men to women.
+There are many other fun activities, classes, and clubs so Google any class/topic plus “your city” and “classes.”
+Definitely do not miss out on online dating.
+Meeting people online is essential because it gives you a sense of the wide variety of singles that are out there right now.
+About 40 million singles are dating online in the U.S. according to the latest independent research.
+You can partake of this smorgasbord of possibilities right there at your computer.
+Spend the time and work two sites.
+In addition to subscribing to a large site like Match, eHarmony or PlentyofFish, subscribe to a more specialized site like christianmingle or Jdate.
+And for the best online dating tips for Boomer women be sure to sign up for my free newsletter.
+A recent one featured a two part series on secrets of online dating success for over 40s and 50s.
+Put some time into it.
+Most people spend more time planning a vacation than they do planning their dating lives.
+And they get great vacations and little-to-no love life!
+So if you want to date, get out your calendar and set aside 8 to 10 hours per week to spend on going to courses, working your online dating program and actually going out on dates.
+Tips for successful online dating
+Women, make sure you use a great headshot photo — men are very visual.
+Either get one done professionally that looks casual, or have a photographer friend take 100 shots to get just the right one.
+Digital cameras make it easy to take many photos, so you can choose the one that’s perfect.
+My love mentors specialize in online dating so that you get the best possible responses.
+So now you have the basic tools for successful Boomer dating.
+Face down your fears and insecurities and get in the game.and
+don’t forget to subscribe to my weekly FREE dating tips & relationship advice newsletter.
+Click here to get it.
