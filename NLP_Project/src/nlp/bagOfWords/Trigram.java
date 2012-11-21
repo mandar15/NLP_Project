@@ -14,15 +14,14 @@ import nlp.utilities.Constants;
 import nlp.utilities.Parser;
 import weka.core.tokenizers.NGramTokenizer;
 
-public class Bigram {
-
+public class Trigram {
 	private Constants constants;
 	private Parser[] bots;
 	private NGramTokenizer ngt;
 	private HashMap<String, Integer> features;
 	private HashMap<Integer, Integer> document_frequency;
 	
-	public Bigram() throws FileNotFoundException, IOException
+	public Trigram() throws FileNotFoundException, IOException
 	{
 		features = new HashMap<String, Integer>();
 		document_frequency = new HashMap<Integer, Integer>();
@@ -54,7 +53,7 @@ public class Bigram {
 
 	void generate_training_data(int author1, int author2, int cross, int skip_start, int interval) throws Exception
 	{
-		String train_file = constants.getTrainFilePrefixBow() + "bigram." + cross + "." + author1 + "_" + author2 + ".trn";
+		String train_file = constants.getTrainFilePrefixBow() + "Trigram." + cross + "." + author1 + "_" + author2 + ".trn";
 		FileOutputStream output_file = new FileOutputStream(train_file);
 		
 		//int start = 100, offset = 400;
@@ -74,7 +73,7 @@ public class Bigram {
 
 	void generate_testing_data(int author1, int author2, int cross, int start, int interval) throws Exception
 	{
-		String test_file = constants.getTestFilePrefixBow() + "bigram." + cross + "." + author1 + "_" + author2 + ".tst";
+		String test_file = constants.getTestFilePrefixBow() + "Trigram." + cross + "." + author1 + "_" + author2 + ".tst";
 		FileOutputStream output_file = new FileOutputStream(test_file);
 		//int start = 0, offset = 100;
 		generate_feature_set(author1, output_file, start, interval);
@@ -94,8 +93,8 @@ public class Bigram {
 		for(i=start; i<start+offset; i++)
 		{
 			//System.out.println(data[i]);
-			ngt.setNGramMaxSize(2);
-			ngt.setNGramMinSize(2);
+			ngt.setNGramMaxSize(3);
+			ngt.setNGramMinSize(3);
 			ngt.tokenize(data[i]);
 			
 			while(ngt.hasMoreElements())
@@ -132,8 +131,8 @@ public class Bigram {
 			
 		for(j=start;j<start+offset;j++)
 		{
-			ngt.setNGramMaxSize(2);
-			ngt.setNGramMinSize(2);
+			ngt.setNGramMaxSize(3);
+			ngt.setNGramMinSize(3);
 			ngt.tokenize(data[j]);
 		
 			while(ngt.hasMoreElements())
@@ -164,8 +163,8 @@ public class Bigram {
 		
 		for(j=start;j<start+offset;j++)
 		{
-			ngt.setNGramMaxSize(2);
-			ngt.setNGramMinSize(2);
+			ngt.setNGramMaxSize(3);
+			ngt.setNGramMinSize(3);
 			ngt.tokenize(data1[j]);
 
 			while(ngt.hasMoreElements())
@@ -256,10 +255,9 @@ public class Bigram {
 	 */
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
-		Bigram b = new Bigram();
+		Trigram b = new Trigram();
 		b.generate_data();
 
 
 	}
-
 }
