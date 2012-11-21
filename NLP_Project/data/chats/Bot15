@@ -1,0 +1,2926 @@
+hi..EAD aa gyaa tera
+?
+19 minutes
+haan Florida mein kuch logo ka aya hai saayad
+yup
+perhaps
+I am not going
+My mom dad are coming.
+:)
+haan
+haan
+tujhe bahut tnsn thi isliye pucha
+hmm..
+crodpati log
+:P
+i c..fir kaise aane wale hai paise..
+;)
+ghar se hi na
+toh hui na crodpati
+:D
+hmm
+cool
+haha..haan
+thik hai dono kangal karodpati
+:D
+abey teri joining kab aur kidhar hai ?
+hmm
+sahi hia
+San francisco 28th Jan
+yup i know
+mehenga hai..thoda
+par NYC se kam hai i guess
+hmm..koi na..saturday sunday chali jaya karna pranav ke paas
+oh..
+i guess akele bhi reh sakti hai New port ke aas pas ache flat bane hai
+yeah i can understand
+hmm...
+hmm..atb
+:)
+nope
+tereko ?
+pata nahin
+congos
+:)
+hmm
+hmm
+chal abhi kitna bolti hai.. :P
+hehhe..juz kidin
+yup
+u tc.. :)
+i got job with AppDynamics..but again no papparazi :)
+thnks ;)
+yours too
+hahha
+hmm
+i had my dinner
+fir chalte hai
+:p
+hahah
+hmm
+chalenge
+Thanks..SFO
+hmm..tera ticket ho gyaa
+india ka
+hmm..
+chal then .. tc :)
+will have a combo treat
+sometime
+:)
+cya :)
+congrats !!
+18 minutes
+100 aye hai ter comp geo ke project mein
+;)
+wateva :P
+kidhar?
+kewl
+njoi!!
+:)
+grade nahin aaye
+sirf project ke number aaye hai
+ooh aisa
+lemme check
+a-
+chal party de..
+a lane ki
+:P
+chapin mein thi toh kabhi bulaya nahin abhi bula rahi hai..
+haha
+hmm..waise jersey mast hai indian food awesome milta hai
+chal got to work
+tc
+njoi
+:)
+k
+haan main woh database wlai cheez handle karne ki koshish kar raha tha
+kuch toh panga aa gaya..kal dekhunga ab main bhi
+haan
+kal meri job rahegi
+12 o clock tak mein ayhi dekhunga
+job pe bhi
+fir report pe baith sakta hoon
+i know
+k
+k
+yeah i know
+some values are descripant
+the thing which i thiknk is possible is some website doesnt allow Java script to run
+so they return zero
+when we querry them
+but this is the best we can doo
+so we will explain them
+last value ?
+yeah so probably that site wasnt loaded at all
+its ok
+i guess
+hmm...its because we are talking just ab otu the body load
+and body can be very small
+not necessary
+10 milis is maxtime to wait right
+usse kam bhi ho sakta hai na
+hmm.
+loadeventstart
+and loadeventend
+no
+usne bola tha
+us din
+loadevent se lo
+arey nahin re baba
+u leave this to me
+i heard that
+usne kaha tha
+tabhi woh bola tha ki scripting
+of this thing might be difficult
+so u take ladevent start and end
+okiie
+i will c
+hmm
+9 minutes
+yup
+files?
+oh csv
+haan main karne wala tha..bt i am on job :(
+kaam de diya
+boss ne
+asap
+abhi kissi aur kecomputer pe hi hoon
+i will do
+if i get time
+and send
+u
+arey kyonnn
+chala na usko
+kya chal nahin raha hai kya woh tere yahan
+chalega
+chala ke dekh ek baar
+it will ease ur burden
+otherwise ur wish :)
+6 minutes
+haan bol
+kya hua
+relax re..aa rahi hia woh bhi..suna diyo jo bhi sunana hai ji bhar ke
+wat the heck
+kya bol rha iaha
+shittttttt
+yeh toh hadd ho gayi
+hmm...not done attitude agar aisa hai toh
+isiliye bula liya mein aaj
+usko
+aa rahi hai abhi woh bhi
+baat kar lenge jo bhi hia
+rellllllllllaaxxxxxx
+itna gussa sehat ke liye hanikarak hai
+i know
+project mein contri ke liye nahin bulaaya hai
+tere gusse ka saman karne ke liye bulaya haia :D
+aaa sakta hoon abhi
+7
+tak
+okay
+aata hoon
+void calcPow(int val)
+{
+int powof2 = 1;
+// Double powof2 until >= val
+while( powof2 < val ) powof2 <<= 1;
+// double vald = (double)val;
+//int next_pow = (int)pow(2,ceil(log2(vald)));
+printf("print next_pow--->%d",powof2);
+}
+yeh try kar
+replacce karne ko
+this is working here
+15 minutes
+make ho raha hai yeh
+yeh chal jayega
+try ka
+r
+16 minutes
+void calcPow(int val)
+{
+double vald = (double)val;
+int next_pow = (int)pow(2,ceil(log2(vald)));
+printf("next_pow--->%d",next_pow);
+}
+include <math.h>
+nahin...jo 2 ki power hia wahi
+uske liye toh subtrach
+haan
+u just need to subtract the current data na...
+ok
+FirefoxProfile profile = new FirefoxProfile();
+profile.setPreference("network.proxy.type", 1);
+profile.setPreference("network.proxy.http", "localhost");
+profile.setPreference("network.proxy.http_port", 4444);
+WebDriver driver = new FirefoxDriver(profile);
+20 minutes
+profile.setPreference("network.proxy.socks", "localhost");
+profile.setPreference("network.proxy.socks_port", 4444);
+24 minutes
+oye
+report mein code bhi dena hai kya
+hmm
+ok
+clean up karna padega
+ek doubt hai muhe waise
+har baar run karne pe number of triangles diffeernt aa raha hai
+aisa ho sakta hia
+i guess cause
+i am shuffling the edges
+for randomizing it
+wat do usay
+?
+hmm ok
+its ok.. i have almost completed with comp geo..report bhi \bana dunga
+aaj
+ek point pe aake ek stable weight aa raha hai
+mast maza aa gaya
+:P
+woh point dhundhne ka kuch soch raha ahao
+haan prachi ko wireshark dekhne ke liye bol diya
+arey uska pati wireshark ke saath din raat khelta hai
+:D
+yeh kaam kar sakti hai woh
+i know
+packets mil gaye toh uski bhi script likhne ka soch sakta hoon
+to analyze those packets
+last time likhi thi ayon ne kuch toh
+wireless mein
+tu bas kar sake toh woh try kar le jo boli thi
+nahin toh neend nahin aayegi tujhe
+raat bhai
+:D
+hmm..ok
+doooor bhag jaana chahiye mujhe
+tu irritate hoti hai toh darr hi lagta hai
+D:
+:D
+okie
+tc
+perhpas kal tak report ready ho jayegi
+comp geo ki
+abey roz hi form mein rehta hoon
+:P
+okie
+ek min
+naresh ko bola tha maine
+ki aisa boli hia madam
+toh he also mailed
+i dunno kya matlab hai us reply ka
+if u can figure out
+i can forward that to u
+have a look fir bhi
+hmm
+i know
+good then..capter close
+:D
+hey tune call kiya
+tha
+i called u back on landline
+kissi ne uthaya hi nahin
+okie
+kya hua
+kya boli woh
+she is doing for 5bpoints na
+its ok..chad
+jaisa bhi hai
+we willmention it in the report
+its ok..
+haan jo bhi scene hai ..woh likh denge yahi keh raha hoon
+but in the ind
+end
+we have to justify a person called jie gao
+which is a touugh nut to crack
+:P
+that why for four points it is not a tetrahedron
+i guess we should prepare this answer
+with some logics
+as the full class is struggling witht he problems
+so someone willask
+definitly
+oh ok
+we can use wireshark
+haan ssh not valid hi hai
+we have ot do
+tcp.port = 2222
+sthin likethat
+u got the point
+matlab jo packet
+2222 pe aa jaa rahe hai
+unko catch karega
+k
+will ask purvesh tomorrow
+i tried a script
+that will open the files in the browser
+i mean all the 100000 websites
+automatically
+yup
+hmm
+haan kar liya
+chal raha hai woh
+but i am trying to fetch that data for all the sites
+honi chahiye kuch plugin extensions
+hmm
+hmm main bhhi
+okie
+i tried printing the points of the triangles
+kuch edges ke adjacent triangle mein points null aa rahe hai
+triangle hi null aana chahiye na unke liye
+ok
+hey we have done both of these things
+randomization and multiple runs
+apna weight 373.483 aa raha hai
+kissi se verify karna ho toh
+arey these are USP of the project
+we must highlight htis
+main dekhta hoon
+likhunga raat ko
+ok
+net sec kal prof se milne ke baad baithte hai
+net sec
+chal then ..cya..tc
+ok
+aaj likh dunga main
+okie
+9 minutes
+humne woh function likha tha na
+to find all the triangles wala
+jab baithe toh batana...i will come..need to understand kya kari hai tu
+19 minutes
+??
+kya mail kari hai yeh
+time hi nahin hia bade logon ke paas
+ok watever
+dekh lunga
+hmm
+16 minutes
+i thnk i am not in mood of looking at the changes...jab aap bade log thode garibon ke liye free ho jaaye toh samjha dena...warna evaluation bhi bade log hi karenge... :P
+hey hallo...wat the heck is this...itna kya ghamand hai tereko kaam pe...itna ghum rahe hain saath mein...last time main tujhe aise code de deta toh
+bolta samjh le
+jo samajhna hai
+woh toh main dekhunga hi
+but htisattitude of urs
+is too much
+hey i told u
+baithte hai raat ko
+haan bol
+arey hadd hia yaar..toh group mein hai toh algo discuss karke code saath hi karenge na
+uski jaroorat nahin hai .. and tune kaam kiya..i am not denying it... but its out fo ur hurrying nature...not because i am not interested
+ok
+yaar toh tere yahan kitni jaldi hota hai kaam
+but mein tere yahan baith nahin sakta pure time
+toh kaam group mein toh aise hi hota hai na
+yeh kya baat hui maine kiya tune kiya
+ok
+i did already isliye itni baat kar raha hoon tujhse
+anyways..
+chaf
+chad
+yaar ... toh instead of discussiong in group you go ahead and discuss with the world
+fir dimag kharab hota hai
+toh mujhe bol rahi hai
+kya grip nahin hai re
+its just i wanted to do fast work
+thats why i told u ki jo kiya hai woh kar de
+is me bhi
+toh you are thinking i dont have grip and stuff
+but thik hia ..i thought we should work as a team
+but u are an alone player type person it seems
+and moreover tere yahan setup hua
+isliye tere yahan kaam tez ho raha hia
+yeah
+haan ok
+aaj mera bhi mushkil hai
+kal pakka nopta dalte hai isko
+54 minutes
+o teri sahi
+haan kya
+hey timeout matlab
+setitimer wala
+?server alive time
+woh comp geom mein toh woh problme ho gi toh check karna padega logo se
+woh puchne aayi thi ...woh poochunga usse mein abhi
+kuch hal mila kya iska
+hmm kindastrange dekhte hai
+hmm
+sphoorti is not picking the call
+so gayi hogi
+dekhta hoon naresh se poochta hoon
+okie
+??
+arey woh random timing
+ke liye toh karna padga na
+yeah
+kal hi milte hia
+main bhi sochta hoon
+yup
+i know
+but woh zero aa rah ahai
+na
+tu boli
+hmm
+server pe set hi nahin kiya tha kya
+jis tarah isme set kya hua hai
+hmm
+oh ok..abhi call karoon
+?
+haan
+kya ho raha hai
+ext pe
+koi kuch bol nahin raha]
+k
+13 minutes
+http://www.cs.iastate.edu/~cs518/homeworks/hw5-soln.pdf
+yahin bheji kya woh
+ok
+5.5a
+chek it out
+iska c part nahin mila hai
+hmm
+3 kar liye
+aage ke soch raha hon
+koi nahin hai
+woh paper...na re baba
+itna samay nahin hai
+:P
+hmm...we have to hit and try things and see ..there is no other options...
+jitna kiya hai woh try karte hai
+uske aage nahin badh sakte
+hmm i know
+okie
+abhi mujhe yeh dm sambhalne de kal tak
+oye woh 2nd wla fir se bhejna
+oop
+iska logic smajh aa gaya
+?
+diagnals bana bana ke ear kat rahe hai ...
+whai hai na
+k..thoda different hai proof
+hmm
+bol
+i am trying to complete this shit today
+anyhow
+hmm
+ok
+ok
+hey...aaj thoda raat meiin baithe...i have a discrete exam on 24th kuch nahin padha hai :P
+haan
+haan aaj
+a
+hmm k
+oye
+battery gayi
+:P
+ek min call me on ext
+http://fossies.org/dox/openssh-5.9/ssh_8c.html
+u might find it helpfu;
+have a look
+hello
+comp geo assignemnt ke liye baithna hai kya
+okie good
+assignment dekhegi kya abhi.. ?
+k
+aaja fir shalo is also coming
+shaoli *
+hmm..toh ek ghane se aaja
+chalte hai fi r
+on phone
+get bac 2 u
+??
+okie
+uth gayi kya
+k
+16 minutes
+??
+uthoooooooooooooooooooo
+5 min = 20 min
+1min =
+?
+??
+???
+:P
+6 minutes
+hmm
+ok
+?
+okie
+i did that
+tere samne hi toh kiya tha
+i did allow user in my config file with my name
+do u mean i have to add ur name to it
+?
+haan
+i dont think that is working but we will try again
+i can come in 1/2 an hour if you are ok...
+oh
+ok
+atb for that :)
+cya @ 5 then
+NE LUCK
+6 minutes
+ok
+main asaunga abhi lunch karne
+tera wqubi install ho jaye toh batana
+ok
+trykiya login
+karne ko
+tu kitne baje niklegi yahan se wapas ghar ko
+lo bolo
+ek toh sahi chal raha tha
+ab woh bhi gaya
+:P
+ruk aata hoon mein
+hey
+mile kya tum log kal
+arey ek baar chala
+uske baadd
+permission denied hi aa raha hai
+yup
+hmm aaj aure try karta hoon
+kal purvesh se bhi bnaat kari thi
+milna nahin ho paya
+aaj milunga
+okie
+kitne baje
+hmm kya bola woh
+job pe hoon
+k
+main yaha pe baith ke aur try karta hoon
+nahin toh ubuntu fir se install karta hoon
+pata nahin kya ho raha hai
+koi trouble nahin hai toh permission denied kyo de raha hai\
+i am out of ideas
+my server runs
+and then i try ssh localhost
+-p 2222
+it says access denied
+it asks for password
+and then it says access denid
+yup
+chal aaj aur dekhta hoon
+fir dekhte hai
+milta hoon 3 baje ke as paas tujhse
+sur ethat will be best
+melville aaja
+arey nahin...abhi i am on job
+2
+haan ok
+thats fine
+ok
+hmm k
+hmm
+kuch privilege seperation user does not exist jaise error aa rahi hai
+any idea
+ek kaam kar
+check your sshd_config
+file
+haan woh kar idya
+hai
+usme
+UsePrivilegeSeparation
+search for this word
+no likha hai na
+iske aage
+k
+arey sabhi kuch commented hai usme
+pagal :D
+:P
+hmm
+mere mein toh woh bhi commented hai
+hmm
+14 minutes
+yup chal gaaya
+hmm..
+main kuch hit and try karta hoon code mie
+k
+27 minutes
+hmm
+haan ok
+ok
+arey fir kuch pnga ho gaya hai server chal raha hai client authentication nahin ho raha hai
+wahi check kar raha haoon keys ka kuch toh issue ho gay ahai
+netsec mein kitna aaya
+fod di ?
+chal jhuti
+mere se toh acha hi hoga
+kitna aaya bache eh toh bata
+29
+khasa toh kuch nahin hia
+haan bach gaya baal baal
+mere ko theory mein pure diya woh
+ok dekhta hoon
+hey wait a sec..dont we need a proxy whose code is accessible
+like open source
+i think we should find one first
+and we need a website which is not accesible normally
+hmm..
+Lo ji ho gaya decision
+:P
+wateva
+hum use toh nahin kar rahe
+usko
+aur discusson ke liye bhi saath hi baith rahe hia
+dekhi jayegi
+arey woh reloy hi nahin karti h=yaar
+eh chal na thik hia
+she wont mind much
+i know
+then let her mind
+okie
+hmm bolo
+hmm
+usme scaling hoti hia
+points kafi nazdeek hai na
+isliye aisa dikhr aha hoga
+hmm
+yup
+mujhe bula ke koi nahin aata hai
+:P
+nope
+na pawan na tu
+i am the only sincere guy
+:P
+nahin aayi woh
+hmm..but i asked sphoorti about rob reaction to new ideas
+he is telling the whole class to ultimately chosse from those three topics
+she said
+they went to him
+hmm..wahi dekhna padega in the end
+monday ko chalte hai puchte hai kya karna hai usme bhai bata do
+hmm k
+7 minutes
+hehehe..
+good..
+:P
+hmm
+hmm
+ok
+ok..
+5 minutes
+nahi
+arey but matlab ko integrate kaise karenge java ke saath
+hai mere paas matlab on my hard drive le jaana chahiye toh
+kya bolti haikya karti hai tu aur bhagwan hi janta hai
+le jaan matlab
+hai mere pass
+har disk mein
+ab padhne de..
+haan 5o clock hsc
+eh
+hmm
+smyle gelhai
+?
+hmm ok np :)
+hmm ok
+oke
+apply some smyle gel
+kissi se puch le
+ok
+chek this out
+http://gnujavaplot.sourceforge.net/JavaPlot/Example.html
+sound cool
+ek kaam karte hai
+u try gnuplot i will try R
+that way it will be fun
+:)
+yup
+ehh
+yeh kaisa sawal hai
+java to matlab
+:P
+OMG
+arey toh woh points matlab me kaise jayenge
+hmm
+arey matlab
+:)
+you wil run java program
+and then you will run matlab
+?
+abey pagal hai kya
+hmmm
+matlab is freakin heavy software
+lemme think of something else for this agar aisa hi kuch karna hia toh
+there is something called R
+same plotting
+ke kaam aata hai
+yeah
+designeing wale use karte hai
+and its abit lighter
+but i dont think its a good idea
+i mean we run a program and finally it should output the graph
+aisa kuch dhoondhna padega java mein ki directly graphing module call ho jaye
+hotoh sakta hai
+.csv u mean
+yeha i know
+so that can be done
+through java generation of csv file
+hmm
+i have a code for that
+woh ho jayega
+but the think is can we callR modules through java
+alag se program chalane ke idea ke favour men hain hoon main
+nahin*
+arey ..
+chal jaayega alag se maan le
+i am telling u
+chala dunga main
+fir kya
+its better we find all the peices
+and then join it
+hmm ask him
+woh jyada bata sakta hai
+http://stdioe.blogspot.com/2011/07/rcaller-20-calling-r-from-java.html
+nahin khul rahi hai yeh link
+khul gayi sorry :P
+hmm
+8 minutes
+yup
+we can use it
+seems good
+its ok we dont need fancy but can we call gnu plot from java
+haan
+kyon
+arey woh sab ho jayega
+chi gandi
+:P
+hm mok
+oops..i thought tu karne wali hia ..toh main kuch aur karne lage
+:P
+chal koi na
+10 o clock sounds good
+kar sakte hai
+lets brainstorm first the ideas
+lets mail the other two also
+k
+arey haan marei maa
+:P
+hmm... paan singh tomar
+dekh le
+maine bhi nahin dekhi hai
+but log bol rahe thik hia
+hmm... maine jo animated dekhi hai woh toh tune dekhi hi hogi
+toh no idea uske baad
+cartoons dekh le youtube pe
+hmm
+njoi :)
+hmm
+tu dekhi main jo behja tha
+eh''
+hadd hai matlab
+chod woh sab..abhi kuch aur ho rhaa hai check out ek baar sone se pehle
+areynahin...
+after 4 passes
+woh thoda increase hua
+kyon
+k
+but hum ek kaam kar sakte hia ..jo weights mein minimum aayega uska triangulation dikhaa sakte hai
+after say 10 passes
+haan i understand that
+but it decreases also after increasing
+whats the harm in doing that
+arey yeh experiment hia
+i will handle it
+there is a trade off
+of space compleity also
+we have to save for 50
+triangulation
+so we chose 10
+by experimantation
+its a perfectly valid answers
+arey woh hum check karlenge
+koi ek numebr pe toh aayega
+its perfectly logical to me
+i mean onot 10
+but kuch experiments ke baad
+we will arrive at a number
+and moreover
+we have to experiment with chosing random edges
+probably it will give some good results
+we have a fixed datset in ourt casae
+no errors..just experiment it abit
+aur tere logs delh le
+i cant get a word out of it
+:P
+hmm ok..
+yup
+512 kuch aa rha tha
+woh toh hai hi
+apne 213 ke aas paas ghum raha tha
+i am dude ;)
+:D
+kuch over nahin hai kaam kar
+:P
+good ladki
+fir kay karegi corneelll
+:D
+good ..mainm toh mast sone wala hoon
+:D
+i think so
+kuch boli toh nahin hai
+na zor lagana wla hoon main na shor machaunga mein
+:D
+ehhhh
+chal be
+sab kuch poora hota hia
+:P
+kyon karna hia itni jaldi
+kyoon
+yeah yeah ok i know
+abhi bahut kaam bacha hai..lets try to display the triangulation with a gui
+wat say
+java 3d ki apis aati ahi
+dekha tha maine
+abey toh nayi cheez hai
+maine bhi nahinkiya hai
+padh ke thoda bahut kar sakte hai
+all we want is just to represent our arrayof line on the 3d canvas
+utna bhi kar paye toh acha hoga
+edges u mean
+we have arraylist of edges right
+i guess edges..
+apna hi bana lenge jyada mushkil nahin hona chahiye
+a good thing ho jayegi git hub pe dall denge..companies ko dikhane ke kaam aa yege
+open source
+;)
+hmm..time toh nikalna padta hai...
+haan dekha hai main
+i also have its code
+try {
+System.setOut(new PrintStream(new File("Logging.txt")));
+} catch (FileNotFoundException e) {
+// TODO Auto-generated catch block
+e.printStackTrace();
+}
+add this at the start of main
+for loggin
+okie
+aaj class ke baad bhi baith sakte hai
+class aa rhai hia kya
+hmm..ok
+isme kuch kari kya tu comp geo mein
+hmm ok
+Pahuch gaya
+i can hear ya
+skype pe aa
+shaundass
+ofc
+kyo hua kya
+okie
+about this code..which i have sent..usme changes karke 3 dimensional ke liye bante hia..abhi toh isme sirf libraries hai which i got online
+the algo stuff..
+le
+isme kya trouble hai
+woh khud hi boli thi
+lots of help is available online
+okie..sounds good..send me the code jitna likh chuki hai..
+ok dekhta hoon
+mein aaj
+anhin kal
+send me..
+the file
+okie
+got it
+haan jo maine bheja woh bhi aisa hi kuch hai
+hm ok
+hmm u have a liik at main window and try to get the flow
+u can have afeel of the algo
+i think hum is dono ko mila ke
+kuch kar sakte hai
+look*
+okie
+is algo mein heuristics use hue hai..and i feel its a bit efficient
+then urs
+no harm in having a look
+hmm
+hmm k
+hi
+have a llook at the code
+ttyl
+kaam aa gaay akuch
+mil;a?
+arey you have all the time of universe.. dont worry
+kar le
+aaram se :)
+main waise bhi nikalunga yaha se
+nope
+but now we have two codes
+which one will we work
+mine is not complete
+i am thinking of the algo
+which one will be best
+i need to reach the algo part today will give you tomorrow ok ?
+gr8 :)
+algo ki link bheji hai time mile toh dekh lena
+pdf hai na
+click kar uspe
+wait i will send u the pdf
+chal cya then bbye
+tc
+send you the doc
+haan dekha
+algo toh incremental hi hia\
+i dunno code kuch khas samjh nahin aaya
+yeah i saw it
+ehh
+ek min ..can you send me the link again
+woh jisme java code diya tha wahi bol rhai hai na
+oh ok
+yup
+but i guess uska triangulation use karke hum kya apna immplementation kar sakenge
+i mean i didnt dig into it much
+tune dekha kya
+hmm..
+hmm..ok
+okie
+hmm
+just aaya hoon rong zhao se meet hti
+okie..aaj toh nahin kal karunga main
+hmm
+okie np :)
+haan koi problem nahin hai
+tu bhi dhundh main bhi dhundhta hon
+but yeh java code chalana ka koi fayda lag nahin raha
+because its a jar file for delaunau triancgulation
+nahin aisa kuch nahin hia jisme ho jaye
+language is never an issue for me
+i dont htink so
+hmm... i think eventually dono ko dono hi karnapadega..but for start lets dig into the text both of us...kyon ki woh bhi kam nahin hoga
+algo padhna hai aur best dhoondhna hai
+not an easy task
+implementation toh from scratch bhi soch sakte hai
+ek baar algo ready ho toh
+toh i will dig into algo
+if you want go ahead with DT implementations thing
+hmm ...ho toh jana chahiye
+hmm ok
+spring break mein toh kar sakte hai thodi research
+dekhte hai ..dont panic
+:)
+hmm
+abhi aaj toh main sounga ..paper diya hai aakhir maine :P
+i will have a look at it in the mrng
+:)
+hmm..chal koi na..tt khelti hia tu
+woh kkhel sakte hai..if u feellike
+fir toh sahi hai ...pohaaaaaaaaaaaa
+;)
+aaj cewit mein grc tha...kya sahi sahikaam karte hia yaara log
+tera bhi naam tha
+presentation mein
+tu gayi nahin
+:P
+some learning software stuff
+?
+heheheh
+lo bolo
+yup
+tere ko presentation deni thi aaj
+kayde se
+:P
+wah khade hoke
+showing your work
+how awesome it is
+tera naam hia yaara
+presenting people mein
+oh ok
+yeah
+i dunno i reached there last mein
+i am not sure ki kaun gay aur kau nahin
+but tera naam dekha tha maine
+haan
+ganesh ka dekha..aur bhi tha
+hmm
+ab itna nahin dekha
+aur koi kaam nahin hia kya mere paas
+:P
+aadaat se majboor
+:D
+:D
+anyways..main toh kuch aur bata raha tha
+acha tha ..some new ideas
+never thought of in those directions
+chal ..tera mood kare toh tt sikha sakta hoon main..yaa chess khel sakte hai ..baki aur kuch nahin aata mujhe..
+:P
+hmm..good idea
+run run run
+:)
+hmmm
+hmm
+chal i am goin to sleep
+bbye tc
+have a happy journey ..
+:)
+u cald kya
+yup
+haan bol
+ek sec
+haan ab kar
+mera phone restart ho raha hai
+haan ab kar
+mhn internet
+yup
+bolo
+yeah i left my pohone
+job
+arey yahi sab kal samajhne ki koshish kar raher the
+not very sure ki hum bhi clear
+hai
+aaj fir baithenge
+yahi sab security
+meri bhi nahin
+sab kuch
+oh ok
+kyon kya hua\
+koina
+hmm
+ATB :)
+fodu hai yaar utjaroorat nahin hai
+khushi dekho chehre pe
+:D
+chal good hai .. kitne baje hai
+/.
+?
+oh ok..
+oo u came back
+inni jaldi
+hmm..toh main aur sundi hai hsc mein hi ..net sec padh rahe hai
+aana ho toh aaja
+we wil study kerberos and stuff after that
+hmm..i know
+kal interview ka na
+yup
+:)
+padh lo
+wthats important
+kuch doubts ho toh keep discussion
+discussing
+hmm...
+congosssssssssss
+kaun si company
+partyyyyyyyyyyyyyyyyyyyyyyyyyyy
+good
+:)
+kitna pay kar rahi hai y\eh
+??
+kewl
+:)
+ab toh party banti hai
+hmm
+kar lena
+bolo
+sent u the doc
+okie dokie :)
+hmm
+haan bol
+1/2^n
+for each of the possible value
+aaja ghar pe hum bhi likh hi rahe hai
+main aur sundi
+hmm..ok i will try
+x1 x2 x3 liya
+fri r1 r2 r3 liya
+dono ko xor kiya
+toh t1 t2 t3 aayega
+toh kitne possibel t's aayenga
+2^n
+rite
+number of bits
+ohhhhhhhhhooooooo
+(p(x1=0,r1=0)+p(x1=1,r1=1))
+*
+p(x2=0,r2=0)+p(x2=1,r2=1)
+.
+now figure it out :P
+pehle bata raha tha
+toh i will figure it out
+:P
+for each
+expression
+P(T1=0,t2=0....)
+arey bahut difficult hai is tarah samjhana
+main likh lunga toh dekh lena
+abhi
+abhi nahin ..
+okie
+good
+np :)
+there
+?
+hi
+arey ek baar dekh common sense wala question lag raha ahi
+:d
+:P
+aur doosra jo tune kiya ..uska soln same hai na jo main bata raha tha
+e.d wala
+i think CPA
+yeha i am totally confused
+discuss karna padega baithke
+but woh question
+usme toh jaroorat hi nahn hai kuch karne ki aisa lag raha hai
+do random number ka sum random number hi hoga
+hmm...i thought sthing is up
+itna trivial nahin ho sakta
+btuu cant figure out
+jo securtiy elgamal ki hogi
+wahi uski bhi hogi na
+cuae its addition of powers
+haan sure
+cpa
+itna hi malum hai mujhe bhi
+:P
+i cant think of..
+ok chalo bbye
+karegi kya netsec
+abhi
+hi
+haan so chuka
+mein
+:)
+oh thank god
+ki tu khana khayi :P
+:S
+:D
+sahi hai
+ok..main bhi dekhta hoon
+hmm ok
+hehe
+hhahahah
+sahi hai
+ok
+yup
+aaja library mein
+kabhi bhi
+melville
+naa re tere jaane ke baad kuch nahin kiya kal se
+ok
+call karke nikalna ghar se
+haan
+k
+chal raha hai
+yupie
+awrity
+:)
+hi
+abey kya dara rahi hai
+kal hia
+:P
+nope
+baki likh li
+?
+hmm
+postponement of hw ki baat kar rahi hai janta
+hmm
+wah mate
+aap dhanya ho
+:D
+kahan hai charan aapke
+kitthe
+weekend pe kya hai
+ja hi sakti hai
+respond to the mail atleast mate
+net sec ?
+hmm abey abhi socha nahin uske baremein kuch
+abhi exams hai do
+unko de dene de
+fir sochenge
+usko
+aur tension ki dukaan...shutter laga de usme
+:D
+nope main nahin hoon :P
+karna hi hai tujhe
+main toh tere bharose hoon
+:P
+good
+good
+arey tu bhi toh tough hia
+maiya
+chal abhi discrete padhne de...aur mail ko reply kar...
+aa jayega
+tension not
+:)
+refresh
+kar apna gmaila
+wale pe
+nahin kyon
+basically worst case chahiye na
+ehhh
+aisa
+hmm
+abey overlay kya hota hia
+:P
+kuch mila uske baare mein
+dhooooooondhooo..
+:P
+kuch samajh nahin aa raha
+hai
+us question mein
+4th wala dekh yaar
+haan sort of
+ok
+mujeh toh bahut kuch samajh nahin aa rah
+n2 complexity wala question hua kay
+2nd wala
+oye
+tune 4th kiya na
+hawa hi naihn lag rahi hai
+3rd
+manhataan
+kya matlab hai yaar question ka
+:P
+:P
+give me some reference
+arey matlab formal proof
+kaise denge
+geometry se
+?
+hmm ok
+ok
+hey
+awrity
+first question ka hint de yaar
+kahna se mila tha
+okies
+:)
+main nahin le rah ahoo..woh tu...le rahi hai mere liye...and i am not sorry
+:D
+second floor pe aaja
+i will pick u up
+k
+k
+yup i know
+hmm..
+wahi padhan padega
+ab oth ime bhi nahin ahi
+arey hsc aa rhai hai kya
+koi na..aa jayenge tereko lene
+hsc second floor
+bookstorepe aaja
+main aur sheetal hai ..jab tak padh skaenge tab tak
+:P
+oye
+tu netsec ke notes likhi kya
+last do clas ke
+hmm
+kaisa hua
+gud
+tit for tat
+:)
+k
+aaja
+haan mein toh library mein hi hoon
+tu kahan ahi
+arey diiscrete ki class thi
+uske baad yahi hoon
+arey bahut hai itne funds nahin hai mere paas
+ok
+k
+hmmm..ATB :)
+kaisa hua
+aaj tha na tera
+kyooooooooo
+awwwwwwwwww
+areyyyyyyy
+koi baat nahin kiddooo
+aise nahin bolte
+kya bola likhne ko
+chillllllllz
+ohhh..baap re ..maregi kya
+:P
+heyyyyyyyyyyyy
+its ok re baba u r nt alone
+bahut log hai jo kar rahe hai struggle
+its part of it
+atleast u r getting calls which are telling u that u need to work
+its ok it happens
+kya pucha yeh toh bata...
+u mean tokenize the string accordig to spaces and insert a new line
+toh kya gadbad kari
+haan kissi me bhi karegi toh yahi
+hmm
+koi na
+kya bola interviewer
+hmm
+kaise kari
+hmm..good heap toh sujha hi nahin mujhe
+u r brilliant mommma
+;)
+i am not sure..time complexity kaise o()nbol rhai hai
+hmm...is pe sochna padega
+:D
+hmm
+hmm...relaxxxxxxxxxxxx
+kal chalne lagega
+haan tabhi bol raha hoon
+abhi relax ho jaa
+so jaa
+oh boyyyyy
+sahi
+badh aa gayi hai tujhe toh
+fir kya tension hai
+mujhe toh aa hi nahin rahe calls
+hmm
+kal kiska hai
+naam toh hoga
+dekhe toh aaj toh browser wali thi na
+company
+cali ki
+abey cali mein intern lag jayegi...toh acha hai
+arey ho jayegi...
+8 minutes
+acha kaam hai inka bhi
+ache se dena
+and chills
+:)
+all the best
+monday tuesday ko kaun sa hia
+awrity..
+tc and study.. :)
+18 minutes
+kiska
+assignemnt ?
+post ho gya ahai bb pe
+fir
+oh open bok
+hmm nahin liya abhi
+okie
+kal le lete hai..but puri book ka lenge kya
+:P
+hmm
+tu nikalti hi nahin hai ...toh hogi hi oob...
+yup
+badi jaldi samjh aayi
+chalo der aaye durust aaye
+:P
+hmm..nikla kar kahi toh..ake it a point ki friday shaam ko entertainment karegi tu
+no studies
+watever happens
+i mean..jsut a suggestion
+hmmm..
+hmm..thats like a good jack..
+:)
+kabhi kabhi entertainement ke liye khana bana sakti hai mere ghar aake...just a suggestion ;)
+:D
+16 minutes
+maine socha bura maan gayi ladki
+:)
+kitna dekh li tu
+discuss kare kya thoda
+oops sidhe question
+main toh theory hi dekh raha tha
+hmm..
+theroy samajh aa gayi tujhe puri
+?
+tab tak ke kya plan hai
+hmm
+kal kiska hai
+sahi
+good
+arey browser banane wali company ahi
+sahi lag rahi hai
+http://www.rockmelt.com/
+yahi hai na
+aisa lag raha hai
+hmm
+toh sahi toh ahi
+hm
+:)
+yeah
+ok
+tab tak main bhi padhta hoon
+tough lag raha yeh thoda
+hmm
+hmm
+ok
+arey bahut bada hai yaar is baar
+delaunay
+dekh raha tah main aaj
+hi
+hmm..yaara tune toh bahut apply kar diya hai..just wait and watch
+maine toh chod hi diya hai almost dekhna
+heh
+e
+koi na tere liye nayi post banae ki soch rahe honge
+:P
+mazak nahin uda raha yaaar..
+miljayegi
+just dont panic..i asked seniors they said
+ki may tak bhi aate hia calls
+keep applying
+:)
+arey nahin re
+tune ?
+kuan se
+good good
+all the best
+kispe kaam hia
+naicee
+tu toh fod degi ab
+kafi padhai kar li hai tune
+sahi hai na padhai toh ho gayi
+:)
+hmm
+ok..
+atb :)
+share the question though...i would like to think over it
+hmm
+yara aaj rat ko thoda kaam ho sakta hai..
+yaar maine bola toh hai 9 baje jaana hoga mujhe..toh bola hai woh thik hai ..
+lets see..i will try ma best to come
+kahan milna hai
+yaar ek prof se milne jaana hai..
+toh woh bola hai 8 baje ka
+toh rpobably 9 baje tak free ho jayenge
+arey tu kar legi tension not
+i will come if possible..
+awrity
+oye..hai kya
+BOA se ko ireply aaya kya
+reject ka reply aaya ?
+hmm
+same here then
+hmm
+hmm
+same here
+no freakin idea
+hmm
+kissi ka pata chala jisko aaya ho
+kewl
+38 minutes
+hai kya
+The database scheme consists of four tables:
+Product(maker, model, type)
+PC(code, model, speed, ram, hd, cd, price)
+Laptop(code, model, speed, ram, hd, screen, price)
+Printer(code, model, color, type, price)
+The table "Product" includes information about the maker, model number, and type ('PC', 'Laptop', or 'Printer'). It is assumed that model numbers in the Product table are unique for all the makers and product types. Each PC uniquely specifying by a code in the table "PC" is characterized by model (foreign key referencing to Product table), speed (of the processor in MHz), total amount of RAM - ram (in Mb), hard disk drive capacity - hd (in Gb), CD ROM speed - cd (for example, '4x'), and the price. The table "Laptop" is similar to that one of PCs except for the CD ROM speed, which is replaced by the screen size - screen (in inches). For each printer in the table "Printer" it is told whether the printer is color or not (color attribute is 'y' for color printers; otherwise it is 'n'), printer type (laser, jet, or matrix), and the price.
+expand kar ke padh ek baar..fir question behjta hoon
+nahin samajh aa raha mujhe toh.. :P
+For each fifth model (in ascending order of model numbers) in the Product table
+find out the product type and average price of that model.
+yeh complex hai ?
+i mean i have no idea
+rownum hota hai kya kuch
+by default
+hmm
+acha ek querry se koi table aayi ..usko upar doosri query kaise chalate hai
+from clause mein query deke na
+ki aur bhi koi tarika hota hai
+is querry me koi problem hai kya dekh
+select * from product,PC where MOD(rownum,5)= 0
+yahi nahin recognize kar raha hai
+mod is not a built in function bol raha hai
+defaul inner join ho jayega na
+mysql
+nahin re default inner join hota hai i gs
+Invalid column name 'rownum'
+u sure rownum hota hai
+hmm
+hmm
+yahin hoon
+jo bata rahi hai try kar raha hoon
+oye likh li kya tu
+we have started writing..me and sheetal
+6 minutes
+sahi hai
+hahaha
+bolna yes aur kya
+o teri u r gonna give interview
+oh sahi
+mangaer babu
+hahaha
+pata chal raha hai film dekhi hai bahut dinon baad
+dialogue mar rahi hai
+:D
+uth gayi kya
+main bhi
+:P
+good find..but kuch samajh nahin aaya soln :P
+hey hi..
+yeh stabber wala paper padhi kya tu
+nahin samajh aaya mujhe...
+haan kaise nikala woh
+a line segment corresponds to wedge in dual plane right
+and if there si a stabber it should lie in intersection
+of all the wedges
+i mean if there is a stabeer there should be common intersection
+ab tune hi bola
+toh maine socha bade logon se discussion karna hai
+toh kuch mehnat toh karni padegi
+:P
+bhej ppt
+abey isme likha hai solved using duality
+bas kahtab
+khatam
+mazaaaaaaaaak
+abey waise pata hai kya..apan intersection area agar nikal paye in arrangements of line
+toh we can say fi the cardinality of that intersection area is n in dual plane..then there exist a stabber rather a set of stabbers in primal plane
+hmm...
+main bhi abhi soch raha hon
+line arrangment mein intersection area ka kuch toh batayi thi na woh class mein with line sweep
+abey tu kar kya rahi hai ..pranav se baatein kya ?
+uffffffffffffff
+intelligent hoon main bahut
+isliye ;)
+:)
+good good
+chal u cary on..free ho toh batan
+this is freakin sexy
+haan mast hai
+ab isme ek teen line bana
+aur duality plane
+mein ek point bana inteenon ke intersection mein
+toh primal plane mein stabber banega
+yeh bol raha tha
+tu bas ek kaam kar...botes khol apne aur usme dekh wether we can find intersection plane of all the line segments
+notes*
+in O()n^2
+main yeh paper dekhta hoon
+kaise nikalte hai..plane sweep se
+yup ..and it was
+haan
+sahi hia then this is the algo
+Finding a stabber
+Convert all the line segments in the duality plane to wedges
+Find the intersection of all the wedges—Plane sweep
+If the cardinality of the intersection is number of line segments then there exist a stabber
+Complexity 
+O(n)
+O(n^2)
+O(n)
+second step bharna hai...
+:P
+dual of a line segment is a wedge
+"Segment"
+chalo this questin is solved matlab
+ehh
+i might fo to sleep
+kya chal raha hai kudiye
+second samjh aaya kya kuch
+main toh aaj hi likhne ki soch raha tha ssare
+hmm...
+hmm..check out chpater 15 of textbook
+thoda kuch diya hai
+samajh mein aaye toh samjhna mujhebhi
+dropbox
+aur kya kiya aaj//
+oh sahi..kahan kahan kiya
+yaar..poha hai kya tere ghar pe..
+hadd hai :(
+:)
+abhi kya khao
+comp geom hi kar raha hoon
+hmm
+ok
+34 minutes
+abey second dekh...yeh toh sab k0o mil gaya hai you r late sweety ;
+;)
+arey likh lena baad mein
+yeh discuss kar lete hai
+2nd tu padh le uske baad
+awrite..main toh yeh soch ke ek saath hi likhunga..
+haan plan toh yahi tha..but aaj subha se tu gyab hai
+maine dekhe hi nahin
+ok
+haan dhondh lunga
+tu kehtio hai toh ;)
+mommy ka kahan sunna chahiye
+haan maate
+avashya
+jo aagaya mataji
+hmm bol
+kehne ka matlab hai...n+m log n+m rite
+which is nlogn only
+matlab ki jyada difference nahin hona chahiye
+liner factor increse kar rahe hai toh asymptotically
+itna fark nahin padna chahiye
+hmm same here...
+ek min
+Let S be a set of $n$ triangles
+aisi koi mail aayi thi kya
+jie gao ki
+yup aayi thi
+hmm
+toh agar n triangles hai fir o 4n log 4n ho gaya
+hmm
+agar triangle bahut jyada hue then also i guess
+hmm suppose n^2 triangles hue
+then there is a problem
+:P
+complexity n^2logn ho jayegi
+this means linear increase in n is fine..
+yup
+now i am also convinced
+haan maine toh hath pakde hai tere
+:P
+43 minutes
+nahin bol..kaise kiya
+utha
+haan
+kyo
+oye
+khana ban gaya kya tera
+nahin bana hai toh aaja
+mast TOFU banaey hai
+okk..taste karna ho toh aaja
+paneer ka soya counterpart
+awrity
+:)
+kar do
+hmm..cant get u
+yahi aaja tofu bhi kha lena..fir discuss karte hai
+ahaha,,,kal taktoh kuch na bachan
+:P
+ok ok..as u wish :)
+cheer up
+:)
+kal ke liye taiyaari karo
+nahint oh kal bhi kharab hoga
+kaisa hua ?
+hmm
+hmm
+ctrl alt delete se nahin dikhta hia kay
+:P
+:D
+good god
+good*
+hmm
+hmm
+hmm
+yup
+tere ko
+sahi
+hmm
+ho jayega
+dunt wry :)
+hmm
+chal sahi hai..
+good going
+no idea
+pata kar ke bata mujhe bhi
+ATB :)
+hmm.koi na
+kitne baje hai
+hmm
+kitne baje ?
+jaa rahi hai
+oh ok
+hmm..
+mast cheez hia
+hmm
+yeh soch ke padho toh jyada ache se samajh aata hai ;)
+you go into details u c
+:d
+:D
+chal..cya in class
+bye. :)
+24 minutes
+marketAxess sealed \m/
+nytime sweety
+:D
+hmm kam hui keh sakti hai
+its not paying much..i guess
+3200 per month
+arey startups 35$ per hour deti hai..
+i guess try karunga ab startups mein
+lets c
+aur BBC nahin karna abhi
+:P
+Brodcast
+;)
+still no papparazi..;)
+linkedin
+wale bade log
+rote hi rehte hai
+hojayega
+tensin not
+hmm
+same here
+i dunno yeh banks reject kyon kar rahi hia
+sure dear
+anytime
+i guess ham present nahin kar paa rahe hai apne aap ko
+hmm
+yeah resume exchange kar lete hai
+hmm
+main bhi
+this time people on mission in JOB FAIR
+;)
+That's the spirit
+yup kudiya
+:)
+lets nail thes americans ;)
+heheh
+how mean
+khud ka ho gyaa
+wah wah...mean hoti jaa rahi hai tu..
+not good
+khud ka ho gya toh logon ki madad karne ki
+MACT ki ladki wali baat aa rahi hai
+i have all the fuckin idea..but u know helping never hurts...
+that was my seniors has taught me
+its ok yaar
+be like that..there is someone who is keeping ur records
+who is telling u to learn from others
+learn urself
+and distribute wat u have learnt
+that really helps urself
+listen dear..there are 101 way to learn things..and helping others is one of them..
+as far as i am concerned i never say no ..i cant actually if i am able to help
+may be not good..but it helps myself only in long run
+haan tu toh bhagwan ahi na
+kyon ki god helps who helps themselves
+ghamandi kahin ki :P
+i am not interested in how have u done..but wat i fell that everytime u shold feel ki not very big thing has happened if u have solvd that thing as u r born to do bigger things...
+so .. u dont reachon cloud 9 everytime..
+moreover...attitude ehhh..look who is saying..ur attitude toward C language is not good either
+cccccc
+i proved that u rno different
+unko java se lagta hoga
+big deal
+listen ..the point is not that... we were talking about attitude..and ifeel we are all the same
+its just the area which we feel comfortable
+we are ready to dive in
+and the are which we are not
+we hesitate
+exactlyyyyyyyyy
+so wat i wanna say that u should not be proud of anything u do on this stupid idiot box called copmputer as everything is fuckin easy
+hmm
+heheh
+tune kiya na
+tu gr8 hai
+kya gadbad thi
+mozilla pe chal raha tha
+oh javascipt mein dala kya kuch
+hmm..batana mujhe bhi
+kya kiya...
+kyon xml create karne mein kya
+hai
+?
+haan toh
+haan toh
+yeah i know
+toh
+problem kahan ahi
+u mena through ant scipt
+ant scripts arelike make file
+usme kuch nahin hota xml create karne ke liye
+i guess
+thse are parsers
+xml se data nikalne ke liye saayad
+xml mein data manuaallly hi dala jata hai
+yaa fir data base se fetch karke
+for fetchign through database u need DTD
+file
+woh hai kya
+i mean..thoda galat bol diya :P
+chal milenge toh bataunga jitna mujhe aata hai..jo ki bahut kam hia bade log ke saamne ..but i ll try
+:P
+tubelight
+:P
+yaa bade logon ka ishtyle
+sahi
+kab
+?
+kab jaa rahi hai
+valentine pe
+oh teri
+sahi
+:D
+kal hi ..
+shai hai
+flight booking ho gayi
+oh kewl
+hmm
+haan
+kyon
+kya hua
+woh specific requests ko jo filter karne ke liye rite ?
+and corresponding responses modify karne ke liye
+i have an idea
+but ache se nahin aata
+in windows firefox pe chala ke dekh
+ie ki prob bhi ho sakti hai
+hmm..
+yup
+linux mein firefox hota hai na browser
+kispe chalaya tune
+linux mein IE
+?
+hmm
+strange thing happens
+nahin yaar
+pata nahin ek bhi bank se calls nahin aa rahi
+samajh nahin aa raha kya ho raha hai
+helloz
+yaad nahin
+kyon kya hua
+check karta haan
+nahin yaar
+utna hi likha hai bahi
+3 question
+likhunga kal
+koi lcass nahin ahi
+hmm
+kaun sa project
+marmoset
+hmm
+okies
+linked in ki koi update
+ubs mein kya aaya
+nope
+reject
+hmm
+strange shit!!!!!!!
+yeah
+ho sakta hai
+hmm\
+naa kuch nahin
+no
+do hi dn toh hue hai
+i will mail im
+within a week
+hmm :)
+linked in?
+hmm
+bol usko jaldi bhej bahut ho gaya natak
+:P
+hmm
+hmm
+chal ok then gn tc cya bbye
+:)
+helloz
+hmm bolo
+prachi paul
+hehe
+hai ek..rong zhao ke under mila hai 523 usko bhi
+yup
+yup
+not yet
+yeah she seems good..i dunno..
+abhi toh time nain dhoondhne ka...
+abhi padhai hi samajh nahin aa rhai hai
+us subject mein
+anu j is not taking netsec
+tere ko aana hai..toh be prepared to do anything i mean..usme mujhe lag raha hai hoga kuch toh C wagerah pe kaam...but attitude agar sahi rakhegi toh we can handle it..
+toh tu sochle aur bata dena ..toh koi aur itnersted hu a toh mein mana kar paaon..
+arey..aise mat kar..interest match hone chahiye yaar...dhoondh le mil jayega
+koi jabardasti nahin hai i m fine witha group of two only
+arey hai yara..
+dekh..i tell u..u make up ur mind..completely
+exactly ..toh if you feel ki after joingin the group u r not doing well and u urself feel depressed after that..toh isse acha hai pehle se soch le
+group toh abhi bhau tootenge..banenge..
+but you are not willing to give up ur handicap for that
+which is not good
+according to me
+isiliye group banaye jaate hai
+toh i dont want u to get in stuff u really cant feel ..
+so think properly..and then join..
+good girl :)
+ATB :)
+MACT ke log nahin darte
+;)
+sab chalega relax chill calm down
+party keliye wait kar raha hon mein
+:)
+hmm same here
+:)
+abey thnad
+main hi karoo kya phonw interview le leta hoon
+hahah
+reject kar dunga
+bue
+42 minutes
+pata nahin
+?
+kissi aur ne diya kya
+:D
+good...acha hi hua hoga
+questions kya puche
+tochararray
+woh wala?
+hey bhagwan
+oh ..u coded in c
+na
+than its ok
+hmm
+good girl
+ho jayega
+heheh
+nahin hoga bus...bilkul nahin hoga
+4 min
+o my gosssshhhh
+ab kya hoga tera
+tu toh gyai
+waatt lag gayi teri
+:D
+haan..barbad kar diya..bewkoof ullo hai tu
+CALL ME
+YUP
+kyaaaaaaaaaaa
+sahi toh hua hai tera
+abey dimag hai jo settle hoga :P
+wahi hai
+dhyan se padhegi toh pata chalega
+so jaa bahi
+abhi*
+surru ke char padhne hai
+thodda random padha raha hai
+but hai matter wahi se
+oye
+aa gayi kya wapas
+kaisa tha
+hmm...
+naam likh diya na ?
+hmm..ok
+ok
+yup
+on phone
+ek min
+abhi i have to go yaar ..khana bhi nahin khaya hai ..baad mein milu toh puchna bata dunga
+basically core java and J2ee concepts puche
+haan meri maa
+:P
+cya
+yup
+temme
+hmm
+i dunno lemme chek
+http://www.marketaxess.com/careers/jobsearch.php
+thnx
+:)
+hmm
+bolo
+nahin re
+abey ..tu panic na kar
+maths hai
+itni jaldi samajh aa gay to hwhere is the fun
+:P
+uff..hawa kya andhi toofan sab lag jayega..dekhte hai ..
+:P
+i havent seen them yet..
+aur tu mera interview epic systms ke saath chal raha hai kaha khana bataiy hai BBC :P
+hey bhagwan
+chal chad
+kitne baje aa rahi hai
+haan haan thik hai
+koi na..
+make it 8
+haan ..
+ok
+8 baje aa ja..fir dekhte hai..
+i m in middle of sthing
+isliye bol raha hai
+awrite cya then :)
+1 hour
+yup
+aaja
+and come with chilled out mind..no panic :P
+sry
+ok
+awrity
+aww :(
+koi naa..
+bahut thandi jagah hai
+kya hi karegi jaa ke
+:P
+haan
+ek online test hai woh dena hai
+uske baad
+onsite test ke liye bulayenge
+nahin
+aptitude pe hai
+saayad
+awrity
+:)
+thnks
+linkdin ki taiyaari kar
+:)
+nikal le
+khatam kar
+haha
+aa jayega
+hmm..uska bi reply nahin aayega
+i am sure
+better hai be patient
+and keep trying
+sure
+yup
+abhi dates nahin batayi hai unhone
+dekhte hai
+hmm..wahi tedha kaam hai thoda usme
+baki sab asan hai
+fodor se bola tha maine
+ki ek baar meet karwa de un logon se
+jo bana rahe hai isko
+toh chill maar fir thursday tak
+comp geo padh ..bahut kuch hai usme
+haan dekh raha tha
+hmm
+ok..
+ok..
+itna kya has rahi hai
+kyua hua
+?
+sahi hia
+kab
+sahi hai
+kya kaam hai
+sahi hia
+badhai ho
+party
+haha
+toh khushi mein hi toh party dete hai
+kanjooooooooos
+hmm
+padh lena ho jayega tera
+heheh
+yeah
+he did a HR tyoes interview
+asking me about projects and stuff
+no technical stuff
+how was the session
+Epic systems
+kyon
+haha
+yeah mujhe bhi karna hia yaar woh kaam
+kya procedure hai
+uska
+rook ghar pe hai na tu
+call karta hoon
+ok..
+jaata hoon monday ko
+como geo ki koi book hia kya tere pass
+pdf types
+ok
+ok
+tera samir das se meet ka kya hua
+gai thi tu ?
+:P
+hahha
+hmm
+jie gao ko IS ka kya scene ban raha hai
+oh kool
+yup
+nahin toh
+arey woh purana aaya tha ek baar kabhi toh mail
+tab apply kiya tha
+zebra net ke through
+yup
+tha
+online hi apply kar de
+usme graduates e liye nahin hai kya kuch
+strange ?
+maine jab kiya tha tab toh tha
+oh ok
+fir toh aayega
+oye hai kya..
+tu logic le rahi hai na aur netsec
+aur teesra kaun sa
+kal discrete ki class karenge kya
+suna hai light course hai
+anita kar ke hai koi
+but project wagerah koi nahin ahi
+arey third subject
+woh toh main bhi le hi raha hoon
+arey net sec comp geo aur ?
+main wahi bol raha hoon logic se better hoga discrete
+heheh
+hahah sabhi kharab nahin hote
+aaj compiler ki class mein ho ke aaya
+mast padhay usne
+nahin re ..pointer ki lag jayegi
+project se yaad aaya...comp geo ka project saath mein karenge kya
+aur net sec ka bhi
+pata nahin..sayad language independent
+hona chahiye
+haan ..thik hia
+main toh aise hi soch raha tha yeh dono subject toh almost final hia mere bhi
+hmm
+hmm
+kya done ?
+hmm..i think you are not in mailing list
+boli bhi hai tu usko
+:P
+??
+maine na bataya hota toh waat thi teri :P
+:D
+hmm..ok
+pata nahin yaar
+kuch samajh nahin aa rah
+rong zhao kab reply karega kab nain
+aaj raat ko mail karunga agar reply nahin aya toh
+hmm
+yeh profs bhi na bahut dimag kahrab karte hia huh
+:(
+jhmm
+bolo
+?/
+nope
+i dunno usko mail kari hai interest ko leke.
+aaj kal main batayega
+tera kya hua interview mein kal
+de detin na javascript
+ka hi kya problem thi
+arey yaraa
+arey interview dena aur offer anaa aur join karna
+different stages
+de deti interview confidence aa jaata
+:P
+naice
+wahi mujhe laga tune usko bola i cant give interview
+:P
+gr8
+u did it gal
+;)
+heheh
+haha
+hmm
+i am iam
+:)
+yup
+bandi nahin chalegi :P
+hahah
+sahi hai
+in super computing class
+ok
+tc
+ttyl
+i confirmed fodor
+talked to scarlettos
+hmmm
+tere is some misconception saayad
+i talkd towrong GUY
+perhaps
+:P
+neways...
+haan
+and he also worked on same domain
+iphone app development
+toh main usse baat karne laga
+anywasy
+marmoset is sounding good tome
+averagelevel project
+i will do it...sealed
+:)
+aur bhi bahut gham hai jamane mein
+kisse
+arey woh bola i have very high expectations
+from the project
+a publication
+in the end is expected
+and your app should be designed and testeda nd deployed
+itna nahin sambhal payenge yaar
+internship is alsoimportant
+ab nahin jaa raha main kahin
+bahut timewast ho gaya
+yeah..
+first sem toh bas ekbaar setup ho gaya na woh code
+rest is a cake walk
+aaj dekhta hoon try karunga saayad
+awrite
+subjects bhi almost decide kar liye maine
+kal aur audit karunga dochar classes andthats it
+wow
+kaun si company
+super
+arey sahi toh hai
+ho ja surru
+awrity
+all the best
+hmm
+why will i..
+go aheadladki
+all the best
+:)
+same here
+aaj fodor ki meeting bhi hai na
+aaj wong ki class mein baat karunga main usse
+ek baar fir
+nahin degi toh kya hi kar lenge
+fodor jindabad aur kya
+:)
+iphone wal hai na scarlatos
+hm
+chal usse bhi karta hoon aaaj baat
+hmm
+hmm
+project ka naam kya tha
+?
+hm
+ok cya
+ofc
+kyon kya hua..teri job toh thi na
+oh aisa
+not fair :(
+context switch :P
+post saayad library mein hai ek khali
+check it out
+unka call aay atha mujhe
+maine mana kar diya tha
+hmm
+18 minutes
+i c
+i know
+hi
+wassup
+tune subah pingkiya tha kya
+awww bacha
+koi naa aaja ermicilli banate hai
+awrite
+sahi hia
+fodor for sure ho gay akya
+toh reply aaya
+hmm
+haan maine time table banaya
+haii
+teen classes
+hai
+haan saaytad
+ek min di ka phine aaya hi
+hanji abbolo
+haan she was having lunch
+oh naicne
+congos
+oh ok
+arey tu kar kyon rahi hai woh yeh toh bata woh toh ho hi jayega sab
+ek baarproject decide ho
+haan android install kiyatha maine bhi ek baar
+hmm
+hmm
+yaar mobile app walakaun hai yahan wong hai woh reply hi nahin kar rahi
+u told me
+this
+uske under kau sa hai mobile app wala
+marmoset mein hi hai
+oh i c
+hmm
+han han woh toh kar lenge no issues..but i am expecting wongto reply yaar y is she not replyingi dont get it
+oh ok...
+u put urself in heat again
+woh bolega f de saktatha mein sidhe
+arey yara
+he has full right to give F to us ..u know that
+toh acha hi diya na usse
+hmm..chal dekh kya reply aata hai..
+hot chocolate peene hai
+chpin commons
+6.30
+yup
+kuch toh footbal match hia
+kal first class netsechai mere list mein
+12.50
+fir embedded fir compiler
+its on tuesday
+nahin mila hia
+yup
+yup
+arey kalmerijob hai wahise jaunga direct
+provost office
+administration
+naa re
+yup
+10
+abhi kal se hi suuru karni hai
+chal chocolate penne aa rha hai toh
+wahi baat karte hai
+awrite
+take care
+:)
+hi
+ne progress
+barf ke maze le
+:)
+hmm
+lori scarlatos matlabwoh mobile app wala
+jo tu bolithi
+hmm
+she is ready
+rite?
+toh kya problem hai..objective c is it ?
+i dunno main woh doc banane baitha tha
+abhi
+i amnotgetting ki main kya karunga is sem emin
+:P
+arey nahin yaar
+fodor is the last option
+but i dont have any other option
+hahaha
+:P
+haan wahij toh
+uske yeh doc de diya toh khatam hai fir toh
+:P
+yaar wong ne toh hadd kar di
+koi reply nahin
+main kahan tnsn de raha hoon
+main toh yahi bola
+bark ke maze le
+:)
+barf
+*
+oh not bad
+;)
+sumit uhmmmm
+:D
+yeh kyon bata rahi hai
+main toh kuch nahin bola
+;)
+acha..kya samajhi main nahin samjah
+:-/
+ek hi bande ke saath ..not fair ..aisi feeling toh nahin aa rahi ;)
+:D
+haaan
+haan
+ab main samajh raha hoon bhavano ko
+oh he came here ?
+not bad...
+sahi hia
+nop[e :(
+tere ko ?
+hmm
+nop
+dekhta hoon abhi..aaj kuch baat waat karta hoon profs se
+nahin
+ok kaise bataunga but
+number ?
+hmm
+ok
+np :)
+hi
+any news from WONg
+WONG
+nope
+aaj kissi se mili
+i dunt know
+yaar koi replyu hi nahin kar raha hai..lagta hai marmoset mein hi jaana padega
+:P
+hmm
+hi
+no response
+till date
+bas mila aur bola wait karo
+haan milne pe bola wait karo next week tak
+hoga toh batayega
+aaj fodor ki meet mein gyai thi kya
+kuch samajh aaya kya
+acha
+prolog se hat ke
+:P
+arey yeaar marmoset mein toh woh jyada interest dikha nahin raha
+pata nahin kaisa project hia kya hai
+main toh aa hi nahin paaya
+mail hi 7 bajekholi maine
+wong ka reply aaya kya kissi ko
+aaj dene wali thi
+oh aisa
+hmm
+dekhte hai
+terea ho gay fir final na
+fir ?
+aur khana chal rahi baat
+wong ka reply aaya tere ko
+haan interest bhejo karke na
+hmm
+haan kar diya hai
+mil gaya toh main toh le hi lunga
+information systems aur mobil app
+aur DAPA
+shit kyon
+?
+wah waha
+kuch bhi
+same here
+arey koi na dono ko mil jayega
+tension mat le
+arey shai hia na toh kya problem hai first sem mein chill mar ke padhai karna internship wagerah bhi rahengi hi
+second sem pe isme dhayn sena
+dena*
+yaar yeh goldman sachs ka form bhara kya tune
+kya nautanki form hai
+sach mein
+arey usme resume hi upload nahin hua
+baki duniya ki bakar likhwali
+:P
+fir crash kar gaya system
+:'(
+??
+fi ao
+kahan bula rahi hai
+haha
+kyon
+kya hua
+arey le jaa yaar humein kahan aati hai banana..tu bana ke khilayegi tabhi toh khapayenge
+:P
+hmm
+aaj ek mast probablitiy ka question pucha tha kissi ne
+a 52 card deck hia ..3 players and you are on e of them ..everyone gets a pair of card..the pair with highest sum win..what is the probablity of ur win
+Ace =1 J =11 Q = 12 K =13
+hmm
+shanti se soch..its not that easy
+kal milenge toh batana
+main bhi sochta hon
+:)
+how do you find a number is prime or not in a most efficient way... ;)
+hahah
+finding root n is also inefficient
+better than n tak chalane ke
+but more efficient
+are you sure it will give results
+i dont think n/2 is rite answer
+check kar lena
+yup
+root n is correct
+but inefficient
+dhoondh raha hoon
+i dunno interviewer bolte hai
+:P
+abey anuj de ke gaya tha ek
+wohi soch raha hoon
+kya padh rahi hai
+java
+padh li ?
+kitne chapter hue
+mere toh 2 hi ho paye
+so hi jaata hoon mein
+hmm
+good
+OS ?
+ab OS kyon padhan ahi
+NP padh padhan hi hai toh
+toh OS ke bare mein kya likh diya
+oh acha
+sahi hai
+hmm
+dekhte hai
+oye java ke questions puchti rehna...
+i am also studying kathy
+ok
+pucha toh sahi
+main hi suruat karta hoon aaur tu fir dhoka deti hai
+:P
+wah wat a realization
+itni der baad
+:P
+yup aa gaya
+:)
+hahah
+chal cary on then
+yup
+gn
+hi
+wassup
+yaar its better if u can match your profile with the requirements
+maine toh ek hi resume banaya hia abhi tak
+haan
+yaaha aake networking ka ho gya ahai thoda toh woh dal diya hai
+arey toh daal toh de hi
+concepts hi puchega interviewer
+kaun sa code likhwa raha hai client server ka
+hmm woh toh hai..
+hmm..
+sahi hia
+aur kya chahiye
+:(
+mera bhi
+han yaar
+:(
+chal koi na isbaar mehnat karni hai
+hmm...
+relax..tu jitnajyada sochegi
+pareshan ho jayegi
+is baar mehnat karte hai
+yaar is baar saayad net sec toh lena hi padega
+koi poption nahin hia
+uske alawa
+aur bucket complete karni hia toh db bhi
+lena padega
+tere ko bhi security bucket se kuch toh lena padega
+is baar hai na
+hmm
+wahi aake audit karenge
+fir dekhte hai
+:D
+haha
+hmm
+paul foddor wala project finalize ho gaya kya tera
+same here..main bhi yahi soch raha tha
+but mail karne se pehle main milna chahta tha
+usse
+hmm
+yaar usko commit kar diya fir uske baad koi aur project mila toh
+haan wahi karunga
+hmm
+hmm
+arey samsung india ka us se koi door door tak lena dena nahin ahi
+yaar
+i am also trying
+direct hi apply kar yaha yahi system hai
+aa jayenge calls
+dont worry
+taiyaari kar calls convert karne ki
+Samsung mein nahin tha aisa kuch
+woh sirf korea se hi contact rakhti thi
+i know...
+bt relax ho jayega
+mere bhi ko bahut ache toh aaye nahin ahi
+hmm...
+sabka matlab
+bahut ka A- se upar
+aisa
+haan
+andaze se :P
+i mean logical guess
+transcript dekh
+nahin re
+charon mein a aata toh number hote 12 rite...
+toh grade hota A+
+us hisab se jodegi as in number by number of grades available toh har grade ki range aa jayegi
+bola na logical guess ;)
+not sure
+toh chill maar ke padhai karte hia ...ho jayega kuch na kuch
+tension no
+:)
+aisa mat soch re...
+tu soch tu padhai karegi thats it wat is in ur hand
+gr8
+to tera bhi overall 3.33 ho gaya na matlab
+kal
+subah
+oh ok
+hmm
+kahan kahn apply kar diya abhi
+koi list of companies ka ek pool banana chahiye
+that is beneficial to all
+haan exactly
+lets make a grooup in fb
+kya bolti hai
+dekhte hia kitne log interested hai
+cya
+tc
+:)
+jenifer wong se baat kari hia..baki toh kissi se nahin ..tera kya scene hai
+haan
+abhi reply nahin aaya uska
+haha..kyon kyahua
+hmm
+hmm
+tension na le laddki all iz well bol all iz well
+:)
+hmm i know
+yeah..strange hai but agar koi lega hi nahin toh kya karenge
+haan
+haan
+not yet
+tu mili nahin sidhe mail hi kiya kya
+hmm
+hmm..ok
+thnks..
+for the info
+:)
+hi wassup..
+15th
+tu pahuch gayi kya
+hahah..
+yahan se kaise karoon
+wahin aake karunga
+koi reply nahin de raha hai yaar
+yaar main application development mein hi karna chahta hoon
+usme jenifer wong hai woh reply nahin diya usne kuch
+tera kya scene hai
+hmm
+aisa bhi ho sakta hia kya :P
+i mean will it be counted in 523
+haha
+hmm
+kitna aaya grade algo mein
+course website
+bata apna number
+b laga mera
+tera b- dikha raha hai
+b
+yup
+http://www.cs.sunysb.edu/~hgupta/548/grades.txt
+have alook
+kya plan hai...
+arey kya plan hai algos ka kya karegi...
+companiya call nahin deti ...
+algos ke grade ki wajah se
+ask ur contacts..
+seniors
+wagerah
+kab 3rd mein
+tab tak toh apply karna padega
+companies mein
+second mein hi lena padega
+agar fir lena hai toh
+haan
+sohc rahe hai bahut log
+next sem algo repeat karne ka
+hmm
+gr88888888
+:D
+aaj kya tha tera
+kaisa hua
+chal raha hia
+tera ?
+hmm..mera med imaging ka presentation chla raha hai
+aaj
+aaj sab khatamho jayega
+i am glad
+abhi ho jayega
+;)
+abhi hua nahin hai
+hmm..thik hia kudiye..dikha de.. :)
+hmm..koi na
+hmm
+arey aaj nahin kal hia
+arey kal raat ko manayenge
+2nd december
+ko hai
+hmm
+nahin kal hai
+kal aaana
+:)
+cya
+tc
+no
+hmm
+nahin utha raha
+mobile number hai kya
+i asked him
+already
+he asked preeti before
+oh ok
+give me the mail id
+oye
+meet hui kya teri
+43 minutes
+hmm
+matlab?
+oy e ladki kuch fundae mile kya first question ke liye
+??
+17 minutes
+ok
+i figured out the mistake mommmmmmy
+today i will do it
+eureka
+:)
+surru ho gay amommypana
+:D
+juz kiddn
+jaroor mommy
+1hr
+:)
+wireless kar rahe hai
+yup
+hmm
+i know temme sthing new
+:D
+relax sweety
+we will make it
+7 minutes
+oye
+kya hua
+call me when free
+43 minutes
+oye...
+just contact some seniors if u can..as to what to do...
+ruk puchta hoon..yahan par kissi se
+have u send the mail
+arey ruk puch raha hoon
+haan
+pucha maine
+give me a number to call u
+6318893142
+21 minutes
+gr8
+rote nahin babe
+chill
+aaj aana aaj chal denge usko
+apan ussi kal wale code mein karenge
+usmein kafi base hai
+aur client server tera lelenge
+ok
+nahin
+rehen de
+abhi apna ke client server mein bhi bhaut changes honge
+toh koi panga nahin hoga
+now relax chik
+haan
+u ?
+yeah
+cheer up mommmmy
+:)
+awwwwwwwwwww
+cummon
+arey main hoon na..trust me a bit moma
+:P
+:)
+chal tc..cya
+in clas
+ie
+hiee*
+kal raat ko aa ke so gaya main :P
+hmm..apan dono latakne wale hai pakka :D
+hm
+odr mein
+linklist wala kaam nahin kiya
+i have made array of strctures
+haan structure ke array mein hogi na woh value
+kyon sab kuch milega usko toh na
+packet client se odr ke paas aaya
+toh sab kuch leke aayega na
+haan
+abhi mein thodi der yahi np karunga aur tu bilkul nahin aana abhi :P
+nahin 4 baje wireless ke liye jaan ahia
+shaam mein aajana
+shaam yaane stony brook ki shaam
+ohh
+ok
+k
+aunty aunty ball de do na..ab nahin aayegi.. :D
+:D
+thnk u aunty..ab toh ball de do
+:P
+aaj se toh tera naam public ho chuka hai
+thnkx uk
+:D
+hahhah
+mommmmmmy
+chalega
+ab isse jyada koi concession nahin mlega
+hahha..
+daudega
+ho sakta hai na..curious case mein...
+by the way tera toh somple case mein hi ho raha hai
+:P
+simple*
+haan aaj se duty hai teri..jagat mommy ban chuki hai ..hum sab ko sudharne ki
+irresponsible mom
+:P
+hmm
+bol
+i havent tried..but gethostbyname chalna chahiye na...
+cap wala?
+nope :P
+bki ho gaye
+hmm
+mast time hia
+;)
+yahan janta 4 din se soi nahin hai...
+aur yeh 4 ghante mein karengelog
+isse kehte hai master mond
+mind*
+;)
+superb..kahan se lati hai
+inna sara
+hahah..per pad,,kaanpakad uthak baithak kar
+fir sochunga
+;)
+haha..
+ab kaaam kar kaam .bakwas karwa lo bas
+;)
+haan sarkar..jo huukum
+;)
+sameera reddy kya bola aaj
+:D
+haan bola karo karo ;)
+sla apna dono ke kyaitmimngs hai na sachi
+:D
+hahhaa
+chal back to work..6th hota hai toh batata hoon
+bbye
+cya :)
+16 minutes
+oye 3rd ka second part proof ho gyaa
+??
+bahut khush hai aaj kudiye
+kyooooooooo
+hahah
+sahi hai
+acha ek baat bata..yeh samir das ne kahan tak padhaya tcp over wireless bhi kar diya kya
+kahtam
+aur geographic mein kya padhaya
+kahan se padhna hai
+slides toh dikh nahin rahi
+k
+yup
+kal raat ko sab fit chalne laga
+:)
+thnx to u
+:)
+arey woh error checking
+:)
+bolo matlab tarif lootne ka ek mauka nahin chodte log
+:D
+;)
+28th dec
+kyoo
+kya gift dene wali mujhe
+?
+:P
+i badly need a mac book
+:D
+hahahaha :D
+but u dont need
+na
+ur lenove rockzzzzzzzzz
+:D
+isisliye khush hai bacha
+ab samajh aaya
+:D
+unke aane ki koi khushi nahin ahi
+laptop aayega
+:D
+haha..
+:D
+sahi hai
+yaar yeh face rotuing ka kaun sa paper hia
+itne saare hai
+isme
+:(
+Notes by Samir Das - Handout distributed in class
+yeh kab hua
+hua hai kya aisa kuch
+:P
+k
+aur woh quiz kab hai
+shit yaar
+yaar padhan padega
+bahut kuch
+wireless barso ho gyae haath lagaye
+it seems someone is calling for part time job... :P
+jo bhi hai..
+acha dikh raha hai
+:P
+hmm
+13 minutes
+have a look ;)
+http://www.weather.com/weather/hurricanecentral/article/tropical-depression-nine-storm-hurricane-irene_2011-08-20
+yeah
+chutttttttti :)
+aww
+u sad
+hmm..oracle ... a good company it seems :P
+;)
+yeah ppl will be ood further also if one is good itself...
+good*
+LESS?????????
+whan jaa ke pata chalega kitna less travelled hia
+:D
+haha..atleast ur family know abt higher studies
+in my family toh wat they know is once u have job u sud marry and then only can u merry
+hahah
+no brides father is mad enopugh now to wait for me for 2 years..STRATEGY uc
+hahaha
+they were on their heels for that
+;)
+kab ki born hai tu
+she will also be married by then
+hahaha
+same age ke hum
+i am also dec 86
+yeah she will be married
+her family is also not ready
+to wait
+i want..bt her famil dont want
+and she is not willing to go against her family
+yeah...life's tough :(
+though u r lucky enough
+she is not stubborn
+thats the issue
+not yet..bt she said to me that she will do that..
+nopes
+hmm
+arey na
+arey mera lead aa gaya tha
+her name is bhoomika..lives in mumbai
+:)
+well...
+very ajeeb kahani...will share some day..bt for now..i am a self percieved single person and proud to be one...:D:D
+hahaha..yeah...
+no need for that
+ek hi clg mein jaa rahe hai
+tu mujhe batana apni success story..main apni batuanga
+:P
+not so failure story
+:D
+yaar ab saath hi jaa rahe ho...success hone ke chances toh hai hi
+yahan toh koi chance nahin ahi
+wah ekdum sahi sawaal
+jo meri story ko ajeeb banta hai
+on papers bachpan se...in reality 3 days
+hahaha
+hai na
+AJEEB
+haha...
+i never told the we broke up :P
+but fate will break us up
+we know that
+i told u she isi not stubborn
+toh i didnt pressurize
+its ok
+agar usko realize hota hai
+toh she will do it and tell me
+nahin toh khule sand bhi bure nahin hai hum
+:D:D

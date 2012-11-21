@@ -9,7 +9,7 @@ public class PosMain {
 
 	public static void main(String args[]) throws IOException{
 		//genTwitterFiles(5, 0 , 400 , 500);
-		genBlogData(30,0,500);
+		genBlogData(30,0,2000);
 		//genBlogData(5 , 0 , 160 , 200);	//for fold1
 		//genBlogData(5, 200);		//for other folds
 		
@@ -31,14 +31,14 @@ private static void genBlogData(int botNum, int start, int end) throws IOExcepti
 		for(int j = i + 1; j <= botNum; j++){
 			if( i == j)
 				continue;
-			obj.readFilePopulateTags("data/blog/Bot" + i, start , end, ngram);
-			obj.readFilePopulateTags("data/blog/Bot" + j, start , end, ngram);
+			obj.readFilePopulateTags("data/tweet/TwBot" + i, start , end, ngram);
+			obj.readFilePopulateTags("data/tweet/TwBot" + j, start , end, ngram);
 			
 			FileWriter outTrainFile = new FileWriter(constObj.getTrainFilePrefixPos() + "pos." + i + "_" + j + ".trn");
-			obj.genFile("data/blog/Bot" + i,outTrainFile,start, end, ngram);
+			obj.genFile("data/tweet/TwBot" + i,outTrainFile,start, end, ngram);
 			outTrainFile.close();
 			outTrainFile = new FileWriter(constObj.getTrainFilePrefixPos() + "pos." + i + "_" + j + ".trn",true);
-			obj.genFile("data/blog/Bot" + j,outTrainFile,start , end, ngram);
+			obj.genFile("data/tweet/TwBot" + j,outTrainFile,start , end, ngram);
 			outTrainFile.close();
 			
 		}

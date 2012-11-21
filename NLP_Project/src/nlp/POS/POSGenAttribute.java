@@ -52,7 +52,7 @@ public class POSGenAttribute {
 		Parser parserObj = new Parser();
 		parserObj.readFile(inFile);
 		data = parserObj.getData();
-		String fileNum = inFile.substring(13);
+		String fileNum = inFile.substring(16);
 
 		for(int i = start; i < end ; i++){
 			Map<Integer,Integer> frequencyHm = getFrequency(i, tagger, ngram);
