@@ -1,19 +1,20 @@
 package nlp.utilities;
 
 public class Constants {
-	private final int noOfBots = 20;
-	private final int n = 3;
+	private final int noOfBots = 8;
+	private final int n = 2;
 	private final int noOfCrossFolds = 5;
-	private final int authorDataLength = 200;
+	private final int authorDataLength = 2000;
 	private final String inputFilePrefixTweet = "data/tweet/TwBot";
 	private final String inputFilePrefixBlog = "data/blog/Bot";
-	private final String dataSetType = "blog";
-	private final String trainFilePrefixNgram = "train/" + dataSetType + "/ngram/";
-	private final String testFilePrefixNgram = "test/" + dataSetType + "/ngram/";
-	private final String trainFilePrefixBow = "train/" + dataSetType + "/bow/";
-	private final String testFilePrefixBow = "test/" + dataSetType + "/bow/";
-	private final String trainFilePrefixPos = "train/" + dataSetType + "/pos/";
-	private final String testFilePrefixPos = "test/" + dataSetType + "/pos/";
+	private final String dataSetType = "tweet";
+	private final String tempFilePrefix = "/media/Masters/temp/";
+	private final String trainFilePrefixNgram = tempFilePrefix + "train/" + dataSetType + "/ngram/";
+	private final String testFilePrefixNgram = tempFilePrefix + "test/" + dataSetType + "/ngram/";
+	private final String trainFilePrefixBow = tempFilePrefix + "train/" + dataSetType + "/bow/";
+	private final String testFilePrefixBow = tempFilePrefix + "test/" + dataSetType + "/bow/";
+	private final String trainFilePrefixPos = tempFilePrefix + "train/" + dataSetType + "/pos/";
+	private final String testFilePrefixPos = tempFilePrefix + "test/" + dataSetType + "/pos/";
 	
 	public int getNoOfBots() {
 		return noOfBots;

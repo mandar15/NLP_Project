@@ -21,8 +21,14 @@ public class NGramUtils {
 
 		int noOfBots = constants.getNoOfBots();
 		int authorDataLength = constants.getAuthorDataLength();
-
-		String fileNamePrefix = constants.getInputFilePrefixTweet();
+		String fileNamePrefix = "";
+		
+		if(constants.getDataSetType().equals("tweet")) {
+			fileNamePrefix = constants.getInputFilePrefixTweet();
+		}
+		else if(constants.getDataSetType().equals("blog")) {
+			fileNamePrefix = constants.getInputFilePrefixBlog();
+		}
 
 		bots = new Parser[noOfBots];
 		for (int i = 0; i < noOfBots; i++) {
@@ -69,7 +75,7 @@ public class NGramUtils {
 					String substr = data[i].substring(j, j + winSize);
 
 					/*
-					 * Put all the unique words in a document into Feture Vector The Hash set local keeps the track of
+					 * Put all the unique words in a document into Feature Vector The Hash set local keeps the track of
 					 * uniqueness
 					 */
 					if (!local.contains(substr)) {
@@ -93,7 +99,7 @@ public class NGramUtils {
 		int skipDataPosition = skipDataLength * testNo;
 		
 		String output = constants.getTrainFilePrefixNgram();
-		output += winSize + "." + (bot1 + 1) + "_" + (bot2 + 1) + ".trn";
+		output += winSize + "." + (testNo + 1) + "." + (bot1 + 1) + "_" + (bot2 + 1) + ".trn";
 		FileWriter trainingFileWriter = new FileWriter(output);
 		BufferedWriter trainingBufferedWriter = new BufferedWriter(trainingFileWriter);
 
@@ -168,7 +174,7 @@ public class NGramUtils {
 			String data[] = bots[bot1].getData();
 			
 			String output = constants.getTestFilePrefixNgram();
-			output += winSize + "." + (bot1 + 1) + "_" + (bot2 + 1) + ".tst";
+			output += winSize + "." + (testNo + 1) + "." + (bot1 + 1) + "_" + (bot2 + 1) + ".tst";
 			FileWriter testFileWriter = new FileWriter(output);
 			BufferedWriter testBufferedWriter = new BufferedWriter(testFileWriter);
 			
