@@ -20,6 +20,9 @@ public class POSGenAttribute {
 
 	public static ArrayList<String> attributes = new ArrayList<String>();
 	public static String data[] = null;
+	POSModel model = new POSModelLoader().load(new File("external_jars/en-pos-maxent.bin"));
+    POSTaggerME tagger = new POSTaggerME(model);
+    
 	//public static String fileNum;
 	
 	//public static Integer fileNum = 0;
@@ -50,9 +53,7 @@ public class POSGenAttribute {
 		parserObj.readFile(inFile);
 		data = parserObj.getData();
 		String fileNum = inFile.substring(13);
-		POSModel model = new POSModelLoader().load(new File("external_jars/en-pos-maxent.bin"));
-	    POSTaggerME tagger = new POSTaggerME(model);
-	    
+
 		for(int i = start; i < end ; i++){
 			Map<Integer,Integer> frequencyHm = getFrequency(i, tagger, ngram);
 			if(frequencyHm == null)

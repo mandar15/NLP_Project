@@ -9,15 +9,40 @@ public class PosMain {
 
 	public static void main(String args[]) throws IOException{
 		//genTwitterFiles(5, 0 , 400 , 500);
-		
+		genBlogData(30,0,500);
 		//genBlogData(5 , 0 , 160 , 200);	//for fold1
 		//genBlogData(5, 200);		//for other folds
 		
-		genFoldData(5, 1 , 0 , 0 , 400 , 0 , 400 , 500);
-		genFoldData(5, 2 , 100 , 0 , 500 , 0 , 0 , 100);
-		genFoldData(5, 3 , 200 , 0 , 500 , 100 , 100 , 200);
-		genFoldData(5, 4 , 300 , 0 , 500 , 200 , 200 , 300);
-		genFoldData(5, 5 , 400 , 0 , 500 , 300 , 300 , 400);
+		/*genFoldData(30, 1 , 0 , 0 , 400 , 0 , 400 , 500);
+		genFoldData(30, 2 , 100 , 0 , 500 , 0 , 0 , 100);
+		genFoldData(30, 3 , 200 , 0 , 500 , 100 , 100 , 200);
+		genFoldData(30, 4 , 300 , 0 , 500 , 200 , 200 , 300);
+		genFoldData(30, 5 , 400 , 0 , 500 , 300 , 300 , 400);*/
+	}
+
+private static void genBlogData(int botNum, int start, int end) throws IOException {
+		// TODO Auto-generated method stub
+	Constants constObj = new Constants();
+	
+	POSGenAttribute obj = new POSGenAttribute();
+	int ngram = 2;
+	
+	for(int i =1; i <= botNum; i++){
+		for(int j = i + 1; j <= botNum; j++){
+			if( i == j)
+				continue;
+			obj.readFilePopulateTags("data/blog/Bot" + i, start , end, ngram);
+			obj.readFilePopulateTags("data/blog/Bot" + j, start , end, ngram);
+			
+			FileWriter outTrainFile = new FileWriter(constObj.getTrainFilePrefixPos() + "pos." + i + "_" + j + ".trn");
+			obj.genFile("data/blog/Bot" + i,outTrainFile,start, end, ngram);
+			outTrainFile.close();
+			outTrainFile = new FileWriter(constObj.getTrainFilePrefixPos() + "pos." + i + "_" + j + ".trn",true);
+			obj.genFile("data/blog/Bot" + j,outTrainFile,start , end, ngram);
+			outTrainFile.close();
+			
+		}
+	}
 	}
 
 /*	public static void genBlogData(int botNum, int start, int trainEnd, int end) throws IOException {

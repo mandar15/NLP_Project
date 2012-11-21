@@ -17,8 +17,8 @@ my $accuracy = ">".$n.".accuracy";
 my $noOfBots = $ARGV[1];
 my $trainPath = "../classifier/./train";
 my $predictPath = "../classifier/./predict";
-my $trainDataPath = "../train/blog/bow/";
-my $testDataPath = "../test/blog/bow/"; 
+my $trainDataPath = "../train/blog/pos/";
+my $testDataPath = "../test/blog/pos/"; 
 
 open(ACCURACY, $accuracy);
 
