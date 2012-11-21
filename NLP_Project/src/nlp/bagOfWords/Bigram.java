@@ -24,6 +24,11 @@ public class Bigram {
 	
 	public Bigram() throws FileNotFoundException, IOException
 	{
+		features = new HashMap<String, Integer>();
+		document_frequency = new HashMap<Integer, Integer>();
+		ngt = new NGramTokenizer();
+
+		constants = new Constants();
 		String fileNamePrefix = "null";
 		int noOfBots = constants.getNoOfBots();
 		int authorDataLength = constants.getAuthorDataLength();
@@ -222,6 +227,7 @@ public class Bigram {
 		int noofLines = constants.getAuthorDataLength();
 		int i,j, k, skip_start, cross_val = constants.getNoOfCrossFolds(), interval = noofLines/cross_val; 
 		int noofBots = constants.getNoOfBots();
+		boolean flag = true;
 		for(i=1;i<noofBots;i++)
 		{
 			for(j = i+1; j<=noofBots; j++)
@@ -231,7 +237,13 @@ public class Bigram {
 					generate_training_data(i,j,k,skip_start, interval);
 					generate_testing_data(i,j,k,skip_start, interval);
 					generate_testing_data(j,i,k,skip_start, interval);
-						
+					
+//					if(flag)
+//					{
+//						System.out.println(features.keySet().toString());
+//						flag=false;
+//					}
+					
 					features.clear();
 					document_frequency.clear();
 				}
