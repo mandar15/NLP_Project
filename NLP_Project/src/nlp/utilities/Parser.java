@@ -8,13 +8,15 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Parser {
-	private String data[]; 
+	private String data[];
+	private int dataSize = 500;
 	
 	public Parser() {
-		data = new String[500];
+		data = new String[dataSize];
 	}
 	
 	public Parser(int n) {
+		
 		data = new String[n];
 	}
 	
@@ -28,7 +30,7 @@ public class Parser {
 		DataInputStream fileDataInputStream = new DataInputStream(fileInputStream);
 		BufferedReader fileBufferredReader =  new BufferedReader(new InputStreamReader(fileDataInputStream));		
 
-		for(int i = 0; (line = fileBufferredReader.readLine()) != null; i++) {
+		for(int i = 0; (line = fileBufferredReader.readLine()) != null && i < dataSize; i++) {
 			data[i] = line.toLowerCase();
 		}
 		

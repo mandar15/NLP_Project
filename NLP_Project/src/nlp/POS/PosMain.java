@@ -57,37 +57,37 @@ Constants constObj = new Constants();
 	public static void genFoldData(int botNum, int fold, int trainStart1, int trainStart2, int trainEnd1, int trainEnd2, int testStart, int testEnd) throws IOException{
 		
 		Constants constObj = new Constants();
-		
+		int ngram = 2;
 		POSGenAttribute obj = new POSGenAttribute();
 		for(int i =1; i <= botNum; i++){
 
 			for(int j = i + 1; j <= botNum; j++){
 				if( i == j)
 					continue;
-				obj.readFilePopulateTags("data/blog/Bot" + i, trainStart1 , trainEnd1);
-				obj.readFilePopulateTags("data/blog/Bot" + i, trainStart2 , trainEnd2);
-				obj.readFilePopulateTags("data/blog/Bot" + j, trainStart1 , trainEnd1);
-				obj.readFilePopulateTags("data/blog/Bot" + j, trainStart2 , trainEnd2);
+				obj.readFilePopulateTags("data/blog/Bot" + i, trainStart1 , trainEnd1,ngram);
+				obj.readFilePopulateTags("data/blog/Bot" + i, trainStart2 , trainEnd2,ngram);
+				obj.readFilePopulateTags("data/blog/Bot" + j, trainStart1 , trainEnd1,ngram);
+				obj.readFilePopulateTags("data/blog/Bot" + j, trainStart2 , trainEnd2,ngram);
 				
 				FileWriter outTrainFile = new FileWriter(constObj.getTrainFilePrefixPos() + "pos." + fold + "." + i + "_" + j + ".trn");
-				obj.genFile("data/blog/Bot" + i,outTrainFile,trainStart1, trainEnd1);
+				obj.genFile("data/blog/Bot" + i,outTrainFile,trainStart1, trainEnd1,ngram);
 				outTrainFile.close();
 				outTrainFile = new FileWriter(constObj.getTrainFilePrefixPos() + "pos." + fold + "." + i + "_" + j + ".trn",true);
-				obj.genFile("data/blog/Bot" + j,outTrainFile,trainStart1 , trainEnd1);
+				obj.genFile("data/blog/Bot" + j,outTrainFile,trainStart1 , trainEnd1,ngram);
 				outTrainFile.close();
 				outTrainFile = new FileWriter(constObj.getTrainFilePrefixPos() + "pos." + fold + "." + i + "_" + j + ".trn",true);
-				obj.genFile("data/blog/Bot" + i,outTrainFile,trainStart2 , trainEnd2);
+				obj.genFile("data/blog/Bot" + i,outTrainFile,trainStart2 , trainEnd2,ngram);
 				outTrainFile.close();
 				outTrainFile = new FileWriter(constObj.getTrainFilePrefixPos() + "pos." + fold + "." + i + "_" + j + ".trn",true);
-				obj.genFile("data/blog/Bot" + j,outTrainFile,trainStart2 , trainEnd2);
+				obj.genFile("data/blog/Bot" + j,outTrainFile,trainStart2 , trainEnd2,ngram);
 				outTrainFile.close();				
 				
 				FileWriter outTestFile = new FileWriter(constObj.getTestFilePrefixPos() + "pos." + fold + "." + i + "_" + j + ".tst");
-				obj.genFile("data/blog/Bot" + i,outTestFile, testStart, testEnd);
+				obj.genFile("data/blog/Bot" + i,outTestFile, testStart, testEnd,ngram);
 				outTestFile.close();
 				
 				FileWriter outTestFile2 = new FileWriter(constObj.getTestFilePrefixPos() + "pos." + fold + "." + j + "_" + i + ".tst");
-				obj.genFile("data/blog/Bot" + j, outTestFile2, testStart, testEnd);
+				obj.genFile("data/blog/Bot" + j, outTestFile2, testStart, testEnd,ngram);
 				outTestFile2.close();
 				//obj.getAttributesList().clear();
 			}
