@@ -9,10 +9,10 @@ import java.io.InputStreamReader;
 
 public class Parser {
 	private String data[];
-	private int dataSize = 500;
+	private Constants constants = new Constants();
 	
 	public Parser() {
-		data = new String[dataSize];
+		data = new String[constants.getAuthorDataLength()];
 	}
 	
 	public Parser(int n) {
@@ -28,9 +28,11 @@ public class Parser {
 		String line;
 		FileInputStream fileInputStream = new FileInputStream(fileName);
 		DataInputStream fileDataInputStream = new DataInputStream(fileInputStream);
-		BufferedReader fileBufferredReader =  new BufferedReader(new InputStreamReader(fileDataInputStream));		
+		BufferedReader fileBufferredReader =  new BufferedReader(new InputStreamReader(fileDataInputStream));
+		
 
-		for(int i = 0; (line = fileBufferredReader.readLine()) != null && i < dataSize; i++) {
+		for(int i = 0; i < constants.getAuthorDataLength(); i++) {
+			line = fileBufferredReader.readLine();
 			data[i] = line.toLowerCase();
 		}
 		
