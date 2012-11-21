@@ -73,13 +73,23 @@ public class MandyBOW {
         TokenizerModel tModel = new TokenizerModel(model);
         Tokenizer tokenizer = new TokenizerME(tModel);
 
+        System.out.println("Length: "+data.length);
 		for (int i = 0; i < data.length;) {
 			if (!dataSkipped && i == skipDataPosition) {
 				i += skipDataLength;
 				dataSkipped = true;
 			}
 			else {
-				String[] tokens = tokenizer.tokenize(data[i]);
+				String[] tokens;
+				try
+				{
+				tokens = tokenizer.tokenize(data[i]);
+				}
+				catch(NullPointerException e)
+				{
+					System.out.println("i: "+i);
+					break;
+				}
 				Set<String> local = new HashSet<String>();
 				
 				for(String token : tokens) {
@@ -111,7 +121,7 @@ public class MandyBOW {
         Tokenizer tokenizer = new TokenizerME(tModel);
 		
 		String output = constants.getTrainFilePrefixBow();
-		output += "bow." + (bot1 + 1) + "_" + (bot2 + 1) + ".trn";
+		output += "bow." + testNo + "." + (bot1 + 1) + "_" + (bot2 + 1) + ".trn";
 		FileWriter trainingFileWriter = new FileWriter(output);
 		BufferedWriter trainingBufferedWriter = new BufferedWriter(trainingFileWriter);
 
@@ -175,7 +185,7 @@ public class MandyBOW {
 			String data[] = bots[bot1].getData();
 			
 			String output = constants.getTestFilePrefixBow();
-			output += "bow." + (bot1 + 1) + "_" + (bot2 + 1) + ".tst";
+			output += "bow." + testNo + "." + (bot1 + 1) + "_" + (bot2 + 1) + ".tst";
 			FileWriter testFileWriter = new FileWriter(output);
 			BufferedWriter testBufferedWriter = new BufferedWriter(testFileWriter);
 			
@@ -217,7 +227,7 @@ public class MandyBOW {
 			bot2 = bot1 - bot2;
 			bot1 = bot1 - bot2; 
 			
-			findPopularFeatures(tempFeatureVector, 10);
+			//findPopularFeatures(tempFeatureVector, 10);
 			
 			testBufferedWriter.close();
 		}
@@ -238,6 +248,25 @@ public class MandyBOW {
 		
 		for(Map.Entry<Integer, String> entry : popularFeatures.entrySet()) {
 			System.out.println(entry.getKey() + " " + entry.getValue());
+		}
+	}
+
+	public static void main(String args[])throws Exception
+	{
+		Constants constants = new Constants();
+		MandyBOW mandyBOW = new MandyBOW();
+		for(int test = 0; test <constants.getNoOfCrossFolds(); test++)
+		{
+		for(int i = 0; i < constants.getNoOfBots(); i++)
+		{
+			for(int j = i + 1; j < constants.getNoOfBots(); j++)
+			{
+				Map<String, Integer> featureVector = mandyBOW.generateFeatureVector(test, i, j);
+				mandyBOW.populateTrainingFile(featureVector, test, i, j);
+				mandyBOW.populateTestFile(featureVector, test, i, j);
+				System.out.println("Generated Files for Bot combo: (" + i + ", " + j + ")");
+			}
+		}
 		}
 	}
 }
