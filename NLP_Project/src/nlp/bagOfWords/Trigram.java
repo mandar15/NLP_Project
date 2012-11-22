@@ -1,5 +1,6 @@
 package nlp.bagOfWords;
 
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -39,7 +40,10 @@ public class Trigram {
 		{
 			fileNamePrefix = constants.getInputFilePrefixBlog();
 		}
-		
+		else if(constants.getDataSetType().equalsIgnoreCase("chats"))
+		{
+			fileNamePrefix = constants.getInputFilePrefixChat();
+		}
 		bots = new Parser[noOfBots];
 		for (int i = 0; i < noOfBots; i++) 
 		{
@@ -79,6 +83,22 @@ public class Trigram {
 		generate_feature_set(author1, output_file, start, interval);
 		
 		output_file.close();
+//		FileInputStream input_file = new FileInputStream(test_file);
+//		
+//		boolean flag = false;
+//		int c;
+//		while((char)(c=input_file.read() != '\0')
+//		{
+//			flag = true;
+//		}
+//		
+//		if(flag)
+//		{
+//			output_file = new FileOutputStream(test_file);
+//			String line = author1+" 1:0\n";
+//			output_file.write(line.getBytes());
+//			output_file.close();
+//		}
 	}
 	
 	void generate_feature_set(int author, FileOutputStream output_file, int start, int offset) throws Exception
@@ -88,7 +108,6 @@ public class Trigram {
 		int i, feature_number, feature_frequency;
 		
 		HashMap<Integer,Integer> feature_vector = new HashMap<Integer, Integer>();
-		StringTokenizer tokens;
 		
 		for(i=start; i<start+offset; i++)
 		{
