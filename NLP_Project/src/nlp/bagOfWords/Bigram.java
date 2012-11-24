@@ -40,7 +40,10 @@ public class Bigram {
 		{
 			fileNamePrefix = constants.getInputFilePrefixBlog();
 		}
-		
+		else if(constants.getDataSetType().equalsIgnoreCase("chats"))
+		{
+			fileNamePrefix = constants.getInputFilePrefixChat();
+		}
 		bots = new Parser[noOfBots];
 		for (int i = 0; i < noOfBots; i++) 
 		{
@@ -243,7 +246,7 @@ public class Bigram {
 //						System.out.println(features.keySet().toString());
 //						flag=false;
 //					}
-					
+					System.out.println(features.size());
 					features.clear();
 					document_frequency.clear();
 				}
@@ -258,8 +261,7 @@ public class Bigram {
 		// TODO Auto-generated method stub
 		Bigram b = new Bigram();
 		b.generate_data();
-
-
+		System.out.println("DONE");
 	}
 
 }

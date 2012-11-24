@@ -43,6 +43,10 @@ public class BagOfWords {
 		{
 			fileNamePrefix = constants.getInputFilePrefixBlog();
 		}
+		else if(constants.getDataSetType().equalsIgnoreCase("chats"))
+		{
+			fileNamePrefix = constants.getInputFilePrefixChat();
+		}
 
 		bots = new Parser[noOfBots];
 		for (int i = 0; i < noOfBots; i++) 
@@ -221,7 +225,7 @@ public class BagOfWords {
 			feature_number = Integer.parseInt(features.next().toString());
 			feature_frequency = Integer.parseInt(feature_vector.get(feature_number).toString());
 			
-			tfidf = feature_frequency / Double.parseDouble(document_frequency.get(feature_number).toString());
+			tfidf = feature_frequency;// / Double.parseDouble(document_frequency.get(feature_number).toString());
 			line = line + " " + feature_number + ":" + tfidf;
 			flag = true;
 		}
@@ -232,8 +236,9 @@ public class BagOfWords {
 		}
 	}
 
-	void generate_data(int noofLines) throws Exception
+	void generate_data() throws Exception
 	{
+		int noofLines = constants.getAuthorDataLength();
 		int i,j, k, skip_start, cross_val = constants.getNoOfCrossFolds(), interval = noofLines/cross_val; 
 		int noofBots = constants.getNoOfBots();
 		for(i=1;i<noofBots;i++)
@@ -245,7 +250,15 @@ public class BagOfWords {
 					generate_training_data(i,j,k,skip_start, interval);
 					generate_testing_data(i,j,k,skip_start, interval);
 					generate_testing_data(j,i,k,skip_start, interval);
-						
+
+//					System.out.println(features.size());
+//					Set set = features.keySet();
+//					Iterator it = set.iterator();
+//					
+//					while(it.hasNext())
+//					{
+//						System.out.println(it.next().toString());
+//					}
 					features.clear();
 					document_frequency.clear();
 				}
@@ -260,8 +273,8 @@ public class BagOfWords {
 //		bow.generate_testing_data(1,2);
 //		bow.generate_features();
 		
-		bow.generate_data(200);
-		
+		bow.generate_data();
+		System.out.println("DONE");
 
 	}
 

@@ -1,14 +1,15 @@
 package nlp.utilities;
 
 public class Constants {
-	private final int noOfBots = 8;
+	private final int noOfBots = 30;
 	private final int n = 2;
 	private final int noOfCrossFolds = 5;
 	private final int authorDataLength = 2000;
 	private final String inputFilePrefixTweet = "data/tweet/TwBot";
 	private final String inputFilePrefixBlog = "data/blog/Bot";
+	private final String inputFilePrefixChat = "data/chats/Bot";
 	private final String dataSetType = "tweet";
-	private final String tempFilePrefix = "/media/Masters/temp/";
+	private final String tempFilePrefix = "/media/DEF8DBF5F8DBC9C3/NLP/";
 	private final String trainFilePrefixNgram = tempFilePrefix + "train/" + dataSetType + "/ngram/";
 	private final String testFilePrefixNgram = tempFilePrefix + "test/" + dataSetType + "/ngram/";
 	private final String trainFilePrefixBow = tempFilePrefix + "train/" + dataSetType + "/bow/";
@@ -38,6 +39,10 @@ public class Constants {
 	
 	public String getInputFilePrefixBlog() {
 		return inputFilePrefixBlog;
+	}
+	
+	public String getInputFilePrefixChat() {
+		return inputFilePrefixChat;
 	}
 	
 	public String getTrainFilePrefixNgram() {

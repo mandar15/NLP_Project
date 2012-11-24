@@ -16,16 +16,19 @@ import opennlp.tools.tokenize.Tokenizer;
 import opennlp.tools.tokenize.TokenizerME;
 import opennlp.tools.tokenize.TokenizerModel;
 import opennlp.tools.util.InvalidFormatException;
+import weka.core.tokenizers.NGramTokenizer;
 
 import nlp.utilities.Constants;
 import nlp.utilities.Parser;
 
-public class MandyBOW {
+public class MandyTrigram {
 	private Parser bots[];
 	private Constants constants;
+	private NGramTokenizer ngt;
 	
-	public MandyBOW() throws FileNotFoundException, IOException {
+	public MandyTrigram() throws FileNotFoundException, IOException {
 		constants = new Constants();
+		ngt = new NGramTokenizer();
 
 		int noOfBots = constants.getNoOfBots();
 		int authorDataLength = constants.getAuthorDataLength();
@@ -73,9 +76,9 @@ public class MandyBOW {
 		int skipDataPosition = skipDataLength * testNo;
 		boolean dataSkipped = false;
 		
-        InputStream model = new FileInputStream("binaries/en-token.bin");
-        TokenizerModel tModel = new TokenizerModel(model);
-        Tokenizer tokenizer = new TokenizerME(tModel);
+//        InputStream model = new FileInputStream("binaries/en-token.bin");
+//        TokenizerModel tModel = new TokenizerModel(model);
+//        Tokenizer tokenizer = new TokenizerME(tModel);
 
 		for (int i = 0; i < data.length;) {
 			if (!dataSkipped && i == skipDataPosition) {
@@ -83,10 +86,12 @@ public class MandyBOW {
 				dataSkipped = true;
 			}
 			else {
-				String[] tokens;
+//				String[] tokens;
 				try
 				{
-				tokens = tokenizer.tokenize(data[i]);
+					ngt.setNGramMaxSize(3);
+					ngt.setNGramMinSize(3);
+					ngt.tokenize(data[i]);
 				}
 				catch(NullPointerException e)
 				{
@@ -94,12 +99,13 @@ public class MandyBOW {
 					break;
 				}
 				Set<String> local = new HashSet<String>();
-				
-				for(String token : tokens) {
+				String token;
+				while(ngt.hasMoreElements()) {
 					/*
 					 * Put all the unique words in a document into Feature Vector The Hash set local keeps the track of
 					 * uniqueness
 					 */
+					token = ngt.nextElement().toString();
 					if (!local.contains(token)) {
 						int count = 1;
 						local.add(token);
@@ -124,7 +130,7 @@ public class MandyBOW {
         Tokenizer tokenizer = new TokenizerME(tModel);
 		
 		String output = constants.getTrainFilePrefixBow();
-		output += "bow." + testNo + "." + (bot1 + 1) + "_" + (bot2 + 1) + ".trn";
+		output += "trigram/trigram." + testNo + "." + (bot1 + 1) + "_" + (bot2 + 1) + ".trn";
 		FileWriter trainingFileWriter = new FileWriter(output);
 		BufferedWriter trainingBufferedWriter = new BufferedWriter(trainingFileWriter);
 
@@ -138,7 +144,7 @@ public class MandyBOW {
 			for (String feature : features) {
 				tempFeatureVector.put(feature, 0);
 			}
-			
+			String token;
 			boolean dataSkipped = false;		
 			for (int i = 0; i < data.length;) {
 				if (!dataSkipped && i == skipDataPosition) {
@@ -146,8 +152,11 @@ public class MandyBOW {
 					dataSkipped = true;
 				}
 				else {
-					String[] tokens = tokenizer.tokenize(data[i]);
-					for(String token : tokens) {
+					ngt.setNGramMaxSize(3);
+					ngt.setNGramMinSize(3);
+					ngt.tokenize(data[i]);
+					while(ngt.hasMoreElements()) {
+						token = ngt.nextElement().toString();
 						int count = tempFeatureVector.get(token);
 						count++;
 						tempFeatureVector.put(token, count);
@@ -190,17 +199,22 @@ public class MandyBOW {
 			String data[] = bots[bot1].getData();
 			
 			String output = constants.getTestFilePrefixBow();
-			output += "bow." + testNo + "." + (bot1 + 1) + "_" + (bot2 + 1) + ".tst";
+			output += "trigram/trigram." + testNo + "." + (bot1 + 1) + "_" + (bot2 + 1) + ".tst";
 			FileWriter testFileWriter = new FileWriter(output);
 			BufferedWriter testBufferedWriter = new BufferedWriter(testFileWriter);
 			
 			for (String feature : features) {
 				tempFeatureVector.put(feature, 0);
 			}
+			String token;
 			
 			for(int i = testDataPositionStart; i < testDataPositionEnd; i++) {
-				String tokens[] = tokenizer.tokenize(data[i]);
-				for(String token : tokens) {
+				ngt.setNGramMaxSize(3);
+				ngt.setNGramMinSize(3);
+				ngt.tokenize(data[i]);
+				
+				while(ngt.hasMoreElements()) {
+					token = ngt.nextElement().toString();
 					int count = 0;
 //					if (tempFeatureVector.get(token) == null) {
 //						count = tempFeatureVector.get("Unknown");
@@ -265,26 +279,26 @@ public class MandyBOW {
 	public static void main(String args[])throws Exception
 	{
 		Constants constants = new Constants();
-		MandyBOW mandyBOW = new MandyBOW();
+		MandyTrigram MandyTrigram = new MandyTrigram();
 		for(int test = 0; test <1/*constants.getNoOfCrossFolds()*/; test++)
 		{
 		for(int i = 0; i < constants.getNoOfBots(); i++)
 		{
 			for(int j = i + 1; j < constants.getNoOfBots(); j++)
 			{
-				Map<String, Integer> featureVector = mandyBOW.generateFeatureVector(test, i, j);
-				mandyBOW.populateTrainingFile(featureVector, test, i, j);
-				mandyBOW.populateTestFile(featureVector, test, i, j);
+				Map<String, Integer> featureVector = MandyTrigram.generateFeatureVector(test, i, j);
+				MandyTrigram.populateTrainingFile(featureVector, test, i, j);
+				MandyTrigram.populateTestFile(featureVector, test, i, j);
 				System.out.println(featureVector.size());
 				System.out.println("Generated Files for Bot combo: (" + i + ", " + j + ")");
-//				
-//				Set set = featureVector.keySet();
-//				Iterator it = set.iterator();
-//				
-//				while(it.hasNext())
-//				{
-//					System.out.println(it.next().toString());
-//				}
+				
+				Set set = featureVector.keySet();
+				Iterator it = set.iterator();
+				
+				while(it.hasNext())
+				{
+					System.out.println(it.next().toString());
+				}
 
 			}
 		}
