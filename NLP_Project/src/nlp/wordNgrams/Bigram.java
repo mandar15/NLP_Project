@@ -1,32 +1,33 @@
-package nlp.bagOfWords;
+/*
+ * This class generates the bigram features.
+ */
+
+package nlp.wordNgrams;
 
 import java.io.BufferedWriter;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
-
-import opennlp.tools.tokenize.Tokenizer;
-import opennlp.tools.tokenize.TokenizerME;
-import opennlp.tools.tokenize.TokenizerModel;
 import opennlp.tools.util.InvalidFormatException;
 import weka.core.tokenizers.NGramTokenizer;
 
 import nlp.utilities.Constants;
 import nlp.utilities.Parser;
 
-public class MandyTrigram {
+public class Bigram {
 	private Parser bots[];
 	private Constants constants;
 	private NGramTokenizer ngt;
 	
-	public MandyTrigram() throws FileNotFoundException, IOException {
+	/*
+	 * Initializing parameters required for computation of the features
+	 * includes number of authors, the data set, total lines in the files.
+	 */
+	public Bigram() throws FileNotFoundException, IOException {
 		constants = new Constants();
 		ngt = new NGramTokenizer();
 
@@ -56,29 +57,38 @@ public class MandyTrigram {
 		}
 	}
 
-
+	/*
+	 * generateFeatureVector generates the unique bigram tokens from the data file and stores them into a map.
+	 * This Map<String, Integer> stores <bigram token, document frequency> pairs.
+	 * Output: Map<String, Integer>
+	 * Input:
+	 * testNo: this is for 5 fold cross validation to identify between the test and train data.
+	 * bot1: the first author
+	 * bot2: the second author
+	 */
 	public Map<String, Integer> generateFeatureVector(int testNo, int bot1, int bot2) throws InvalidFormatException, IOException {
 		// Keeps a track of features and the corresponding document frequency
 		Map<String, Integer> featureVector = new HashMap<String, Integer>();
 
 		String data[] = bots[bot1].getData();
 		populateFeatureHash(featureVector, data, testNo);
-		//System.out.println("Feature Vector =>" + featureVector.size());
 		data = bots[bot2].getData();
+		// computes the document frequency.
 		populateFeatureHash(featureVector, data, testNo);
-		//System.out.println("Feature Vector =>" + featureVector.size());
-		//featureVector.put("Unknown", 0);
 		return featureVector;
 	}
 	
+	/*
+	 * populateFeatureHash generates the feature and their corresponding document frequency.
+	 * Input:
+	 * Map: the feature vector - which holds all the unique tokens.
+	 * data: the data whose feature vector is to be generated.
+	 * testNo: for cross fold validation.
+	 */
 	private void populateFeatureHash(Map<String, Integer> featureVector, String data[], int testNo) throws InvalidFormatException, IOException {
 		int skipDataLength = constants.getAuthorDataLength() / constants.getNoOfCrossFolds();
 		int skipDataPosition = skipDataLength * testNo;
 		boolean dataSkipped = false;
-		
-//        InputStream model = new FileInputStream("binaries/en-token.bin");
-//        TokenizerModel tModel = new TokenizerModel(model);
-//        Tokenizer tokenizer = new TokenizerME(tModel);
 
 		for (int i = 0; i < data.length;) {
 			if (!dataSkipped && i == skipDataPosition) {
@@ -86,11 +96,13 @@ public class MandyTrigram {
 				dataSkipped = true;
 			}
 			else {
-//				String[] tokens;
 				try
 				{
-					ngt.setNGramMaxSize(3);
-					ngt.setNGramMinSize(3);
+					/*
+					 * the NGramTokenizer object tokenizes the line into bigrams. 
+					 */
+					ngt.setNGramMaxSize(2);
+					ngt.setNGramMinSize(2);
 					ngt.tokenize(data[i]);
 				}
 				catch(NullPointerException e)
@@ -102,8 +114,9 @@ public class MandyTrigram {
 				String token;
 				while(ngt.hasMoreElements()) {
 					/*
-					 * Put all the unique words in a document into Feature Vector The Hash set local keeps the track of
-					 * uniqueness
+					 * Put all the unique bigram tokens in a document into Feature Vector 
+					 * The Hash set local keeps the track of uniqueness
+					 * basically the document frequency of the given token.
 					 */
 					token = ngt.nextElement().toString();
 					if (!local.contains(token)) {
@@ -121,16 +134,21 @@ public class MandyTrigram {
 		}
 	}
 	
+	/*
+	 * populateTrainingFile generates the feature vector for the training files.
+	 * Input:
+	 * Map: It holds all the unique features of the training data set.
+	 * testNo: Used for cross fold validation.
+	 * bot1: the first author
+	 * bot2: the second author  
+	 */
 	public void populateTrainingFile(Map<String, Integer> featureVector, int testNo, int bot1, int bot2) throws IOException {
 		int skipDataLength = constants.getAuthorDataLength() / constants.getNoOfCrossFolds();
 		int skipDataPosition = skipDataLength * testNo;
 		
-        InputStream model = new FileInputStream("binaries/en-token.bin");
-        TokenizerModel tModel = new TokenizerModel(model);
-        Tokenizer tokenizer = new TokenizerME(tModel);
-		
+        // generating the path to store the output files.
 		String output = constants.getTrainFilePrefixBow();
-		output += "trigram/trigram." + testNo + "." + (bot1 + 1) + "_" + (bot2 + 1) + ".trn";
+		output += "bigram/bigram." + testNo + "." + (bot1 + 1) + "_" + (bot2 + 1) + ".trn";
 		FileWriter trainingFileWriter = new FileWriter(output);
 		BufferedWriter trainingBufferedWriter = new BufferedWriter(trainingFileWriter);
 
@@ -152,8 +170,12 @@ public class MandyTrigram {
 					dataSkipped = true;
 				}
 				else {
-					ngt.setNGramMaxSize(3);
-					ngt.setNGramMinSize(3);
+					
+					/*
+					 * tokenized into bigrams.
+					 */
+					ngt.setNGramMaxSize(2);
+					ngt.setNGramMinSize(2);
 					ngt.tokenize(data[i]);
 					while(ngt.hasMoreElements()) {
 						token = ngt.nextElement().toString();
@@ -165,6 +187,11 @@ public class MandyTrigram {
 					trainingBufferedWriter.write((bot1 + 1) + "");
 					int k = 0;
 					double denom = 1.0;
+					
+					/*
+					 * generates the features here and writes them back into the training file
+					 * the feature value is computes as the Tf * Idf.
+					 */
 					for (Map.Entry<String, Integer> entry : tempFeatureVector.entrySet()) {
 						k++;
 						if (entry.getValue() != 0) {
@@ -180,7 +207,15 @@ public class MandyTrigram {
 		}
 		trainingBufferedWriter.close();
 	}
-	
+
+	/*
+	 * populateTestFile generates the feature vector for the test files.
+	 * Input:
+	 * Map: It holds all the unique features of the training data set.
+	 * testNo: Used for cross fold validation.
+	 * bot1: the first author
+	 * bot2: the second author  
+	 */
 	public void populateTestFile(Map<String, Integer> featureVector, int testNo, int bot1, int bot2) throws IOException {
 		int testDataLength = constants.getAuthorDataLength() / constants.getNoOfCrossFolds();
 		int testDataPositionStart = testDataLength * testNo;
@@ -189,17 +224,14 @@ public class MandyTrigram {
 		Map<String, Integer> tempFeatureVector = new HashMap<String, Integer>();
 		Set<String> features = featureVector.keySet();
 
-        InputStream model = new FileInputStream("binaries/en-token.bin");
-        TokenizerModel tModel = new TokenizerModel(model);
-        Tokenizer tokenizer = new TokenizerME(tModel);
-
 		int cycles = 2;
 		while(cycles > 0) {
 			cycles--;
 			String data[] = bots[bot1].getData();
-			
+
+			//generates the path to store the test files.
 			String output = constants.getTestFilePrefixBow();
-			output += "trigram/trigram." + testNo + "." + (bot1 + 1) + "_" + (bot2 + 1) + ".tst";
+			output += "bigram/bigram." + testNo + "." + (bot1 + 1) + "_" + (bot2 + 1) + ".tst";
 			FileWriter testFileWriter = new FileWriter(output);
 			BufferedWriter testBufferedWriter = new BufferedWriter(testFileWriter);
 			
@@ -209,23 +241,18 @@ public class MandyTrigram {
 			String token;
 			
 			for(int i = testDataPositionStart; i < testDataPositionEnd; i++) {
-				ngt.setNGramMaxSize(3);
-				ngt.setNGramMinSize(3);
+				
+				/*
+				 * tokenized into bigrams.
+				 */
+				ngt.setNGramMaxSize(2);
+				ngt.setNGramMinSize(2);
 				ngt.tokenize(data[i]);
 				
 				while(ngt.hasMoreElements()) {
 					token = ngt.nextElement().toString();
 					int count = 0;
-//					if (tempFeatureVector.get(token) == null) {
-//						count = tempFeatureVector.get("Unknown");
-//						token = "Unknown";
-//					}
-//					else {
-//						count = tempFeatureVector.get(token);
-//					}
-//					count++;
-//
-//					tempFeatureVector.put(token, count);
+
 					if(tempFeatureVector.get(token) != null) {
                         count = tempFeatureVector.get(token);
                         count++;
@@ -237,6 +264,11 @@ public class MandyTrigram {
 				testBufferedWriter.write((bot1 + 1) + "");
 				int k = 0;
 				double denom = 1.0;
+				
+				/*
+				 * generates the features here and writes them back into the test file
+				 * the feature value is computes as the Tf * Idf.
+				 */
 				for (Map.Entry<String, Integer> entry : tempFeatureVector.entrySet()) {
 					k++;
 					if (entry.getValue() != 0) {
@@ -257,51 +289,28 @@ public class MandyTrigram {
 			testBufferedWriter.close();
 		}
 	}
-	
-	public void findPopularFeatures(Map<String, Integer> featureVector, int no) {
-		Map<Integer, String> popularFeatures = new HashMap<Integer, String>();
-		
-		for(Map.Entry<String, Integer> entry : featureVector.entrySet()) {
-			if(popularFeatures.containsKey(entry.getValue())) {
-				String value =  popularFeatures.get(entry.getValue()) + " " + entry.getKey();
-				popularFeatures.put(entry.getValue(), value);
-			}
-			else {
-				popularFeatures.put(entry.getValue(), entry.getKey());
-			}
-		}		
-		
-		for(Map.Entry<Integer, String> entry : popularFeatures.entrySet()) {
-			System.out.println(entry.getKey() + " " + entry.getValue());
-		}
-	}
 
 	public static void main(String args[])throws Exception
 	{
 		Constants constants = new Constants();
-		MandyTrigram MandyTrigram = new MandyTrigram();
-		for(int test = 0; test <1/*constants.getNoOfCrossFolds()*/; test++)
-		{
-		for(int i = 0; i < constants.getNoOfBots(); i++)
-		{
-			for(int j = i + 1; j < constants.getNoOfBots(); j++)
-			{
-				Map<String, Integer> featureVector = MandyTrigram.generateFeatureVector(test, i, j);
-				MandyTrigram.populateTrainingFile(featureVector, test, i, j);
-				MandyTrigram.populateTestFile(featureVector, test, i, j);
-				System.out.println(featureVector.size());
-				System.out.println("Generated Files for Bot combo: (" + i + ", " + j + ")");
-				
-				Set set = featureVector.keySet();
-				Iterator it = set.iterator();
-				
-				while(it.hasNext())
-				{
-					System.out.println(it.next().toString());
-				}
+		Bigram bigram = new Bigram();
+		
+		/*
+		 * Does the 5 fold cross validation along with the pair wise computation of the authors.
+		 */
+		for (int test = 0; test < constants.getNoOfCrossFolds(); test++) {
+			for (int i = 0; i < constants.getNoOfBots(); i++) {
+				for (int j = i + 1; j < constants.getNoOfBots(); j++) {
+					Map<String, Integer> featureVector = bigram
+							.generateFeatureVector(test, i, j);
+					bigram.populateTrainingFile(featureVector, test, i, j);
+					bigram.populateTestFile(featureVector, test, i, j);
+					System.out.println(featureVector.size());
+					System.out.println("Generated Files for Bot combo: (" + i
+							+ ", " + j + ")");
 
+				}
 			}
-		}
 		}
 	}
 }

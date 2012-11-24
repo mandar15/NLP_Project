@@ -1,4 +1,4 @@
-package nlp.ngram;
+package nlp.characterNgrams;
 
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
@@ -16,6 +16,10 @@ public class NGramUtils {
 	private Parser bots[];
 	private Constants constants;
 
+	/*
+	 * Initializing parameters required for computation of the features
+	 * includes number of authors, the data set, total lines in the files.
+	 */
 	public NGramUtils() throws FileNotFoundException, IOException {
 		constants = new Constants();
 
@@ -29,7 +33,10 @@ public class NGramUtils {
 		else if(constants.getDataSetType().equals("blog")) {
 			fileNamePrefix = constants.getInputFilePrefixBlog();
 		}
-
+		else if(constants.getDataSetType().equals("chats")) {
+			fileNamePrefix = constants.getInputFilePrefixChat();
+		}
+		
 		bots = new Parser[noOfBots];
 		for (int i = 0; i < noOfBots; i++) {
 			bots[i] = new Parser(authorDataLength);
@@ -39,25 +46,34 @@ public class NGramUtils {
 		}
 	}
 
+	/*
+	 * generateFeatureVector generates the unique n-gram character level features
+	 * from the data files and stores them into a map.
+	 * This Map<String, Integer> stores <n-gram character token, document frequency> pairs.
+	 * Output: Map<String, Integer>
+	 * Input:
+	 * testNo: this is for 5 fold cross validation to identify between the test and train data.
+	 * bot1: the first author
+	 * bot2: the second author
+	 */
 	public Map<String, Integer> generateFeatureVector(int testNo, int bot1, int bot2) {
 		// Keeps a track of features and the corresponding document frequency
 		Map<String, Integer> featureVector = new HashMap<String, Integer>();
-
-		/*
-		 * for (int i = 0; i < bots.length; i++) { String data[] = bots[i].getData();
-		 * 
-		 * populateFeatureHash(featureVector, data, testNo); } featureVector.put("Unknown", 0);
-		 */
-		
 		String data[] = bots[bot1].getData();
 		populateFeatureHash(featureVector, data, testNo);
 		data = bots[bot2].getData();
 		populateFeatureHash(featureVector, data, testNo);
 		featureVector.put("Unknown", 0);
-
 		return featureVector;
 	}
 
+	/*
+	 * populateFeatureHash generates the features and their corresponding document frequency.
+	 * Input:
+	 * Map: the feature vector - which holds all the unique n-gram character level tokens.
+	 * data: the data whose feature vector is to be generated.
+	 * testNo: for cross fold validation.
+	 */
 	private void populateFeatureHash(Map<String, Integer> featureVector, String data[], int testNo) {
 		int winSize = constants.getN();
 		int skipDataLength = constants.getAuthorDataLength() / constants.getNoOfCrossFolds();
@@ -93,6 +109,14 @@ public class NGramUtils {
 		}
 	}
 	
+	/*
+	 * populateTrainingFile generates the feature vector for the training files.
+	 * Input:
+	 * Map: It holds all the unique n-gram character level tokens of the training data set.
+	 * testNo: Used for cross fold validation.
+	 * bot1: the first author
+	 * bot2: the second author  
+	 */
 	public void populateTrainingFile(Map<String, Integer> featureVector, int testNo, int bot1, int bot2) throws IOException {
 		int winSize = constants.getN();
 		int skipDataLength = constants.getAuthorDataLength() / constants.getNoOfCrossFolds();
@@ -137,6 +161,8 @@ public class NGramUtils {
 					
 					trainingBufferedWriter.write((bot1 + 1) + "");
 					int k = 0;
+					
+					// feature value is the raw frequency.
 					for (Map.Entry<String, Integer> entry : tempFeatureVector.entrySet()) {
 						k++;
 						if (entry.getValue() != 0) {
@@ -153,6 +179,14 @@ public class NGramUtils {
 		trainingBufferedWriter.close();
 	}
 	
+	/*
+	 * populateTestFile generates the feature vector for the test files.
+	 * Input:
+	 * Map: It holds all the unique n-gram character level tokens of the training data set.
+	 * testNo: Used for cross fold validation.
+	 * bot1: the first author
+	 * bot2: the second author  
+	 */
 	public void populateTestFile(Map<String, Integer> featureVector, int testNo, int bot1, int bot2) throws IOException {
 		int winSize = constants.getN();
 		int testDataLength = constants.getAuthorDataLength() / constants.getNoOfCrossFolds();
@@ -187,6 +221,10 @@ public class NGramUtils {
 					String substr = data[i].substring(j, j + winSize);
 
 					int count = 0;
+					/*
+					 * Increments the count of any unknown token encountered during the test.
+					 * Such tokens are not found in the train data set.
+					 */
 					if (tempFeatureVector.get(substr) == null) {
 						count = tempFeatureVector.get("Unknown");
 						substr = "Unknown";
@@ -220,97 +258,3 @@ public class NGramUtils {
 		}
 	}
 }
-
-/*
-	public void createTrainAndTestFiles(int testNo, Map<String, Integer> featureVector, int bot1, int bot2) throws IOException {
-		int winSize = constants.getN();
-		int testDataLength = constants.getAuthorDataLength() / constants.getNoOfCrossFolds();
-		int testDataPositionStart = testDataLength * testNo;
-		int testDataPositionEnd = testDataPositionStart + testDataLength;
-
-		Map<String, Integer> tempFeatureVector = new HashMap<String, Integer>();
-		Set<String> features = featureVector.keySet();
-		for (String feature : features) {
-			tempFeatureVector.put(feature, 0);
-		}
-		
-		
-		/*
-		 * File name Eg :: 2.1_2.trn & 2.1_2.tst
-		 * => n = 2 language model
-		 * => Trained with authors 1 and 2 & tested on author 1  
-		 
-		String output = constants.getTrainFilePrefixNgram();
-		output += winSize + "." + bot1 + "_" + bot2 + ".trn";
-		FileWriter trainingFileWriter = new FileWriter(output);
-		BufferedWriter trainingBufferedWriter = new BufferedWriter(trainingFileWriter);
-		
-		int cycles = 2;
-		while(cycles > 0) {
-			cycles--;
-			String data[] = bots[bot1].getData();
-			populateTrainingFile(featureVector, testNo, trainingBufferedWriter, bot1, bot2);
-			bot1 = bot2;
-		}
-		output = constants.getTestFilePrefixNgram() + winSize + "." + bot1 + "_" + bot2 + ".tst";
-		FileWriter testFileWriter = new FileWriter(output);
-		BufferedWriter testBufferedWriter = new BufferedWriter(testFileWriter);
-
-		testDataPositionStart
-			String data[] = bots[bot1].getData();
-
-			for (int j = 0; j < data.length; j++) {
-
-				// Get the value of Tf for the current document
-				for (int k = 0; k + winSize < data[j].length(); k++) {
-					String substr = data[j].substring(k, k + winSize);
-
-					int count = 0;
-					if (tempFeatureVector.get(substr) == null) {
-						count = tempFeatureVector.get("Unknown");
-					}
-					else {
-						count = tempFeatureVector.get(substr);
-					}
-					count++;
-
-					tempFeatureVector.put(substr, count);
-				}
-
-				if (j >= testDataPositionStart && j < testDataPositionEnd) {
-					// Generate the test file
-					testBufferedWriter.write((i + 1) + "");
-					int k = 0;
-					for (Map.Entry<String, Integer> entry : tempFeatureVector.entrySet()) {
-						k++;
-						if (entry.getValue() != 0) {
-							testBufferedWriter.write(" " + k + ":" + entry.getValue());
-						}
-					}
-					testBufferedWriter.write("\n");
-				}
-				else {
-					// Generate the training file
-					trainingBufferedWriter.write((i + 1) + "");
-					int k = 0;
-					for (Map.Entry<String, Integer> entry : tempFeatureVector.entrySet()) {
-						k++;
-						if (entry.getValue() != 0) {
-							trainingBufferedWriter.write(" " + k + ":" + entry.getValue());
-						}
-					}
-					trainingBufferedWriter.write("\n");
-				}
-			}
-
-			// tempFeatureVector.clear();
-			for (String feature : features) {
-				tempFeatureVector.put(feature, 0);
-			}
-
-
-
-		trainingBufferedWriter.close();
-		testBufferedWriter.close();
-	}
-}*/

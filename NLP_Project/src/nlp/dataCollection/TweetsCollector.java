@@ -22,13 +22,13 @@ public class TweetsCollector {
 			// credentials:
 			ConfigurationBuilder cb = new ConfigurationBuilder();
 			cb.setDebugEnabled(true)
-					.setOAuthConsumerKey("PAgvdTSIKtk8Wz1ZpEGg")
+					.setOAuthConsumerKey("consumer key")
 					.setOAuthConsumerSecret(
-							"MKPx6zjUvRcXm0gYcOQlqPK3rDKmQwEdnpiVaRrKo")
+							"consumer secret")
 					.setOAuthAccessToken(
-							"466707061-EOa91lVaFilLkE3ZMZ4oTQzKKJoiYw9OKUpTZfw4")
+							"access token")
 					.setOAuthAccessTokenSecret(
-							"o5R5M0QoiFYkVWr0iTqXHNCpqqhY4gCltg0F6kg89Q");
+							"acess token secret");
 
 			TwitterFactory tf = new TwitterFactory(cb.build());
 			Twitter twitter = tf.getInstance();

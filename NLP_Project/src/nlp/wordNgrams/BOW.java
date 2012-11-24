@@ -1,4 +1,8 @@
-package nlp.bagOfWords;
+/*
+ * This class generates the unigram features.
+ */
+
+package nlp.wordNgrams;
 
 import java.io.BufferedWriter;
 import java.io.FileInputStream;
@@ -8,7 +12,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
@@ -20,17 +23,25 @@ import opennlp.tools.util.InvalidFormatException;
 import nlp.utilities.Constants;
 import nlp.utilities.Parser;
 
-public class MandyBOW {
+public class BOW {
 	private Parser bots[];
 	private Constants constants;
 	
-	public MandyBOW() throws FileNotFoundException, IOException {
+	/*
+	 * Initializing parameters required for computation of the features
+	 * includes number of authors, the data set, total lines in the files.
+	 */
+	public BOW() throws FileNotFoundException, IOException {
 		constants = new Constants();
 
 		int noOfBots = constants.getNoOfBots();
 		int authorDataLength = constants.getAuthorDataLength();
 
 		String fileNamePrefix = "";
+
+		/*
+		 * it chooses the data set.
+		 */
 		if(constants.getDataSetType().equalsIgnoreCase("tweet")) {
 			fileNamePrefix = constants.getInputFilePrefixTweet();
 		}
@@ -53,26 +64,42 @@ public class MandyBOW {
 		}
 	}
 
-
+	/*
+	 * generateFeatureVector generates the unique words from the data file and stores them into a map.
+	 * This Map<String, Integer> stores <word, document frequency> pairs.
+	 * Output: Map<String, Integer>
+	 * Input:
+	 * testNo: this is for 5 fold cross validation to identify between the test and train data.
+	 * bot1: the first author
+	 * bot2: the second author
+	 */
 	public Map<String, Integer> generateFeatureVector(int testNo, int bot1, int bot2) throws InvalidFormatException, IOException {
 		// Keeps a track of features and the corresponding document frequency
 		Map<String, Integer> featureVector = new HashMap<String, Integer>();
 
 		String data[] = bots[bot1].getData();
 		populateFeatureHash(featureVector, data, testNo);
-		//System.out.println("Feature Vector =>" + featureVector.size());
 		data = bots[bot2].getData();
+		// computes the document frequency.
 		populateFeatureHash(featureVector, data, testNo);
-		//System.out.println("Feature Vector =>" + featureVector.size());
-		//featureVector.put("Unknown", 0);
 		return featureVector;
 	}
 	
+	/*
+	 * populateFeatureHash generates the features and their corresponding document frequency.
+	 * Input:
+	 * Map: the feature vector - which holds all the unique tokens.
+	 * data: the data whose feature vector is to be generated.
+	 * testNo: for cross fold validation.
+	 */
 	private void populateFeatureHash(Map<String, Integer> featureVector, String data[], int testNo) throws InvalidFormatException, IOException {
 		int skipDataLength = constants.getAuthorDataLength() / constants.getNoOfCrossFolds();
 		int skipDataPosition = skipDataLength * testNo;
 		boolean dataSkipped = false;
 		
+		/*
+		 * helps to detect sentences and finally tokenize them into words.
+		 */
         InputStream model = new FileInputStream("binaries/en-token.bin");
         TokenizerModel tModel = new TokenizerModel(model);
         Tokenizer tokenizer = new TokenizerME(tModel);
@@ -86,7 +113,8 @@ public class MandyBOW {
 				String[] tokens;
 				try
 				{
-				tokens = tokenizer.tokenize(data[i]);
+					// data line is tokenized into words.
+					tokens = tokenizer.tokenize(data[i]);
 				}
 				catch(NullPointerException e)
 				{
@@ -97,8 +125,9 @@ public class MandyBOW {
 				
 				for(String token : tokens) {
 					/*
-					 * Put all the unique words in a document into Feature Vector The Hash set local keeps the track of
-					 * uniqueness
+					 * Put all the unique words in a document into Feature Vector 
+					 * The Hash set local keeps the track of uniqueness
+					 * gets the document frequency
 					 */
 					if (!local.contains(token)) {
 						int count = 1;
@@ -115,6 +144,14 @@ public class MandyBOW {
 		}
 	}
 	
+	/*
+	 * populateTrainingFile generates the feature vector for the training files.
+	 * Input:
+	 * Map: It holds all the unique features of the training data set.
+	 * testNo: Used for cross fold validation.
+	 * bot1: the first author
+	 * bot2: the second author  
+	 */
 	public void populateTrainingFile(Map<String, Integer> featureVector, int testNo, int bot1, int bot2) throws IOException {
 		int skipDataLength = constants.getAuthorDataLength() / constants.getNoOfCrossFolds();
 		int skipDataPosition = skipDataLength * testNo;
@@ -123,6 +160,7 @@ public class MandyBOW {
         TokenizerModel tModel = new TokenizerModel(model);
         Tokenizer tokenizer = new TokenizerME(tModel);
 		
+        // generating the path to store the output files.
 		String output = constants.getTrainFilePrefixBow();
 		output += "bow." + testNo + "." + (bot1 + 1) + "_" + (bot2 + 1) + ".trn";
 		FileWriter trainingFileWriter = new FileWriter(output);
@@ -146,6 +184,9 @@ public class MandyBOW {
 					dataSkipped = true;
 				}
 				else {
+					/*
+					 * tokenized into words.
+					 */
 					String[] tokens = tokenizer.tokenize(data[i]);
 					for(String token : tokens) {
 						int count = tempFeatureVector.get(token);
@@ -156,6 +197,10 @@ public class MandyBOW {
 					trainingBufferedWriter.write((bot1 + 1) + "");
 					int k = 0;
 					double denom = 1.0;
+					/*
+					 * generates the features here and writes them back into the training file
+					 * the feature value is computes as the Tf * Idf.
+					 */
 					for (Map.Entry<String, Integer> entry : tempFeatureVector.entrySet()) {
 						k++;
 						if (entry.getValue() != 0) {
@@ -172,6 +217,15 @@ public class MandyBOW {
 		trainingBufferedWriter.close();
 	}
 	
+
+	/*
+	 * populateTestFile generates the feature vector for the test files.
+	 * Input:
+	 * Map: It holds all the unique features of the training data set.
+	 * testNo: Used for cross fold validation.
+	 * bot1: the first author
+	 * bot2: the second author  
+	 */
 	public void populateTestFile(Map<String, Integer> featureVector, int testNo, int bot1, int bot2) throws IOException {
 		int testDataLength = constants.getAuthorDataLength() / constants.getNoOfCrossFolds();
 		int testDataPositionStart = testDataLength * testNo;
@@ -189,6 +243,7 @@ public class MandyBOW {
 			cycles--;
 			String data[] = bots[bot1].getData();
 			
+			// generates the path to store the test files.
 			String output = constants.getTestFilePrefixBow();
 			output += "bow." + testNo + "." + (bot1 + 1) + "_" + (bot2 + 1) + ".tst";
 			FileWriter testFileWriter = new FileWriter(output);
@@ -202,16 +257,6 @@ public class MandyBOW {
 				String tokens[] = tokenizer.tokenize(data[i]);
 				for(String token : tokens) {
 					int count = 0;
-//					if (tempFeatureVector.get(token) == null) {
-//						count = tempFeatureVector.get("Unknown");
-//						token = "Unknown";
-//					}
-//					else {
-//						count = tempFeatureVector.get(token);
-//					}
-//					count++;
-//
-//					tempFeatureVector.put(token, count);
 					if(tempFeatureVector.get(token) != null) {
                         count = tempFeatureVector.get(token);
                         count++;
@@ -223,6 +268,10 @@ public class MandyBOW {
 				testBufferedWriter.write((bot1 + 1) + "");
 				int k = 0;
 				double denom = 1.0;
+				/*
+				 * generates the features here and writes them back into the test file
+				 * the feature value is computes as the Tf * Idf.
+				 */
 				for (Map.Entry<String, Integer> entry : tempFeatureVector.entrySet()) {
 					k++;
 					if (entry.getValue() != 0) {
@@ -238,56 +287,31 @@ public class MandyBOW {
 			bot2 = bot1 - bot2;
 			bot1 = bot1 - bot2; 
 			
-			//findPopularFeatures(tempFeatureVector, 10);
-			
 			testBufferedWriter.close();
-		}
-	}
-	
-	public void findPopularFeatures(Map<String, Integer> featureVector, int no) {
-		Map<Integer, String> popularFeatures = new HashMap<Integer, String>();
-		
-		for(Map.Entry<String, Integer> entry : featureVector.entrySet()) {
-			if(popularFeatures.containsKey(entry.getValue())) {
-				String value =  popularFeatures.get(entry.getValue()) + " " + entry.getKey();
-				popularFeatures.put(entry.getValue(), value);
-			}
-			else {
-				popularFeatures.put(entry.getValue(), entry.getKey());
-			}
-		}		
-		
-		for(Map.Entry<Integer, String> entry : popularFeatures.entrySet()) {
-			System.out.println(entry.getKey() + " " + entry.getValue());
 		}
 	}
 
 	public static void main(String args[])throws Exception
 	{
 		Constants constants = new Constants();
-		MandyBOW mandyBOW = new MandyBOW();
-		for(int test = 0; test <1/*constants.getNoOfCrossFolds()*/; test++)
-		{
-		for(int i = 0; i < constants.getNoOfBots(); i++)
-		{
-			for(int j = i + 1; j < constants.getNoOfBots(); j++)
-			{
-				Map<String, Integer> featureVector = mandyBOW.generateFeatureVector(test, i, j);
-				mandyBOW.populateTrainingFile(featureVector, test, i, j);
-				mandyBOW.populateTestFile(featureVector, test, i, j);
-				System.out.println(featureVector.size());
-				System.out.println("Generated Files for Bot combo: (" + i + ", " + j + ")");
-//				
-//				Set set = featureVector.keySet();
-//				Iterator it = set.iterator();
-//				
-//				while(it.hasNext())
-//				{
-//					System.out.println(it.next().toString());
-//				}
+		BOW bOW = new BOW();
+		
+		/*
+		 * Does the 5 fold cross validation along with the pair wise computation of the authors.
+		 */
+		for (int test = 0; test < 1/* constants.getNoOfCrossFolds() */; test++) {
+			for (int i = 0; i < constants.getNoOfBots(); i++) {
+				for (int j = i + 1; j < constants.getNoOfBots(); j++) {
+					Map<String, Integer> featureVector = bOW
+							.generateFeatureVector(test, i, j);
+					bOW.populateTrainingFile(featureVector, test, i, j);
+					bOW.populateTestFile(featureVector, test, i, j);
+					System.out.println(featureVector.size());
+					System.out.println("Generated Files for Bot combo: (" + i
+							+ ", " + j + ")");
 
+				}
 			}
-		}
 		}
 	}
 }
