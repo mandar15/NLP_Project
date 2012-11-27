@@ -38,5 +38,22 @@ public class Parser {
 		
 		fileBufferredReader.close();
 	}
+	/*
+	 * Use this function to read files in the code to generate multiclass features. 
+	 */
+	public void readFileMultiClass(String fileName) throws IOException, FileNotFoundException {
+		String line;
+		FileInputStream fileInputStream = new FileInputStream(fileName);
+		DataInputStream fileDataInputStream = new DataInputStream(fileInputStream);
+		BufferedReader fileBufferredReader =  new BufferedReader(new InputStreamReader(fileDataInputStream));
+		
+
+		for(int i = 0; i < MultiClassConstants.authorDataLength; i++) {
+			line = fileBufferredReader.readLine();
+			data[i] = line.toLowerCase();
+		}
+		
+		fileBufferredReader.close();
+	}
 
 }
