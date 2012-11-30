@@ -1,10 +1,11 @@
 package nlp.utilities;
 
 public class Constants {
-	private final int noOfBots = 30;
+	private final int noOfBots = 5;
 	private final int n = 2;
 	private final int noOfCrossFolds = 5;
-	private final int authorDataLength = 2000;
+	private final int authorDataLength = 500;
+	private final int noOfStylometryFeatures = 103;
 	private final String inputFilePrefixTweet = "data/tweet/TwBot";
 	private final String inputFilePrefixBlog = "data/blog/Bot";
 	private final String inputFilePrefixChat = "data/chats/Bot";
@@ -16,6 +17,7 @@ public class Constants {
 	private final String testFilePrefixBow = tempFilePrefix + "test/" + dataSetType + "/bow/";
 	private final String trainFilePrefixPos = tempFilePrefix + "train/" + dataSetType + "/pos/";
 	private final String testFilePrefixPos = tempFilePrefix + "test/" + dataSetType + "/pos/";
+	
 	
 	public int getNoOfBots() {
 		return noOfBots;
@@ -72,4 +74,9 @@ public class Constants {
 	public String getDataSetType() {
 		return dataSetType;
 	}
+	
+	public int getNoOfStylometryFeatures() {
+		return noOfStylometryFeatures;
+	}
+
 }
