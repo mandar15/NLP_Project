@@ -24,6 +24,10 @@ public class Parser {
 		return data;
 	}
 	
+	public String getIthData(int i) {
+		return data[i];
+	}
+	
 	public void readFile(String fileName) throws IOException, FileNotFoundException {
 		String line;
 		FileInputStream fileInputStream = new FileInputStream(fileName);
