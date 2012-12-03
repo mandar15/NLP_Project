@@ -19,68 +19,68 @@ public class StylisticFeatures {
 		}			
 	}
 	
-	public void populateFeatures77_99(String []tokens, double ithBot[]){
+	public void populateFeatures77_103(String token){
 		
-		for(int i = 0 ; i < tokens.length ; i++){
-			String currentToken = tokens[i];
+		
+			String currentToken = token;
 			if(currentToken.length() >= 2){
 				if(Pattern.matches("ew*", currentToken))
-					ithBot[79] = ithBot[79] + 1;
+					features[79] = features[79] + 1;
 				if(Pattern.matches("aw*", currentToken))
-					ithBot[80] = ithBot[80] + 1;
+					features[80] = features[80] + 1;
 				if(Pattern.matches("g8*", currentToken))
-					ithBot[82] = ithBot[82] + 1;
+					features[82] = features[82] + 1;
 				if(currentToken.equalsIgnoreCase("f9"))
-					ithBot[84] = ithBot[84] + 1;
+					features[84] = features[84] + 1;
 				if(currentToken.equalsIgnoreCase("w8"))
-					ithBot[85] = ithBot[85] + 1;
+					features[85] = features[85] + 1;
 				if(currentToken.equalsIgnoreCase("v4"))
-					ithBot[86] = ithBot[86] + 1;
+					features[86] = features[86] + 1;
 				if(currentToken.equalsIgnoreCase("b4"))
-					ithBot[87] = ithBot[87] + 1;
+					features[87] = features[87] + 1;
 				if(currentToken.equalsIgnoreCase("e1"))
-					ithBot[88] = ithBot[88] + 1;
+					features[88] = features[88] + 1;
 				if(Pattern.matches("mm*", currentToken))
-					ithBot[89] = ithBot[89] + 1;
+					features[96] = features[96] + 1;
 				if(Pattern.matches("o*h*", currentToken))
-					ithBot[100] = ithBot[100] + 1;
+					features[100] = features[100] + 1;
 				if(Pattern.matches("kk*", currentToken))
-					ithBot[101] = ithBot[101] + 1;
+					features[101] = features[101] + 1;
 				if(Pattern.matches("o*h*kk*", currentToken))
-					ithBot[102] = ithBot[102] + 1;
+					features[102] = features[102] + 1;
 			}
 			if(currentToken.length() >= 3){
 				if(currentToken.substring(0, 2).equalsIgnoreCase("lol"))
-					ithBot[76] = ithBot[76] + 1;
+					features[76] = features[76] + 1;
 				if(currentToken.equalsIgnoreCase("osm") || Pattern.matches("osm*", currentToken))
-					ithBot[81] = ithBot[81] + 1;
+					features[81] = features[81] + 1;
 				if(currentToken.equalsIgnoreCase("gr8") || Pattern.matches("gr8*", currentToken))
-					ithBot[83] = ithBot[83] + 1;
+					features[83] = features[83] + 1;
 				if(currentToken.equalsIgnoreCase("btw"))
-					ithBot[89] = ithBot[89] + 1;
+					features[89] = features[89] + 1;
 				if(currentToken.equalsIgnoreCase("b/w"))
-					ithBot[90] = ithBot[90] + 1;
+					features[90] = features[90] + 1;
 				if(currentToken.equalsIgnoreCase("wth"))
-					ithBot[93] = ithBot[93] + 1;
+					features[93] = features[93] + 1;
 				if(currentToken.equalsIgnoreCase("wtf"))
-					ithBot[92] = ithBot[92] + 1;
+					features[92] = features[92] + 1;
 				if(currentToken.equalsIgnoreCase("omg"))
-					ithBot[94] = ithBot[94] + 1;
+					features[94] = features[94] + 1;
 				if(currentToken.equalsIgnoreCase("hmm") || Pattern.matches("hmm*", currentToken))
-					ithBot[95] = ithBot[95] + 1;
+					features[95] = features[95] + 1;
 				if(currentToken.equalsIgnoreCase("umm") || Pattern.matches("umm*", currentToken))
-					ithBot[97] = ithBot[97] + 1;
+					features[97] = features[97] + 1;
 				if(currentToken.equalsIgnoreCase("huh") || Pattern.matches("huh*", currentToken))
-					ithBot[98] = ithBot[98] + 1;
+					features[98] = features[98] + 1;
 				if(currentToken.equalsIgnoreCase("aha") || Pattern.matches("aha*", currentToken))
-					ithBot[99] = ithBot[99] + 1;
+					features[99] = features[99] + 1;
 			}
 			if(currentToken.equalsIgnoreCase("lmao"))
-				ithBot[77] += 1;
+				features[77] += 1;
 			if(currentToken.equalsIgnoreCase("rofl"))
-				ithBot[78] += 1;
+				features[78] += 1;
 			if(currentToken.equalsIgnoreCase("btwn"))
-				ithBot[91] += 1;
+				features[91] += 1;
 		}
-	}
+	
 }
