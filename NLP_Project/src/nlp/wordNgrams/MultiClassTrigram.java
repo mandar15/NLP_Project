@@ -160,9 +160,7 @@ public class MultiClassTrigram {
 		for(int j = 0; j < noOfBots; j++)
 		{
 			data = bots[j].getData();
-			for (String feature : features) {
-				tempFeatureVector.put(feature, 0);
-			}
+			
 			String token;
 			boolean dataSkipped = false;		
 			for (int i = 0; i < data.length;) {
@@ -172,6 +170,9 @@ public class MultiClassTrigram {
 				}
 				else {
 					
+					for (String feature : features) {
+						tempFeatureVector.put(feature, 0);
+					}		
 					/*
 					 * tokenized into trigrams.
 					 */
@@ -236,11 +237,11 @@ public class MultiClassTrigram {
 		{
 			data = bots[j].getData();
 			
-			for (String feature : features) {
-				tempFeatureVector.put(feature, 0);
-			}
-			
-			for(int i = testDataPositionStart; i < testDataPositionEnd; i++) {		
+			for(int i = testDataPositionStart; i < testDataPositionEnd; i++) {
+
+				for (String feature : features) {
+					tempFeatureVector.put(feature, 0);
+				}
 				/*
 				 * tokenized into trigrams.
 				 */

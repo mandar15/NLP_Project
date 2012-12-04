@@ -160,9 +160,7 @@ public class MultiClassBigram {
 		for(int j = 0; j < noOfBots; j++)
 		{
 			data = bots[j].getData();
-			for (String feature : features) {
-				tempFeatureVector.put(feature, 0);
-			}
+
 			String token;
 			boolean dataSkipped = false;		
 			for (int i = 0; i < data.length;) {
@@ -171,7 +169,11 @@ public class MultiClassBigram {
 					dataSkipped = true;
 				}
 				else {
-					
+
+					for (String feature : features) {
+						tempFeatureVector.put(feature, 0);
+					}
+		
 					/*
 					 * tokenized into bigrams.
 					 */
@@ -236,11 +238,12 @@ public class MultiClassBigram {
 		{
 			data = bots[j].getData();
 			
-			for (String feature : features) {
-				tempFeatureVector.put(feature, 0);
-			}
-			
 			for(int i = testDataPositionStart; i < testDataPositionEnd; i++) {		
+		
+				for (String feature : features) {
+					tempFeatureVector.put(feature, 0);
+				}
+
 				/*
 				 * tokenized into bigrams.
 				 */
