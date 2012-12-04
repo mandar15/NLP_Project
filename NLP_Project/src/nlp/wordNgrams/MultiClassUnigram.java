@@ -183,9 +183,6 @@ public class MultiClassUnigram {
 		for(int j = 0; j < noOfBots; j++)
 		{
 			data = bots[j].getData();
-			for (String feature : features) {
-				tempFeatureVector.put(feature, 0);
-			}
 			
 			boolean dataSkipped = false;		
 			for (int i = 0; i < data.length;) {
@@ -194,6 +191,11 @@ public class MultiClassUnigram {
 					dataSkipped = true;
 				}
 				else {
+
+					for (String feature : features) {
+						tempFeatureVector.put(feature, 0);
+					}
+
 					/*
 					 * tokenized into words.
 					 */
@@ -259,12 +261,13 @@ public class MultiClassUnigram {
 		for(int j = 0; j < noOfBots; j++)
 		{
 			data = bots[j].getData();
-
-			for (String feature : features) {
-				tempFeatureVector.put(feature, 0);
-			}
 			
 			for(int i = testDataPositionStart; i < testDataPositionEnd; i++) {
+				
+				for (String feature : features) {
+					tempFeatureVector.put(feature, 0);
+				}
+
 				String tokens[] = tokenizer.tokenize(data[i]);
 				for(String token : tokens) {
 					int count = 0;
