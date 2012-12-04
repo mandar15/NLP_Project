@@ -104,10 +104,26 @@ public class Stylometry {
 				List<String> tokens = stylometry.tokenize(i, j);
 				
 				for(String token : tokens) {
+					
+					botData[i].populateFeatures77_103(token);
 					System.out.println(token);
+					
+					botData[i].populateFeatures37_42(token);
 				}
+				
+				botData[i].populateFeatures43_75(tokens);
 			}
 		}
-		
+		genFiles();
+	}
+
+	private static void genFiles() {
+		// TODO Auto-generated method stub
+		Constants constants = new Constants();
+		for(int i =0 ; i< constants.getNoOfBots() ; i++){
+			for(int j = i+1; j < constants.getNoOfBots() ; j++){
+				
+			}
+		}
 	}
 }

@@ -1,7 +1,7 @@
 package nlp.utilities;
 
 public class Constants {
-	private final int noOfBots = 5;
+	private final int noOfBots = 1;
 	private final int n = 2;
 	private final int noOfCrossFolds = 5;
 	private final int authorDataLength = 500;
