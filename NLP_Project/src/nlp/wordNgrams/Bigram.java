@@ -159,9 +159,7 @@ public class Bigram {
 		while(cycles > 0) {
 			cycles--;
 			String data[] = bots[bot1].getData();
-			for (String feature : features) {
-				tempFeatureVector.put(feature, 0);
-			}
+
 			String token;
 			boolean dataSkipped = false;		
 			for (int i = 0; i < data.length;) {
@@ -171,6 +169,10 @@ public class Bigram {
 				}
 				else {
 					
+					for (String feature : features) {
+						tempFeatureVector.put(feature, 0);
+					}
+
 					/*
 					 * tokenized into bigrams.
 					 */
@@ -235,13 +237,14 @@ public class Bigram {
 			FileWriter testFileWriter = new FileWriter(output);
 			BufferedWriter testBufferedWriter = new BufferedWriter(testFileWriter);
 			
-			for (String feature : features) {
-				tempFeatureVector.put(feature, 0);
-			}
 			String token;
 			
 			for(int i = testDataPositionStart; i < testDataPositionEnd; i++) {
-				
+
+				for (String feature : features) {
+					tempFeatureVector.put(feature, 0);
+				}
+
 				/*
 				 * tokenized into bigrams.
 				 */
