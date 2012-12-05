@@ -20,6 +20,10 @@ public class StylisticFeatures {
 		}			
 	}
 	
+	public double[] getFeatures(){
+		return features;
+	}
+	
 	public void populateFeatures77_103(String token){
 		
 			String currentToken = token;
@@ -50,7 +54,7 @@ public class StylisticFeatures {
 					features[102] = features[102] + 1;
 			}
 			if(currentToken.length() >= 3){
-				if(currentToken.substring(0, 2).equalsIgnoreCase("lol"))
+				if(Pattern.matches("lol[a-z]*", currentToken))
 					features[76] = features[76] + 1;
 				if(currentToken.equalsIgnoreCase("osm") || Pattern.matches("osm*", currentToken))
 					features[81] = features[81] + 1;
@@ -112,7 +116,7 @@ public class StylisticFeatures {
 		return count;
 	}
 
-	public void populateFeatures43_75(List<String> tokens) {
+	public void populateFeatures43_76(List<String> tokens) {
 		// TODO Auto-generated method stub
 		int numberDotGroups =0;
 		int dotCount = 0;
@@ -126,78 +130,88 @@ public class StylisticFeatures {
 	
 		for(int i =0; i< tokens.size(); i++){
 			String token = tokens.get(i);
-			if(token.contains(".")){
+			if(Pattern.matches("...*", token)){
 				numberDotGroups++;
 				dotCount = dotCount + getCount(token, '.');
 			}
-			if(tokens.contains(",")){
+			if(Pattern.matches(",,,*", token)){
 				numberCommaGroups++;
 				commaCount = commaCount + getCount(token, ',');
 			}
-			if(token.contains("!")){
+			if(Pattern.matches("!!!*", token)){
 				numberExclaGroups++;
 				exclaCount = exclaCount + getCount(token, '!');
 			}
-			if(token.contains("?")){
+			if(Pattern.matches("\\?\\?\\?*", token)){
 				numberQuestGroups++;
-				questCount = questCount + getCount(token, '!');
+				questCount = questCount + getCount(token, '?');
 			}
 			if(token.contains("*")){
 				char[] charsInToken = token.toCharArray();
 				if(charsInToken[0] == '*' || charsInToken[charsInToken.length - 1] == '*')
 					CountStarWords++;
 			}
-			if(token.matches("aa*") || token.matches("AA*"))
+			if(! Pattern.matches("[a-zA-Z]*\\p{Punct}+[a-zA-Z]*", token))
+				features[49] += 1;
+			if(Pattern.matches("heheh*e*", token) || Pattern.matches("hahah*a*", token))
+				features[104] = features[104] + 1;
+			if(Pattern.matches("yeah*", token))
+				features[105] += 1;
+			if(Pattern.matches("okies*",token))
+				features[106] += 1;
+			if(Pattern.matches("bb*ye", token))
+				features[107] += 1;
+			if(Pattern.matches("[a-z]*aaaa*[a-z]*", token) || Pattern.matches("[A-Z]*AAAA*[A-Z]*", token))
 				features[50] = 1;
-			if(token.matches("bb*") || token.matches("BB*"))
+			if(Pattern.matches("[a-z]*bbbb*[a-z]*", token) || Pattern.matches("[A-Z]*BBBB*[A-Z]*", token))
 				features[51] = 1;
-			if(token.matches("cc*") || token.matches("CC*"))
+			if(Pattern.matches("[a-z]*cccc*[a-z]*", token) || Pattern.matches("[A-Z]*CCCC*[A-Z]*", token))
 				features[52] = 1;
-			if(token.matches("dd*") || token.matches("DD*"))
+			if(Pattern.matches("[a-z]*dddd*[a-z]*", token) || Pattern.matches("[A-Z]*DDDD*[A-Z]*", token))
 				features[53] = 1;
-			if(token.matches("ee*") || token.matches("EE*"))
+			if(Pattern.matches("[a-z]*eeee*[a-z]*", token) || Pattern.matches("[A-Z]*EEEE*[A-Z]*", token))
 				features[54] = 1;
-			if(token.matches("ff*") || token.matches("FF*"))
+			if(Pattern.matches("[a-z]*ffff*[a-z]*", token) || Pattern.matches("[A-Z]*FFFF*[A-Z]*", token))
 				features[55] = 1;
-			if(token.matches("gg*") || token.matches("GG*"))
+			if(Pattern.matches("[a-z]*gggg*[a-z]*", token) || Pattern.matches("[A-Z]*GGGG*[A-Z]*", token))
 				features[56] = 1;
-			if(token.matches("hh*") || token.matches("HH*"))
+			if(Pattern.matches("[a-z]*hhhh*[a-z]*", token) || Pattern.matches("[A-Z]*HHHH*[A-Z]*", token))
 				features[57] = 1;
-			if(token.matches("ii*") || token.matches("II*"))
+			if(Pattern.matches("[a-z]*iiii*[a-z]*", token) || Pattern.matches("[A-Z]*IIII*[A-Z]*", token))
 				features[58] = 1;
-			if(token.matches("jj*") || token.matches("JJ*"))
+			if(Pattern.matches("[a-z]*jjjj*[a-z]*", token) || Pattern.matches("[A-Z]*JJJJ*[A-Z]*", token))
 				features[59] = 1;
-			if(token.matches("kk*") || token.matches("KK*"))
+			if(Pattern.matches("[a-z]*kkkk*[a-z]*", token) || Pattern.matches("[A-Z]*KKKK*[A-Z]*", token))
 				features[60] = 1;
-			if(token.matches("ll*") || token.matches("LL*"))
+			if(Pattern.matches("[a-z]*llll*[a-z]*", token) || Pattern.matches("[A-Z]*LLLL*[A-Z]*", token))
 				features[61] = 1;
-			if(token.matches("mm*") || token.matches("MM*"))
+			if(Pattern.matches("[a-z]*mmmm*[a-z]*", token) || Pattern.matches("[A-Z]*MMMM*[A-Z]*", token))
 				features[62] = 1;
-			if(token.matches("nn*") || token.matches("NN*"))
+			if(Pattern.matches("[a-z]*nnnn*[a-z]*", token) || Pattern.matches("[A-Z]*NNNN*[A-Z]*", token))
 				features[63] = 1;
-			if(token.matches("oo*") || token.matches("OO*"))
+			if(Pattern.matches("[a-z]*oooo*[a-z]*", token) || Pattern.matches("[A-Z]*OOOO*[A-Z]*", token))
 				features[64] = 1;
-			if(token.matches("pp*") || token.matches("PP*"))
+			if(Pattern.matches("[a-z]*pppp*[a-z]*", token) || Pattern.matches("[A-Z]*PPPP*[A-Z]*", token))
 				features[65] = 1;
-			if(token.matches("qq*") || token.matches("QQ*"))
+			if(Pattern.matches("[a-z]*qqqq*[a-z]*", token) || Pattern.matches("[A-Z]*QQQQ*[A-Z]*", token))
 				features[66] = 1;
-			if(token.matches("rr*") || token.matches("RR*"))
+			if(Pattern.matches("[a-z]*rrrr*[a-z]*", token) || Pattern.matches("[A-Z]*RRRR*[A-Z]*", token))
 				features[67] = 1;
-			if(token.matches("ss*") || token.matches("SS*"))
+			if(Pattern.matches("[a-z]*ssss*[a-z]*", token) || Pattern.matches("[A-Z]*SSSS*[A-Z]*", token))
 				features[68] = 1;
-			if(token.matches("tt*") || token.matches("TT*"))
+			if(Pattern.matches("[a-z]*tttt*[a-z]*", token) || Pattern.matches("[A-Z]*TTTT*[A-Z]*", token))
 				features[69] = 1;
-			if(token.matches("uu*") || token.matches("UU*"))
+			if(Pattern.matches("[a-z]*uuuu*[a-z]*", token) || Pattern.matches("[A-Z]*UUUU*[A-Z]*", token))
 				features[70] = 1;
-			if(token.matches("vv*") || token.matches("VV*"))
+			if(Pattern.matches("[a-z]*vvvv*[a-z]*", token) || Pattern.matches("[A-Z]*VVVV*[A-Z]*", token))
 				features[71] = 1;
-			if(token.matches("ww*") || token.matches("WW*"))
+			if(Pattern.matches("[a-z]*wwww*[a-z]*", token) || Pattern.matches("[A-Z]*WWWW*[A-Z]*", token))
 				features[72] = 1;
-			if(token.matches("xx*") || token.matches("XX*"))
+			if(Pattern.matches("[a-z]*xxxx*[a-z]*", token) || Pattern.matches("[A-Z]*XXXX*[A-Z]*", token))
 				features[73] = 1;
-			if(token.matches("yy*") || token.matches("YY*"))
+			if(Pattern.matches("[a-z]*yyyy*[a-z]*", token) || Pattern.matches("[A-Z]*YYYY*[A-Z]*", token))
 				features[74] = 1;
-			if(token.matches("zz*") || token.matches("ZZ*"))
+			if(Pattern.matches("[a-z]*zzzz*[a-z]*", token) || Pattern.matches("[A-Z]*ZZZZ*[A-Z]*", token))
 				features[75] = 1;
 		}
 		if(numberDotGroups != 0)
@@ -206,11 +220,243 @@ public class StylisticFeatures {
 			features[43] = commaCount/numberCommaGroups;
 		if(numberExclaGroups != 0)
 			features[44] = exclaCount/numberExclaGroups;
-		if(numberExclaGroups != 0)
+		if(numberQuestGroups != 0)
 			features[45] = questCount/numberQuestGroups;
 		
 		features[46] = CountStarWords;
 		features[48] = tokens.size();
 	}
 	
+	public void populateFeatures1_5(List<String> tokens)
+	{
+		int i, j, len = tokens.size(), wordLength = 0;
+		char arr[];
+		double length = len;
+		
+		boolean startCap = false, midCap = false, endCap = false;
+		int totalStartCaps = 0;
+		int totalCaps = 0;
+		int totalEndCaps = 0;
+		int totalMidCaps = 0;
+		
+		for(i = 0; i < len; i++)
+		{
+			startCap = endCap = false;
+			
+			arr = tokens.get(i).toCharArray();
+			
+			wordLength = arr.length;
+			
+			if(arr[0] >= 'A' && arr[0] <= 'Z')
+			{
+				startCap = true;
+				totalStartCaps++;
+			}
+			
+			if(arr[wordLength-1] >= 'A' && arr[wordLength-1] <= 'Z')
+			{
+				endCap = true;
+				totalEndCaps++;
+			}
+			
+			midCap = true;
+			for(j = 1; j < wordLength-1; j++)
+			{
+				if(!(arr[j] >= 'A' && arr[j] <= 'Z'))		
+				{
+					midCap = false;
+					break;
+				}
+			}
+			
+			// all the chars apart from first and last are caps
+			if(midCap)
+			{
+				if(startCap && endCap)
+				{
+					totalCaps++;
+				}
+				else if(!startCap && !endCap && wordLength > 2)
+				{
+					totalMidCaps++;
+				}
+			}
+		}
+
+		// Populate the feature array
+		if(totalStartCaps > 0)
+		{
+			features[0] = 1;
+		}
+		
+		features[1] = totalStartCaps/length;
+		features[2] = totalCaps/length;
+		features[3] = totalEndCaps/length;
+		features[4] = totalMidCaps/length;
+		
+	}
+	
+	public void populateFeatures6_15(List<String> tokens)
+	{
+		int i, j, len = tokens.size(), wordLength;
+		char arr[];
+		
+		int count[] = new int[10];
+		for(i = 0; i < 10; i++)
+			count[i] = 0;
+		
+		for(i = 0; i < len; i++)
+		{
+			arr = tokens.get(i).toCharArray();
+			wordLength = arr.length;
+			
+			for(j = 0; j < wordLength; j++)
+			{
+				switch(arr[j])
+				{
+				case '0': count[0]++; break;
+				case '1': count[1]++; break;
+				case '2': count[2]++; break;
+				case '3': count[3]++; break;
+				case '4': count[4]++; break;
+				case '5': count[5]++; break;
+				case '6': count[6]++; break;
+				case '7': count[7]++; break;
+				case '8': count[8]++; break;
+				case '9': count[9]++; break;
+				default: break;
+				}
+			}
+		}
+		
+		for(i = 0; i < 10; i++)
+		{
+			features[5+i] = count[i];
+		}
+	}
+
+	public void populateFeatures16_31(List<String> tokens)
+	{
+		for(int i = 0; i < tokens.size() ; i++){
+			if(tokens.get(i).equals(":") && (i + 1) <= (tokens.size() - 1)){
+				String token = ":" + tokens.get(i + 1);
+				if(token.equals(":)"))
+					features[15] += 1;
+				if(token.equals(":D") || token.equals(":d"))
+					features[16] += 1;
+				if(token.equals(":("))
+					features[17] += 1;
+				if(token.equals(":P") || token.equals(":p"))
+					features[20] += 1;
+				if(token.equals(":O") || token.equals(":o"))
+					features[23] += 1;
+				if(token.equals(":/"))
+					features[24] +=1;
+				if(token.equals(":*"))
+					features[29] += 1;
+				if((i + 2) <= (tokens.size() - 1)){
+					token = token + tokens.get(i + 2);
+					if(token.equals(":-)"))
+						features[15] += 1;
+					if(token.equals(":-D") || token.equals(":-d"))
+						features[16] += 1;
+					if(token.equals(":-P") || token.equals(":-p"))
+						features[20] += 1;
+					if(token.equals(":-("))
+						features[17] += 1;
+					if(token.equals(":'("))
+						features[21] += 1;
+					if(token.equals(":-O") || token.equals(":-o"))
+						features[23] += 1;
+					if(token.equals(":-/"))
+						features[24] += 1;
+					if(token.equals(":-*"))
+						features[29] += 1;
+				}
+				if((i+3) <= (tokens.size() - 1)){
+					token = token  + tokens.get(i + 3);
+					if(token.endsWith(":’-("))
+						features[21] += 1;
+				}
+				}
+			if(tokens.get(i).equals("x") && (i + 1) <= (tokens.size() - 1)){
+				String token = "x" + tokens.get(i + 1);
+				if(token.equals("x("))
+					features[18] += 1;
+				
+				if((i+2) <= (tokens.size() - 1)){
+					token = token + tokens.get(i + 2);
+					if(token.equals("x-("))
+						features[18] += 1;
+				}
+			}
+			
+			if(tokens.get(i).equals("\\") && (i + 1) <= (tokens.size() - 1) && (i+2) <= (tokens.size() - 1)){
+				String token = "\\" + tokens.get(i + 1) + tokens.get(i + 2);
+				if(token.equals("\\m/"))
+					features[19] += 1;
+			}
+			if(tokens.get(i).equals("<") && (i + 1) <= (tokens.size() - 1)){
+				String token = "<" + tokens.get(i + 1);
+				if(token.equals("<3"))
+					features[25] += 1;
+				if((i+2) <= (tokens.size() - 1)){
+					token = token + tokens.get(i + 2);
+					if(token.equals("</3"))
+						features[26] += 1;
+				}
+			}
+			if(tokens.get(i).equals("B") && (i+1) <= (tokens.size() - 1) && (i+2) <= (tokens.size() - 1)){
+				String token = "B" + tokens.get(i+1) + tokens.get(i+2);
+				if(token.equals("B-)"))
+					features[27] += 1;
+			}
+			if(tokens.get(i).equals("V") && (i+1) < (tokens.size() - 1) && (i+2) <= (tokens.size() - 1) && (i+3) <= (tokens.size() -1) && (i+ 4) <= (tokens.size() - 1)){
+				String token = "V" + tokens.get(i+1) + tokens.get(i+2) + tokens.get(i + 3) + tokens.get(i+4);
+				if(token.equals("V.v.V"))
+					features[28] += 1;
+			}
+			if(tokens.get(i).equals(";") && (i+1) <= (tokens.size() - 1)){
+				String token = ";" + tokens.get(i+1);
+				if(token.equals(";)"))
+					features[22] += 1;
+				
+				if((i+2) <= (tokens.size() - 1)){
+					token = token  + tokens.get(i+2);
+					if(token.equals(";-)"))
+						features[22] += 1;
+				}
+			}
+		}
+	}
+	
+	public void populateFeatures32_36(List<String> tokens)
+	{
+		int i;
+		
+		boolean ends[] = new boolean[5];
+		String lastToken = tokens.get(tokens.size() - 1);
+		char sentenceEnd = lastToken.charAt(lastToken.length() - 1);
+
+
+			switch(sentenceEnd)
+			{
+			case '?': ends[0] = true; break;
+			case '!': ends[1] = true; break;
+			case '.': ends[2] = true; break;
+			case ',': ends[3] = true; break;
+			case '%': ends[4] = true; break;
+			default: break;
+			}
+		
+		// put features in the array
+		for(i = 0; i < 5; i++)
+		{
+			if(ends[i])
+			{
+				features[31 + i] = 1;
+				break; //as sentence can end with only one kind of punctuation.
+			}
+		}
+	}
 }
