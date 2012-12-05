@@ -16,19 +16,20 @@ public class NGram {
 		
 		Constants constants = new Constants();
 		NGramUtils nGramUtils = new NGramUtils();
-		int test = 0;
-		/*
-		 * Does the pairwise computation of the authors.
-		 */
-		for(int i = 0; i < constants.getNoOfBots(); i++)
-		{
-			for(int j = i + 1; j < constants.getNoOfBots(); j++)
+		for(int test = 0; test < constants.getNoOfCrossFolds(); test++) {
+			/*
+			 * Does the pairwise computation of the authors.
+			 */
+			for(int i = 0; i < constants.getNoOfBots(); i++)
 			{
-				Map<String, Integer> featureVector = nGramUtils.generateFeatureVector(test, i, j);
-				nGramUtils.populateTrainingFile(featureVector, test, i, j);
-				nGramUtils.populateTestFile(featureVector, test, i, j);
-				System.out.println("Generated Files for Bot combo: (" + i + ", " + j + ")");
-			}
-		}		
+				for(int j = i + 1; j < constants.getNoOfBots(); j++)
+				{
+					Map<String, Integer> featureVector = nGramUtils.generateFeatureVector(test, i, j);
+					nGramUtils.populateTrainingFile(featureVector, test, i, j);
+					nGramUtils.populateTestFile(featureVector, test, i, j);
+					System.out.println("Generated Files for Bot combo: (" + i + ", " + j + ")");
+				}
+			}					
+		}
 	}
 }

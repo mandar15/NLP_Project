@@ -140,9 +140,6 @@ public class NGramUtils {
 		while(cycles > 0) {
 			cycles--;
 			String data[] = bots[bot1].getData();
-			for (String feature : features) {
-				tempFeatureVector.put(feature, 0);
-			}
 			
 			boolean dataSkipped = false;		
 			for (int i = 0; i < data.length;) {
@@ -151,6 +148,10 @@ public class NGramUtils {
 					dataSkipped = true;
 				}
 				else {
+					for (String feature : features) {
+						tempFeatureVector.put(feature, 0);
+					}
+
 					// Get the value of Tf for the current document
 					for (int j = 0; j + winSize < data[i].length(); j++) {
 						String substr = data[i].substring(j, j + winSize);
@@ -212,11 +213,12 @@ public class NGramUtils {
 			FileWriter testFileWriter = new FileWriter(output);
 			BufferedWriter testBufferedWriter = new BufferedWriter(testFileWriter);
 			
-			for (String feature : features) {
-				tempFeatureVector.put(feature, 0);
-			}
 			
 			for(int i = testDataPositionStart; i < testDataPositionEnd; i++) {
+				for (String feature : features) {
+					tempFeatureVector.put(feature, 0);
+				}
+				
 				for (int j = 0; j + winSize < data[i].length(); j++) {					
 					String substr = data[i].substring(j, j + winSize);
 
