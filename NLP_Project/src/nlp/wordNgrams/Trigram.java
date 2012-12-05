@@ -159,9 +159,7 @@ public class Trigram {
 		while(cycles > 0) {
 			cycles--;
 			String data[] = bots[bot1].getData();
-			for (String feature : features) {
-				tempFeatureVector.put(feature, 0);
-			}
+			
 			String token;
 			boolean dataSkipped = false;		
 			for (int i = 0; i < data.length;) {
@@ -170,6 +168,10 @@ public class Trigram {
 					dataSkipped = true;
 				}
 				else {
+					
+					for (String feature : features) {
+						tempFeatureVector.put(feature, 0);
+					}
 					/*
 					 * tokenized into trigrams.
 					 */
@@ -235,12 +237,13 @@ public class Trigram {
 			FileWriter testFileWriter = new FileWriter(output);
 			BufferedWriter testBufferedWriter = new BufferedWriter(testFileWriter);
 			
-			for (String feature : features) {
-				tempFeatureVector.put(feature, 0);
-			}
 			String token;
 			
 			for(int i = testDataPositionStart; i < testDataPositionEnd; i++) {
+				
+				for (String feature : features) {
+					tempFeatureVector.put(feature, 0);
+				}
 				/*
 				 * tokenized into trigrams.
 				 */
