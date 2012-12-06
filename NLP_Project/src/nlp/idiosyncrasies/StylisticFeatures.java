@@ -3,6 +3,13 @@ package nlp.idiosyncrasies;
 import java.util.List;
 import java.util.regex.Pattern;
 
+/*import org.xeustechnologies.googleapi.spelling.Configuration;
+import org.xeustechnologies.googleapi.spelling.Language;
+import org.xeustechnologies.googleapi.spelling.SpellChecker;
+import org.xeustechnologies.googleapi.spelling.SpellCorrection;
+import org.xeustechnologies.googleapi.spelling.SpellRequest;
+import org.xeustechnologies.googleapi.spelling.SpellResponse;*/
+
 import nlp.utilities.Constants;
 
 public class StylisticFeatures {
@@ -24,84 +31,92 @@ public class StylisticFeatures {
 		return features;
 	}
 	
-	public void populateFeatures77_103(String token){
+	public void populateFeatures76_108(String token){
 		
-			String currentToken = token;
-			if(currentToken.length() >= 2){
-				if(Pattern.matches("ew*", currentToken))
-					features[79] = features[79] + 1;
-				if(Pattern.matches("aw*", currentToken))
-					features[80] = features[80] + 1;
-				if(Pattern.matches("g8*", currentToken))
-					features[82] = features[82] + 1;
-				if(currentToken.equalsIgnoreCase("f9"))
-					features[84] = features[84] + 1;
-				if(currentToken.equalsIgnoreCase("w8"))
-					features[85] = features[85] + 1;
-				if(currentToken.equalsIgnoreCase("v4"))
-					features[86] = features[86] + 1;
-				if(currentToken.equalsIgnoreCase("b4"))
-					features[87] = features[87] + 1;
-				if(currentToken.equalsIgnoreCase("e1"))
-					features[88] = features[88] + 1;
-				if(Pattern.matches("mm*", currentToken))
-					features[96] = features[96] + 1;
-				if(Pattern.matches("o*h*", currentToken))
-					features[100] = features[100] + 1;
-				if(Pattern.matches("kk*", currentToken))
-					features[101] = features[101] + 1;
-				if(Pattern.matches("o*h*kk*", currentToken))
-					features[102] = features[102] + 1;
-			}
-			if(currentToken.length() >= 3){
-				if(Pattern.matches("lol[a-z]*", currentToken))
+				String currentToken = token;
+			    if(currentToken.toLowerCase().startsWith("lol"))
 					features[76] = features[76] + 1;
-				if(currentToken.equalsIgnoreCase("osm") || Pattern.matches("osm*", currentToken))
+				else if(currentToken.equalsIgnoreCase("lmao"))
+					features[77] += 1;
+				else if(currentToken.equalsIgnoreCase("rofl"))
+					features[78] += 1;			
+				else if(Pattern.matches("ee*ww*", currentToken.toLowerCase()))
+					features[79] = features[79] + 1;
+				else if(Pattern.matches("aa*ww*", currentToken.toLowerCase()))
+					features[80] = features[80] + 1;
+				else if(Pattern.matches("oo*ss*mm*", currentToken.toLowerCase()))
 					features[81] = features[81] + 1;
-				if(currentToken.equalsIgnoreCase("gr8") || Pattern.matches("gr8*", currentToken))
+				else if(Pattern.matches("gg*88*", currentToken.toLowerCase()))
+					features[82] = features[82] + 1;
+				else if(Pattern.matches("gg*rr*88*", currentToken.toLowerCase()))
 					features[83] = features[83] + 1;
-				if(currentToken.equalsIgnoreCase("btw"))
+				else if(Pattern.matches("ff*99*", currentToken.toLowerCase()))
+					features[84] = features[84] + 1;
+				else if(Pattern.matches("ww*88*", currentToken.toLowerCase()))
+					features[85] = features[85] + 1;
+				else if(Pattern.matches("vv*44*", currentToken.toLowerCase()))
+					features[86] = features[86] + 1;
+				else if(Pattern.matches("bb*44*", currentToken.toLowerCase()))
+					features[87] = features[87] + 1;
+				else if(Pattern.matches("ee*11*", currentToken.toLowerCase()))
+					features[88] = features[88] + 1;
+				else if(currentToken.equalsIgnoreCase("btw"))
 					features[89] = features[89] + 1;
-				if(currentToken.equalsIgnoreCase("b/w"))
+				else if(currentToken.equalsIgnoreCase("b/w"))
 					features[90] = features[90] + 1;
-				if(currentToken.equalsIgnoreCase("wth"))
-					features[93] = features[93] + 1;
-				if(currentToken.equalsIgnoreCase("wtf"))
+				else if(currentToken.equalsIgnoreCase("btwn"))
+					features[91] += 1;
+				else if(Pattern.matches("ww*tt*ff*", currentToken.toLowerCase()))
 					features[92] = features[92] + 1;
-				if(currentToken.equalsIgnoreCase("omg"))
+				else if(Pattern.matches("ww*tt*hh*", currentToken.toLowerCase()))
+					features[93] = features[93] + 1;
+				else if(Pattern.matches("oo*mm*gg*", currentToken.toLowerCase()))
 					features[94] = features[94] + 1;
-				if(currentToken.equalsIgnoreCase("hmm") || Pattern.matches("hmm*", currentToken))
+				else if(Pattern.matches("hh*mm*", currentToken.toLowerCase()))
 					features[95] = features[95] + 1;
-				if(currentToken.equalsIgnoreCase("umm") || Pattern.matches("umm*", currentToken))
+				else if(Pattern.matches("mm+", currentToken.toLowerCase()))
+					features[96] = features[96] + 1;
+				else if(Pattern.matches("uu*mm*", currentToken.toLowerCase()))
 					features[97] = features[97] + 1;
-				if(currentToken.equalsIgnoreCase("huh") || Pattern.matches("huh*", currentToken))
+				else if(Pattern.matches("hh*uu*hh*", currentToken.toLowerCase()))
 					features[98] = features[98] + 1;
-				if(currentToken.equalsIgnoreCase("aha") || Pattern.matches("aha*", currentToken))
+				else if(Pattern.matches("aa*hh*aa*", currentToken.toLowerCase()))
 					features[99] = features[99] + 1;
-			}
-			if(currentToken.equalsIgnoreCase("lmao"))
-				features[77] += 1;
-			if(currentToken.equalsIgnoreCase("rofl"))
-				features[78] += 1;
-			if(currentToken.equalsIgnoreCase("btwn"))
-				features[91] += 1;
-		}
+				else if(Pattern.matches("oo*hh*", currentToken.toLowerCase()))
+					features[100] = features[100] + 1;
+				else if(Pattern.matches("kk*", currentToken.toLowerCase()))
+					features[101] = features[101] + 1;
+				else if(Pattern.matches("oo*hh*kk*", currentToken.toLowerCase()))
+					features[102] = features[102] + 1;			
+				else if(Pattern.matches("hh*ee*hh*ee*[he]*", currentToken.toLowerCase()))
+					features[103] = features[103] + 1;
+				else if(Pattern.matches("hh*aa*hh*aa*[ha]*", currentToken.toLowerCase()))
+					features[104] = features[104] + 1;
+				else if(Pattern.matches("yeaa*", currentToken.toLowerCase()))
+					features[105] += 1;
+				else if(Pattern.matches("yeahh*", currentToken.toLowerCase()))
+					features[106] += 1;			    
+				else if(Pattern.matches("okiess*", currentToken.toLowerCase()))
+					features[107] += 1;
+				else if(Pattern.matches("bb*yy*ee*", currentToken.toLowerCase()))
+					features[108] += 1;
+	}
 	
-	public void populateFeatures37_42(String currentToken){
+	public void populateFeatures36_41(String currentToken){
 		
 		
 		if(currentToken.contains("'"))
-			features[36] += 1;
-		if(currentToken.contains("\""))
-			features[37] += 1;
-		if(currentToken.contains("{") || currentToken.contains("}"))
-			features[38] += 1;
-		if(currentToken.contains("(") || currentToken.contains(")"))
-			features[39] += 1;
-		if(currentToken.contains("[") || currentToken.contains("]"))
-			features[40] += 1;
-		if(currentToken.contains("<") || currentToken.contains(">"))
-			features[41] += 1;		
+			features[36] += getCount(currentToken, '\'');
+		else if(currentToken.contains("\""))
+			features[37] += getCount(currentToken, '\"');
+		else if(currentToken.contains("{") || currentToken.contains("}"))
+			features[38] += getCount(currentToken, '{') + getCount(currentToken, '}');
+		else if(currentToken.contains("(") || currentToken.contains(")"))
+			features[39] += getCount(currentToken, '(') + getCount(currentToken, ')');
+		else if(currentToken.contains("[") || currentToken.contains("]"))
+			features[40] += getCount(currentToken, '[') + getCount(currentToken, ']');
+		else if(currentToken.contains("<") || currentToken.contains(">"))
+			features[41] += getCount(currentToken, '<') + getCount(currentToken, '>');		
 	}
 
 	private int getCount(String currentToken, char charSearched) {
@@ -116,7 +131,7 @@ public class StylisticFeatures {
 		return count;
 	}
 
-	public void populateFeatures43_76(List<String> tokens) {
+	public void populateFeatures42_75(List<String> tokens) {
 		// TODO Auto-generated method stub
 		int numberDotGroups =0;
 		int dotCount = 0;
@@ -127,7 +142,7 @@ public class StylisticFeatures {
 		int numberQuestGroups = 0;
 		int questCount = 0;
 		int CountStarWords = 0;
-	
+		int totalWords = 0;
 		for(int i =0; i< tokens.size(); i++){
 			String token = tokens.get(i);
 			if(Pattern.matches("...*", token)){
@@ -146,72 +161,68 @@ public class StylisticFeatures {
 				numberQuestGroups++;
 				questCount = questCount + getCount(token, '?');
 			}
-			if(token.contains("*")){
-				char[] charsInToken = token.toCharArray();
-				if(charsInToken[0] == '*' || charsInToken[charsInToken.length - 1] == '*')
-					CountStarWords++;
+			if(Pattern.matches("\\*[a-z0-9]+", token.toLowerCase()) || Pattern.matches("[a-z0-9]+\\*", token.toLowerCase())){
+				CountStarWords++;
 			}
-			if(! Pattern.matches("[a-zA-Z]*\\p{Punct}+[a-zA-Z]*", token))
+			
+			if(! Pattern.matches("[a-zA-Z]*\\p{Punct}+[a-zA-Z]*", token)){
 				features[49] += 1;
-			if(Pattern.matches("heheh*e*", token) || Pattern.matches("hahah*a*", token))
-				features[104] = features[104] + 1;
-			if(Pattern.matches("yeah*", token))
-				features[105] += 1;
-			if(Pattern.matches("okies*",token))
-				features[106] += 1;
-			if(Pattern.matches("bb*ye", token))
-				features[107] += 1;
-			if(Pattern.matches("[a-z]*aaaa*[a-z]*", token) || Pattern.matches("[A-Z]*AAAA*[A-Z]*", token))
+				//totalWords++;
+			//	if(!isDictionaryWord(token))
+			//		features[47] += 1;
+			}
+
+			if(Pattern.matches("[a-z]*aaaa*[a-z]*", token.toLowerCase()))
 				features[50] = 1;
-			if(Pattern.matches("[a-z]*bbbb*[a-z]*", token) || Pattern.matches("[A-Z]*BBBB*[A-Z]*", token))
+			if(Pattern.matches("[a-z]*bbbb*[a-z]*", token.toLowerCase()))
 				features[51] = 1;
-			if(Pattern.matches("[a-z]*cccc*[a-z]*", token) || Pattern.matches("[A-Z]*CCCC*[A-Z]*", token))
+			if(Pattern.matches("[a-z]*cccc*[a-z]*", token.toLowerCase()))
 				features[52] = 1;
-			if(Pattern.matches("[a-z]*dddd*[a-z]*", token) || Pattern.matches("[A-Z]*DDDD*[A-Z]*", token))
+			if(Pattern.matches("[a-z]*dddd*[a-z]*", token.toLowerCase()))
 				features[53] = 1;
-			if(Pattern.matches("[a-z]*eeee*[a-z]*", token) || Pattern.matches("[A-Z]*EEEE*[A-Z]*", token))
+			if(Pattern.matches("[a-z]*eeee*[a-z]*", token.toLowerCase()))
 				features[54] = 1;
-			if(Pattern.matches("[a-z]*ffff*[a-z]*", token) || Pattern.matches("[A-Z]*FFFF*[A-Z]*", token))
+			if(Pattern.matches("[a-z]*ffff*[a-z]*", token.toLowerCase()))
 				features[55] = 1;
-			if(Pattern.matches("[a-z]*gggg*[a-z]*", token) || Pattern.matches("[A-Z]*GGGG*[A-Z]*", token))
+			if(Pattern.matches("[a-z]*gggg*[a-z]*", token.toLowerCase()))
 				features[56] = 1;
-			if(Pattern.matches("[a-z]*hhhh*[a-z]*", token) || Pattern.matches("[A-Z]*HHHH*[A-Z]*", token))
+			if(Pattern.matches("[a-z]*hhhh*[a-z]*", token.toLowerCase()))
 				features[57] = 1;
-			if(Pattern.matches("[a-z]*iiii*[a-z]*", token) || Pattern.matches("[A-Z]*IIII*[A-Z]*", token))
+			if(Pattern.matches("[a-z]*iiii*[a-z]*", token.toLowerCase()))
 				features[58] = 1;
-			if(Pattern.matches("[a-z]*jjjj*[a-z]*", token) || Pattern.matches("[A-Z]*JJJJ*[A-Z]*", token))
+			if(Pattern.matches("[a-z]*jjjj*[a-z]*", token.toLowerCase()))
 				features[59] = 1;
-			if(Pattern.matches("[a-z]*kkkk*[a-z]*", token) || Pattern.matches("[A-Z]*KKKK*[A-Z]*", token))
+			if(Pattern.matches("[a-z]*kkkk*[a-z]*", token.toLowerCase()))
 				features[60] = 1;
-			if(Pattern.matches("[a-z]*llll*[a-z]*", token) || Pattern.matches("[A-Z]*LLLL*[A-Z]*", token))
+			if(Pattern.matches("[a-z]*llll*[a-z]*", token.toLowerCase()))
 				features[61] = 1;
-			if(Pattern.matches("[a-z]*mmmm*[a-z]*", token) || Pattern.matches("[A-Z]*MMMM*[A-Z]*", token))
+			if(Pattern.matches("[a-z]*mmmm*[a-z]*", token.toLowerCase()))
 				features[62] = 1;
-			if(Pattern.matches("[a-z]*nnnn*[a-z]*", token) || Pattern.matches("[A-Z]*NNNN*[A-Z]*", token))
+			if(Pattern.matches("[a-z]*nnnn*[a-z]*", token.toLowerCase()))
 				features[63] = 1;
-			if(Pattern.matches("[a-z]*oooo*[a-z]*", token) || Pattern.matches("[A-Z]*OOOO*[A-Z]*", token))
+			if(Pattern.matches("[a-z]*oooo*[a-z]*", token.toLowerCase()))
 				features[64] = 1;
-			if(Pattern.matches("[a-z]*pppp*[a-z]*", token) || Pattern.matches("[A-Z]*PPPP*[A-Z]*", token))
+			if(Pattern.matches("[a-z]*pppp*[a-z]*", token.toLowerCase()))
 				features[65] = 1;
-			if(Pattern.matches("[a-z]*qqqq*[a-z]*", token) || Pattern.matches("[A-Z]*QQQQ*[A-Z]*", token))
+			if(Pattern.matches("[a-z]*qqqq*[a-z]*", token.toLowerCase()))
 				features[66] = 1;
-			if(Pattern.matches("[a-z]*rrrr*[a-z]*", token) || Pattern.matches("[A-Z]*RRRR*[A-Z]*", token))
+			if(Pattern.matches("[a-z]*rrrr*[a-z]*", token.toLowerCase()))
 				features[67] = 1;
-			if(Pattern.matches("[a-z]*ssss*[a-z]*", token) || Pattern.matches("[A-Z]*SSSS*[A-Z]*", token))
+			if(Pattern.matches("[a-z]*ssss*[a-z]*", token.toLowerCase()))
 				features[68] = 1;
-			if(Pattern.matches("[a-z]*tttt*[a-z]*", token) || Pattern.matches("[A-Z]*TTTT*[A-Z]*", token))
+			if(Pattern.matches("[a-z]*tttt*[a-z]*", token.toLowerCase()))
 				features[69] = 1;
-			if(Pattern.matches("[a-z]*uuuu*[a-z]*", token) || Pattern.matches("[A-Z]*UUUU*[A-Z]*", token))
+			if(Pattern.matches("[a-z]*uuuu*[a-z]*", token.toLowerCase()))
 				features[70] = 1;
-			if(Pattern.matches("[a-z]*vvvv*[a-z]*", token) || Pattern.matches("[A-Z]*VVVV*[A-Z]*", token))
+			if(Pattern.matches("[a-z]*vvvv*[a-z]*", token.toLowerCase()))
 				features[71] = 1;
-			if(Pattern.matches("[a-z]*wwww*[a-z]*", token) || Pattern.matches("[A-Z]*WWWW*[A-Z]*", token))
+			if(Pattern.matches("[a-z]*wwww*[a-z]*", token.toLowerCase()))
 				features[72] = 1;
-			if(Pattern.matches("[a-z]*xxxx*[a-z]*", token) || Pattern.matches("[A-Z]*XXXX*[A-Z]*", token))
+			if(Pattern.matches("[a-z]*xxxx*[a-z]*", token.toLowerCase()))
 				features[73] = 1;
-			if(Pattern.matches("[a-z]*yyyy*[a-z]*", token) || Pattern.matches("[A-Z]*YYYY*[A-Z]*", token))
+			if(Pattern.matches("[a-z]*yyyy*[a-z]*", token.toLowerCase()))
 				features[74] = 1;
-			if(Pattern.matches("[a-z]*zzzz*[a-z]*", token) || Pattern.matches("[A-Z]*ZZZZ*[A-Z]*", token))
+			if(Pattern.matches("[a-z]*zzzz*[a-z]*", token.toLowerCase()))
 				features[75] = 1;
 		}
 		if(numberDotGroups != 0)
@@ -224,34 +235,45 @@ public class StylisticFeatures {
 			features[45] = questCount/numberQuestGroups;
 		
 		features[46] = CountStarWords;
-		features[48] = tokens.size();
+		features[48] = (double)tokens.size();
+			
 	}
 	
-	public void populateFeatures1_5(List<String> tokens)
+	public void populateFeatures0_4(List<String> tokens)
 	{
-		int i, j, len = tokens.size(), wordLength = 0;
-		char arr[];
-		double length = len;
+		int i, j, wordLength = 0;
+		int len = tokens.size();
+		char arr[] = null;
+		//double length = len;
 		
 		boolean startCap = false, midCap = false, endCap = false;
 		int totalStartCaps = 0;
 		int totalCaps = 0;
 		int totalEndCaps = 0;
 		int totalMidCaps = 0;
+		String temp = "";
 		
-		for(i = 0; i < len; i++)
+		if(len == 0) {
+			return;
+		}
+
+		for(i = 0; i < tokens.size(); i++)
 		{
+			if(tokens.get(i).length() == 0){
+				continue;
+			}
 			startCap = endCap = false;
-			
+			//System.out.println(tokens.get(i));
 			arr = tokens.get(i).toCharArray();
 			
 			wordLength = arr.length;
 			
-			if(arr[0] >= 'A' && arr[0] <= 'Z')
-			{
-				startCap = true;
-				totalStartCaps++;
-			}
+			//System.out.println(tokens.get(i) + " " +wordLength);
+				if(arr[0] >= 'A' && arr[0] <= 'Z')
+				{
+					startCap = true;
+					totalStartCaps++;
+				}
 			
 			if(arr[wordLength-1] >= 'A' && arr[wordLength-1] <= 'Z')
 			{
@@ -289,14 +311,14 @@ public class StylisticFeatures {
 			features[0] = 1;
 		}
 		
-		features[1] = totalStartCaps/length;
-		features[2] = totalCaps/length;
-		features[3] = totalEndCaps/length;
-		features[4] = totalMidCaps/length;
+		features[1] = totalStartCaps/len;
+		features[2] = totalCaps/len;
+		features[3] = totalEndCaps/len;
+		features[4] = totalMidCaps/len;
 		
 	}
 	
-	public void populateFeatures6_15(List<String> tokens)
+	public void populateFeatures5_14(List<String> tokens)
 	{
 		int i, j, len = tokens.size(), wordLength;
 		char arr[];
@@ -335,7 +357,7 @@ public class StylisticFeatures {
 		}
 	}
 
-	public void populateFeatures16_31(List<String> tokens)
+	public void populateFeatures15_30(List<String> tokens)
 	{
 		for(int i = 0; i < tokens.size() ; i++){
 			if(tokens.get(i).equals(":") && (i + 1) <= (tokens.size() - 1)){
@@ -428,13 +450,21 @@ public class StylisticFeatures {
 				}
 			}
 		}
+		
+		for(int i = 15; i <= 29; i++) {
+			features[30] += features[i];
+		}
 	}
 	
-	public void populateFeatures32_36(List<String> tokens)
+	public void populateFeatures31_35(List<String> tokens)
 	{
 		int i;
 		
-		boolean ends[] = new boolean[5];
+		if(tokens.size() == 0) {
+			return;
+		}
+		
+		boolean ends[] = new boolean[5];	
 		String lastToken = tokens.get(tokens.size() - 1);
 		char sentenceEnd = lastToken.charAt(lastToken.length() - 1);
 
@@ -459,4 +489,29 @@ public class StylisticFeatures {
 			}
 		}
 	}
+	
+	/*public boolean isDictionaryWord(String word){
+		 Configuration config = new Configuration();
+		 //config.setProxy( "my_proxy_host", 8080, "http" );
+
+		 SpellChecker checker = new SpellChecker( config );
+		 checker.setOverHttps( true ); // Use https (default true from v1.1)
+		 checker.setLanguage( Language.ENGLISH ); // Use English (default)
+
+		 SpellRequest request = new SpellRequest();
+		 request.setText(word);
+		 request.setIgnoreDuplicates( true ); // Ignore duplicates
+
+		 SpellResponse spellResponse = checker.check( request );
+
+		 try{
+			 for( SpellCorrection sc : spellResponse.getCorrections() )
+			    System.out.println( sc.getValue());
+			 	//System.out.println("not dictionary word");
+			 	return false;
+			 }catch(NullPointerException e){
+				 //System.out.println("is dictionary word");
+				 return true;
+			 }
+	}*/
 }

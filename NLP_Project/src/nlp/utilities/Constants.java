@@ -2,15 +2,15 @@ package nlp.utilities;
 
 public class Constants {
 	private final int noOfBots = 2;
-	private final int n = 2;
+	private final int n = 5;
 	private final int noOfCrossFolds = 5;
 	private final int authorDataLength = 500;
-	private final int noOfStylometryFeatures = 108;
+	private final int noOfStylometryFeatures = 109;
 	private final String inputFilePrefixTweet = "data/tweet/TwBot";
 	private final String inputFilePrefixBlog = "data/blog/Bot";
 	private final String inputFilePrefixChat = "data/chats/Bot";
 	private final String dataSetType = "chats";
-	private final String tempFilePrefix = "/home/pragya/NLP/NLPData/";
+	private final String tempFilePrefix = "/media/Masters/binary/";
 	private final String trainFilePrefixNgram = tempFilePrefix + "train/" + dataSetType + "/ngram/";
 	private final String testFilePrefixNgram = tempFilePrefix + "test/" + dataSetType + "/ngram/";
 	private final String trainFilePrefixBow = tempFilePrefix + "train/" + dataSetType + "/bow/";
