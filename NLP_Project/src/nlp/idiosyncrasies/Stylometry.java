@@ -1,13 +1,17 @@
 package nlp.idiosyncrasies;
 
+import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
+import nlp.characterNgrams.NGramUtils;
 import nlp.utilities.Constants;
 import nlp.utilities.Parser;
 
@@ -87,198 +91,141 @@ public class Stylometry {
 
 		return tokens;
 	}
+	
+	public void populateTrainingFile(int testNo, int bot1, int bot2) throws IOException {
+		int skipDataLength = constants.getAuthorDataLength() / constants.getNoOfCrossFolds();
+		int skipDataPosition = skipDataLength * testNo;
+		
+		String output = constants.getTrainFilePrefixStylometry();
+		output += "Stylometry." + testNo + "." + (bot1 + 1) + "_" + (bot2 + 1) + ".trn";
+		FileWriter trainingFileWriter = new FileWriter(output);
+		BufferedWriter trainingBufferedWriter = new BufferedWriter(trainingFileWriter);
+	
+		/*
+		 * Creates a file: Stylometry.testNo.A_B.trn
+		 * n: language model
+		 * A: Author of some data specified in Constants class
+		 * B: Author of some data specified in Constants class
+		 */
+		int cycles = 2;
+		while(cycles > 0) {
+			cycles--;
+			
+			boolean dataSkipped = false;		
+			for (int i = 0; i < constants.getAuthorDataLength();) {
+				if (!dataSkipped && i == skipDataPosition) {
+					i += skipDataLength;
+					dataSkipped = true;
+				}
+				else {
+					String result = (bot1 + 1) + " ";
+					StylisticFeatures botData = new StylisticFeatures();
+					botData.defaultInitialization();
+
+					List<String> tokens = tokenize(bot1, i);
+
+					for (String token : tokens) {
+						botData.populateFeatures76_108(token);
+						botData.populateFeatures36_41(token);
+					}
+
+					botData.populateFeatures42_75(tokens);
+					botData.populateFeatures0_4(tokens);
+					botData.populateFeatures5_14(tokens);
+					botData.populateFeatures15_30(tokens);
+					botData.populateFeatures31_35(tokens);
+
+					double[] lineFeatures = botData.getFeatures();
+					for (int l = 0; l < lineFeatures.length; l++) {
+						if (lineFeatures[l] != 0) {
+							result += (l + 1) + ":" + lineFeatures[l] + " ";
+						}
+					}
+					
+					trainingBufferedWriter.write(result + "\n");
+					i++;
+				}
+			}					
+			bot1 = bot2;
+		}
+		
+		trainingBufferedWriter.close();
+	}
+	
+	public void populateTestFile(int testNo, int bot1, int bot2) throws IOException {
+
+		int testDataLength = constants.getAuthorDataLength() / constants.getNoOfCrossFolds();
+		int testDataPositionStart = testDataLength * testNo;
+		int testDataPositionEnd = testDataPositionStart + testDataLength;
+		
+		/*
+		 * Creates two file: Stylometry.testNo.A_B.tst
+		 * n: language model
+		 * Features taken from both the authors A and B
+		 * But tested on author A
+		 */
+		int cycles = 2;
+		while(cycles > 0) {
+			cycles--;
+			
+			String output = constants.getTestFilePrefixStylometry();
+			output += "Stylometry." + testNo + "." + (bot1 + 1) + "_" + (bot2 + 1) + ".tst";
+			FileWriter testFileWriter = new FileWriter(output);
+			BufferedWriter testBufferedWriter = new BufferedWriter(testFileWriter);			
+			
+			for(int i = testDataPositionStart; i < testDataPositionEnd; i++) {
+				String result = (bot1 + 1) + " ";
+				StylisticFeatures botData = new StylisticFeatures();
+				botData.defaultInitialization();
+
+				List<String> tokens = tokenize(bot1, i);
+				for (String token : tokens) {
+					botData.populateFeatures76_108(token);
+					botData.populateFeatures36_41(token);
+				}
+
+				botData.populateFeatures42_75(tokens);
+				botData.populateFeatures0_4(tokens);
+				botData.populateFeatures5_14(tokens);
+				botData.populateFeatures15_30(tokens);
+				botData.populateFeatures31_35(tokens);
+
+				double[] lineFeatures = botData.getFeatures();
+				for (int l = 0; l < lineFeatures.length; l++) {
+					if (lineFeatures[l] != 0) {
+						result += (l + 1) + ":" + lineFeatures[l] + " ";
+					}
+				}
+				
+				testBufferedWriter.write(result + "\n");
+			}
+			
+			//Swap bot1 and bot2. We create test file for bot1.
+			bot1 = bot1 + bot2;
+			bot2 = bot1 - bot2;
+			bot1 = bot1 - bot2; 
+			
+			testBufferedWriter.close();
+		}
+	}
 
 	public static void main(String arg[]) throws FileNotFoundException, IOException {
-
+		
 		Constants constants = new Constants();
-		int fold = 1;
-		for (int i = 0; i < constants.getNoOfBots(); i++) {
-			for (int j = i + 1; j < constants.getNoOfBots(); j++) {
-				FileWriter outTrainFile = new FileWriter(constants.getTrainFilePrefixStylometry() + "stylometry."
-						+ fold + "." + (i + 1) + "_" + (j + 1) + ".trn");
-				FileWriter outTestFile1 = new FileWriter(constants.getTestFilePrefixStylometry() + "stylometry." + fold
-						+ "." + (i + 1) + "_" + (j + 1) + ".tst");
-				FileWriter outTestFile2 = new FileWriter(constants.getTestFilePrefixStylometry() + "stylometry." + fold
-						+ "." + (j + 1) + "_" + (i + 1) + ".tst");
-				generateFile(outTrainFile, i, j, fold, 0, 400, 0, 0, 400, 500, outTestFile1, outTestFile2);
-				outTrainFile.close();
-				outTestFile1.close();
-				outTestFile2.close();
-
-				fold = 2;
-				outTrainFile = new FileWriter(constants.getTrainFilePrefixStylometry() + "stylometry." + fold + "."
-						+ (i + 1) + "_" + (j + 1) + ".trn");
-				outTestFile1 = new FileWriter(constants.getTestFilePrefixStylometry() + "stylometry." + fold + "."
-						+ (i + 1) + "_" + (j + 1) + ".tst");
-				outTestFile2 = new FileWriter(constants.getTestFilePrefixStylometry() + "stylometry." + fold + "."
-						+ (j + 1) + "_" + (i + 1) + ".tst");
-				generateFile(outTrainFile, i, j, fold, 100, 500, 0, 0, 0, 100, outTestFile1, outTestFile2);
-
-				outTrainFile.close();
-				outTestFile1.close();
-				outTestFile2.close();
-
-				fold = 3;
-				outTrainFile = new FileWriter(constants.getTrainFilePrefixStylometry() + "stylometry." + fold + "."
-						+ (i + 1) + "_" + (j + 1) + ".trn");
-				outTestFile1 = new FileWriter(constants.getTestFilePrefixStylometry() + "stylometry." + fold + "."
-						+ (i + 1) + "_" + (j + 1) + ".tst");
-				outTestFile2 = new FileWriter(constants.getTestFilePrefixStylometry() + "stylometry." + fold + "."
-						+ (j + 1) + "_" + (i + 1) + ".tst");
-				generateFile(outTrainFile, i, j, fold, 200, 500, 0, 100, 100, 200, outTestFile1, outTestFile2);
-
-				outTrainFile.close();
-				outTestFile1.close();
-				outTestFile2.close();
-
-				fold = 4;
-				outTrainFile = new FileWriter(constants.getTrainFilePrefixStylometry() + "stylometry." + fold + "."
-						+ (i + 1) + "_" + (j + 1) + ".trn");
-				outTestFile1 = new FileWriter(constants.getTestFilePrefixStylometry() + "stylometry." + fold + "."
-						+ (i + 1) + "_" + (j + 1) + ".tst");
-				outTestFile2 = new FileWriter(constants.getTestFilePrefixStylometry() + "stylometry." + fold + "."
-						+ (j + 1) + "_" + (i + 1) + ".tst");
-				generateFile(outTrainFile, i, j, fold, 300, 500, 0, 200, 200, 300, outTestFile1, outTestFile2);
-
-				outTrainFile.close();
-				outTestFile1.close();
-				outTestFile2.close();
-
-				fold = 5;
-				outTrainFile = new FileWriter(constants.getTrainFilePrefixStylometry() + "stylometry." + fold + "."
-						+ (i + 1) + "_" + (j + 1) + ".trn");
-				outTestFile1 = new FileWriter(constants.getTestFilePrefixStylometry() + "stylometry." + fold + "."
-						+ (i + 1) + "_" + (j + 1) + ".tst");
-				outTestFile2 = new FileWriter(constants.getTestFilePrefixStylometry() + "stylometry." + fold + "."
-						+ (j + 1) + "_" + (i + 1) + ".tst");
-				generateFile(outTrainFile, i, j, fold, 400, 500, 0, 300, 300, 400, outTestFile1, outTestFile2);
-
-				outTrainFile.close();
-				outTestFile1.close();
-				outTestFile2.close();
-				fold = 1;
-				
-				System.out.println("Generated files for Bot combo (" + i + "," + j + ")");
-			}
-		}
-	}
-
-	private static void generateFile(FileWriter outTrainFile, int botNum1, int botNum2, int fold, int trainstart1,
-			int trainend1, int trainstart2, int trainend2, int teststart, int testend, FileWriter outTestFile1,
-			FileWriter outTestFile2) throws FileNotFoundException, IOException {
-		// TODO Auto-generated method stub
-
-		generateTrain(outTrainFile, botNum1, botNum2, fold, trainstart1, trainend1);
-		generateTrain(outTrainFile, botNum1, botNum2, fold, trainstart2, trainend2);
-		generateTest(outTestFile1, botNum1, fold, teststart, testend);
-		generateTest(outTestFile2, botNum2, fold, teststart, testend);
-	}
-
-	private static void generateTest(FileWriter outFile, int botNum, int fold, int teststart, int testend)
-			throws FileNotFoundException, IOException {
-		// TODO Auto-generated method stub
 		Stylometry stylometry = new Stylometry();
-		for (int k = teststart; k < testend; k++) {
-			String result1 = botNum + 1 + " ";
-
-			// write features of botnum1 to train file
-			StylisticFeatures botData = new StylisticFeatures();
-			botData.defaultInitialization();
-
-			List<String> tokens = stylometry.tokenize(botNum, k);
-
-			for (String token : tokens) {
-
-				botData.populateFeatures76_108(token);
-				// System.out.println(token);
-
-				botData.populateFeatures36_41(token);
-			}
-
-			botData.populateFeatures42_75(tokens);
-			botData.populateFeatures0_4(tokens);
-			botData.populateFeatures5_14(tokens);
-			botData.populateFeatures15_30(tokens);
-			botData.populateFeatures31_35(tokens);
-
-			double[] lineFeatures = botData.getFeatures();
-			for (int l = 0; l < lineFeatures.length; l++) {
-				if (lineFeatures[l] != 0)
-					result1 = result1 + "" + (l + 1) + ":" + lineFeatures[l] + " ";
-			}
-			outFile.write(result1);
-			outFile.write(System.getProperty("line.separator"));
-			botData = null;
-			tokens = null;
-
+		for(int test = 0; test < constants.getNoOfCrossFolds(); test++) {
+			/*
+			 * Does the pairwise computation of the authors.
+			 */
+			for(int i = 0; i < constants.getNoOfBots(); i++)
+			{
+				for(int j = i + 1; j < constants.getNoOfBots(); j++)
+				{
+					stylometry.populateTrainingFile(test, i, j);
+					stylometry.populateTestFile(test, i, j);
+					System.out.println("Generated Files for Bot combo: (" + i + ", " + j + ")");
+				}
+			}					
 		}
-	}
-
-	private static void generateTrain(FileWriter outFile, int botNum1, int botNum2, int fold, int start, int end)
-			throws FileNotFoundException, IOException {
-		Stylometry stylometry = new Stylometry();
-		// TODO Auto-generated method stub
-		for (int k = start; k < end; k++) {
-			String result1 = botNum1 + 1 + " ";
-			String result2 = botNum2 + 1 + " ";
-
-			// write features of botnum1 to train file
-			StylisticFeatures botData = new StylisticFeatures();
-			botData.defaultInitialization();
-
-			List<String> tokens = stylometry.tokenize(botNum1, k);
-
-			for (String token : tokens) {
-
-				botData.populateFeatures76_108(token);
-				// System.out.println(token);
-
-				botData.populateFeatures36_41(token);
-			}
-
-			botData.populateFeatures42_75(tokens);
-			botData.populateFeatures0_4(tokens);
-			botData.populateFeatures5_14(tokens);
-			botData.populateFeatures15_30(tokens);
-			botData.populateFeatures31_35(tokens);
-
-			double[] lineFeatures = botData.getFeatures();
-			for (int l = 0; l < lineFeatures.length; l++) {
-				if (lineFeatures[l] != 0)
-					result1 = result1 + "" + (l + 1) + ":" + lineFeatures[l] + " ";
-			}
-			outFile.write(result1);
-			outFile.write(System.getProperty("line.separator"));
-			botData = null;
-			tokens = null;
-
-			// write features of botNum2 to train file
-			StylisticFeatures botData2 = new StylisticFeatures();
-			botData2.defaultInitialization();
-			List<String> tokens2 = stylometry.tokenize(botNum2, k);
-
-			for (String token : tokens2) {
-
-				botData2.populateFeatures76_108(token);
-				// System.out.println(token);
-
-				botData2.populateFeatures36_41(token);
-			}
-
-			botData2.populateFeatures42_75(tokens2);
-			botData2.populateFeatures0_4(tokens2);
-			botData2.populateFeatures5_14(tokens2);
-			botData2.populateFeatures15_30(tokens2);
-			botData2.populateFeatures31_35(tokens2);
-
-			lineFeatures = botData2.getFeatures();
-			for (int l = 0; l < lineFeatures.length; l++) {
-				if (lineFeatures[l] != 0)
-					result2 = result2 + "" + (l + 1) + ":" + lineFeatures[l] + " ";
-			}
-			outFile.write(result2);
-			outFile.write(System.getProperty("line.separator"));
-		}
-
 	}
 }
