@@ -92,6 +92,21 @@ public class Stylometry {
 		return tokens;
 	}
 	
+	public void getLineFeatures(StylisticFeatures botData, int botNum, int lineNo) {
+		List<String> tokens = tokenize(botNum, lineNo);
+
+		for (String token : tokens) {
+			botData.populateFeatures76_108(token);
+			botData.populateFeatures36_41(token);
+		}
+
+		botData.populateFeatures42_75(tokens);
+		botData.populateFeatures0_4(tokens);
+		botData.populateFeatures5_14(tokens);
+		botData.populateFeatures15_30(tokens);
+		botData.populateFeatures31_35(tokens);
+	}
+	
 	public void populateTrainingFile(int testNo, int bot1, int bot2) throws IOException {
 		int skipDataLength = constants.getAuthorDataLength() / constants.getNoOfCrossFolds();
 		int skipDataPosition = skipDataLength * testNo;
@@ -121,7 +136,8 @@ public class Stylometry {
 					String result = (bot1 + 1) + " ";
 					StylisticFeatures botData = new StylisticFeatures();
 					botData.defaultInitialization();
-
+					
+					/*
 					List<String> tokens = tokenize(bot1, i);
 
 					for (String token : tokens) {
@@ -134,6 +150,9 @@ public class Stylometry {
 					botData.populateFeatures5_14(tokens);
 					botData.populateFeatures15_30(tokens);
 					botData.populateFeatures31_35(tokens);
+					*/
+					
+					getLineFeatures(botData, bot1, i);
 
 					double[] lineFeatures = botData.getFeatures();
 					for (int l = 0; l < lineFeatures.length; l++) {
@@ -177,7 +196,9 @@ public class Stylometry {
 				String result = (bot1 + 1) + " ";
 				StylisticFeatures botData = new StylisticFeatures();
 				botData.defaultInitialization();
-
+				
+				getLineFeatures(botData, bot1 , i);
+				/*
 				List<String> tokens = tokenize(bot1, i);
 				for (String token : tokens) {
 					botData.populateFeatures76_108(token);
@@ -189,7 +210,7 @@ public class Stylometry {
 				botData.populateFeatures5_14(tokens);
 				botData.populateFeatures15_30(tokens);
 				botData.populateFeatures31_35(tokens);
-
+				*/
 				double[] lineFeatures = botData.getFeatures();
 				for (int l = 0; l < lineFeatures.length; l++) {
 					if (lineFeatures[l] != 0) {

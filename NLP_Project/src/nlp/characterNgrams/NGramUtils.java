@@ -9,6 +9,8 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import nlp.idiosyncrasies.StylisticFeatures;
+import nlp.idiosyncrasies.Stylometry;
 import nlp.utilities.Constants;
 import nlp.utilities.Parser;
 
@@ -56,7 +58,7 @@ public class NGramUtils {
 	 * bot1: the first author
 	 * bot2: the second author
 	 */
-	public Map<String, Integer> generateFeatureVector(int testNo, int bot1, int bot2) {
+	public Map<String, Integer> generateFeatureVector(int testNo, int bot1, int bot2) throws IOException {
 		// Keeps a track of features and the corresponding document frequency
 		Map<String, Integer> featureVector = new HashMap<String, Integer>();
 		String data[] = bots[bot1].getData();
@@ -64,6 +66,13 @@ public class NGramUtils {
 		data = bots[bot2].getData();
 		populateFeatureHash(featureVector, data, testNo);
 		featureVector.put("Unknown", 0);
+		/*
+		FileWriter fileWriter = new FileWriter("sample_data/temp");
+		BufferedWriter writer = new BufferedWriter(fileWriter);
+		for (Map.Entry<String, Integer> entry : featureVector.entrySet()) {
+			writer.write(entry.getKey() + "\n");
+		}
+		writer.close();*/
 		return featureVector;
 	}
 
@@ -122,8 +131,16 @@ public class NGramUtils {
 		int skipDataLength = constants.getAuthorDataLength() / constants.getNoOfCrossFolds();
 		int skipDataPosition = skipDataLength * testNo;
 		
-		String output = constants.getTrainFilePrefixNgram();
-		output += winSize + "." + (testNo + 1) + "." + (bot1 + 1) + "_" + (bot2 + 1) + ".trn";
+		String output = "";
+		if(constants.isHybridizedStyloPlusCNgram()) {
+			output = constants.getTrainFilePrefixCNgramStyloHybrid();
+			output += "S" + winSize + "." + (testNo + 1) + "." + (bot1 + 1) + "_" + (bot2 + 1) + ".trn";
+		}
+		else {
+			output = constants.getTrainFilePrefixNgram();
+			output += winSize + "." + (testNo + 1) + "." + (bot1 + 1) + "_" + (bot2 + 1) + ".trn";
+		}
+		
 		FileWriter trainingFileWriter = new FileWriter(output);
 		BufferedWriter trainingBufferedWriter = new BufferedWriter(trainingFileWriter);
 
@@ -163,12 +180,31 @@ public class NGramUtils {
 					trainingBufferedWriter.write((bot1 + 1) + "");
 					int k = 0;
 					
+					// Following if condition combines Stylometry with Character Ngram 
+					if(constants.isHybridizedStyloPlusCNgram()) {
+
+						Stylometry stylometry = new Stylometry();
+						StylisticFeatures botData = new StylisticFeatures();
+						botData.defaultInitialization();
+						stylometry.getLineFeatures(botData, bot1, i);
+						
+						double[] lineFeatures = botData.getFeatures();
+						for (int l = 0; l < lineFeatures.length; l++) {
+							if (lineFeatures[l] != 0) {
+								//result += (l + 1) + ":" + lineFeatures[l] + " ";
+								trainingBufferedWriter.write(" " + (l + 1) + ":" + lineFeatures[l]);
+							}
+						}
+						k = constants.getNoOfStylometryFeatures();
+					}
+														
 					// feature value is the raw frequency.
 					for (Map.Entry<String, Integer> entry : tempFeatureVector.entrySet()) {
 						k++;
 						if (entry.getValue() != 0) {
-							trainingBufferedWriter.write(" " + k + ":" + entry.getValue());
+							trainingBufferedWriter.write(" " + k + ":" + entry.getValue());						
 						}
+
 					}
 					trainingBufferedWriter.write("\n");
 					i++;
@@ -208,8 +244,18 @@ public class NGramUtils {
 			cycles--;
 			String data[] = bots[bot1].getData();
 			
-			String output = constants.getTestFilePrefixNgram();
-			output += winSize + "." + (testNo + 1) + "." + (bot1 + 1) + "_" + (bot2 + 1) + ".tst";
+			String output = "";
+			if(constants.isHybridizedStyloPlusCNgram()) {
+				output = constants.getTestFilePrefixCNgramStyloHybrid();
+				output += "S" + winSize + "." + (testNo + 1) + "." + (bot1 + 1) + "_" + (bot2 + 1) + ".tst";
+			}
+			else
+			{
+				output = constants.getTestFilePrefixNgram();
+				output += winSize + "." + (testNo + 1) + "." + (bot1 + 1) + "_" + (bot2 + 1) + ".tst";
+			}
+						
+			
 			FileWriter testFileWriter = new FileWriter(output);
 			BufferedWriter testBufferedWriter = new BufferedWriter(testFileWriter);
 			
@@ -242,6 +288,24 @@ public class NGramUtils {
 				//Write into the test File
 				testBufferedWriter.write((bot1 + 1) + "");
 				int k = 0;
+				
+				// Following if condition combines Stylometry with Character Ngram 
+				if(constants.isHybridizedStyloPlusCNgram()) {
+					Stylometry stylometry = new Stylometry();
+					StylisticFeatures botData = new StylisticFeatures();
+					botData.defaultInitialization();
+					stylometry.getLineFeatures(botData, bot1, i);
+					
+					double[] lineFeatures = botData.getFeatures();
+					for (int l = 0; l < lineFeatures.length; l++) {
+						if (lineFeatures[l] != 0) {
+							//result += (l + 1) + ":" + lineFeatures[l] + " ";
+							testBufferedWriter.write(" " + (l + 1) + ":" + lineFeatures[l]);
+						}
+					}
+					k = constants.getNoOfStylometryFeatures();
+				}
+				
 				for (Map.Entry<String, Integer> entry : tempFeatureVector.entrySet()) {
 					k++;
 					if (entry.getValue() != 0) {

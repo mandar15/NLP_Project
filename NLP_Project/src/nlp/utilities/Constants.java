@@ -1,24 +1,36 @@
 package nlp.utilities;
 
 public class Constants {
-	private final int noOfBots = 2;
-	private final int n = 5;
+	private final int noOfBots = 30;
+	private final int n = 4;
 	private final int noOfCrossFolds = 5;
 	private final int authorDataLength = 500;
 	private final int noOfStylometryFeatures = 109;
 	private final String inputFilePrefixTweet = "data/tweet/TwBot";
 	private final String inputFilePrefixBlog = "data/blog/Bot";
 	private final String inputFilePrefixChat = "data/chats/Bot";
-	private final String dataSetType = "chats";
-	private final String tempFilePrefix = "/media/Masters/binary/";
+	private final String dataSetType = "blog";
+	private final String tempFilePrefix = "/media/Masters/binary/";//"/media/Madey/NLP_Readings/new_binary/";
 	private final String trainFilePrefixNgram = tempFilePrefix + "train/" + dataSetType + "/ngram/";
 	private final String testFilePrefixNgram = tempFilePrefix + "test/" + dataSetType + "/ngram/";
 	private final String trainFilePrefixBow = tempFilePrefix + "train/" + dataSetType + "/bow/";
 	private final String testFilePrefixBow = tempFilePrefix + "test/" + dataSetType + "/bow/";
 	private final String trainFilePrefixPos = tempFilePrefix + "train/" + dataSetType + "/pos/";
 	private final String testFilePrefixPos = tempFilePrefix + "test/" + dataSetType + "/pos/";
+	private final String trainFilePrefixCNgramStyloHybrid = tempFilePrefix + "train/hybrid/" + dataSetType + "/ngram_stylo/";
+	private final String testFilePrefixCNgramStyloHybrid = tempFilePrefix + "test/hybrid/" + dataSetType + "/ngram_stylo/";
 	private final String trainFilePrefixStylometry = tempFilePrefix + "train/" + dataSetType + "/stylometry/";
 	private final String testFilePrefixStylometry = tempFilePrefix + "test/" + dataSetType + "/stylometry/";
+	private final boolean hybridizedStyloPlusCNgram = true;
+
+	
+	public String getTrainFilePrefixCNgramStyloHybrid(){
+		return trainFilePrefixCNgramStyloHybrid;
+	}
+	
+	public String getTestFilePrefixCNgramStyloHybrid(){
+		return testFilePrefixCNgramStyloHybrid;
+	}
 	
 	public String getTrainFilePrefixStylometry(){
 		return trainFilePrefixStylometry;
@@ -86,6 +98,10 @@ public class Constants {
 	
 	public int getNoOfStylometryFeatures() {
 		return noOfStylometryFeatures;
+	}
+	
+	public boolean isHybridizedStyloPlusCNgram() {
+		return hybridizedStyloPlusCNgram;
 	}
 
 }
