@@ -85,6 +85,10 @@ public class BOW {
 		// computes the document frequency.
 		populateFeatureHash(featureVector, data, testNo);
 		
+		/*
+		 * simply copies all the unigram into a file. 
+		 * This piece of code is used for computation of top features.
+		 */
 		FileWriter fileWriter = new FileWriter("sample_data/temp");
         BufferedWriter writer = new BufferedWriter(fileWriter);
         int i = constants.getNoOfStylometryFeatures() + 1;
@@ -350,7 +354,7 @@ public class BOW {
 		/*
 		 * Does the 5 fold cross validation along with the pair wise computation of the authors.
 		 */
-		for (int test = 0; test <  1/*constants.getNoOfCrossFolds()*/; test++) {
+		for (int test = 0; test <  constants.getNoOfCrossFolds(); test++) {
 			for (int i = 0; i < constants.getNoOfBots(); i++) {
 				for (int j = i + 1; j < constants.getNoOfBots(); j++) {
 					Map<String, Integer> featureVector = bOW
