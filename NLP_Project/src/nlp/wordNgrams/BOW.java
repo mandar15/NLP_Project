@@ -20,6 +20,8 @@ import opennlp.tools.tokenize.TokenizerME;
 import opennlp.tools.tokenize.TokenizerModel;
 import opennlp.tools.util.InvalidFormatException;
 
+import nlp.idiosyncrasies.StylisticFeatures;
+import nlp.idiosyncrasies.Stylometry;
 import nlp.utilities.Constants;
 import nlp.utilities.Parser;
 
@@ -82,6 +84,16 @@ public class BOW {
 		data = bots[bot2].getData();
 		// computes the document frequency.
 		populateFeatureHash(featureVector, data, testNo);
+		
+		FileWriter fileWriter = new FileWriter("sample_data/temp");
+        BufferedWriter writer = new BufferedWriter(fileWriter);
+        int i = constants.getNoOfStylometryFeatures() + 1;
+        for (Map.Entry<String, Integer> entry : featureVector.entrySet()) {
+                writer.write(i + ": " + entry.getKey() + "\n");
+                i++;
+        }
+        writer.close();
+        
 		return featureVector;
 	}
 	
@@ -197,6 +209,24 @@ public class BOW {
 					
 					trainingBufferedWriter.write((bot1 + 1) + "");
 					int k = 0;
+					
+					if(constants.isHybridizedStyloPlusCNgram())
+					{
+						Stylometry stylometry = new Stylometry();
+						StylisticFeatures botData = new StylisticFeatures();
+						botData.defaultInitialization();
+						stylometry.getLineFeatures(botData, bot1, i);
+						
+						double[] lineFeatures = botData.getFeatures();
+						for (int l = 0; l < lineFeatures.length; l++) {
+							if (lineFeatures[l] != 0) {
+								trainingBufferedWriter.write(" " + (l + 1) + ":" + lineFeatures[l]);
+							}
+						}
+						
+						k = constants.getNoOfStylometryFeatures();
+					}
+					
 					double denom = 1.0;
 					/*
 					 * generates the features here and writes them back into the training file
@@ -269,6 +299,25 @@ public class BOW {
 				//Write into the test File
 				testBufferedWriter.write((bot1 + 1) + "");
 				int k = 0;
+				
+				if(constants.isHybridizedStyloPlusCNgram())
+				{
+					Stylometry stylometry = new Stylometry();
+					StylisticFeatures botData = new StylisticFeatures();
+					botData.defaultInitialization();
+					stylometry.getLineFeatures(botData, bot1, i);
+					
+					double[] lineFeatures = botData.getFeatures();
+					for (int l = 0; l < lineFeatures.length; l++) {
+						if (lineFeatures[l] != 0) {
+							//result += (l + 1) + ":" + lineFeatures[l] + " ";
+							testBufferedWriter.write(" " + (l + 1) + ":" + lineFeatures[l]);
+						}
+					}
+					
+					k = constants.getNoOfStylometryFeatures();
+				}
+				
 				double denom = 1.0;
 				/*
 				 * generates the features here and writes them back into the test file
@@ -301,7 +350,7 @@ public class BOW {
 		/*
 		 * Does the 5 fold cross validation along with the pair wise computation of the authors.
 		 */
-		for (int test = 0; test < 1/* constants.getNoOfCrossFolds() */; test++) {
+		for (int test = 0; test <  1/*constants.getNoOfCrossFolds()*/; test++) {
 			for (int i = 0; i < constants.getNoOfBots(); i++) {
 				for (int j = i + 1; j < constants.getNoOfBots(); j++) {
 					Map<String, Integer> featureVector = bOW
