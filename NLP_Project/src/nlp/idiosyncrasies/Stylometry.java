@@ -1,5 +1,7 @@
 package nlp.idiosyncrasies;
-
+/*
+ * This is the main class for generating teh stylometry related files
+ */
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -49,6 +51,11 @@ public class Stylometry {
 		}
 	}
 
+	/*
+	 * This function is a self written tokenizer as we needed to tokenize sentences to separate
+	 * word extensions, smileys etc. It takes as input the author number and a line number and generates 
+	 * the tokens from the corresponding authors specified line
+	 */
 	private List<String> tokenize(int botNo, int lineNo) {
 
 		String data = bots[botNo].getIthData(lineNo);
@@ -92,6 +99,10 @@ public class Stylometry {
 		return tokens;
 	}
 	
+	/*
+	 * This function populates the features for a line in the author number provided as input
+	 * for a line number given and populates the features double array of Stylistic features object
+	 */
 	public void getLineFeatures(StylisticFeatures botData, int botNum, int lineNo) {
 		List<String> tokens = tokenize(botNum, lineNo);
 
@@ -107,6 +118,10 @@ public class Stylometry {
 		botData.populateFeatures31_35(tokens);
 	}
 	
+	/*
+	 * This function creates a training file taking as inputs the foldNumber and the two authors
+	 * Bot1 and Bot2
+	 */
 	public void populateTrainingFile(int testNo, int bot1, int bot2) throws IOException {
 		int skipDataLength = constants.getAuthorDataLength() / constants.getNoOfCrossFolds();
 		int skipDataPosition = skipDataLength * testNo;
@@ -118,7 +133,6 @@ public class Stylometry {
 	
 		/*
 		 * Creates a file: Stylometry.testNo.A_B.trn
-		 * n: language model
 		 * A: Author of some data specified in Constants class
 		 * B: Author of some data specified in Constants class
 		 */
@@ -136,21 +150,6 @@ public class Stylometry {
 					String result = (bot1 + 1) + " ";
 					StylisticFeatures botData = new StylisticFeatures();
 					botData.defaultInitialization();
-					
-					/*
-					List<String> tokens = tokenize(bot1, i);
-
-					for (String token : tokens) {
-						botData.populateFeatures76_108(token);
-						botData.populateFeatures36_41(token);
-					}
-
-					botData.populateFeatures42_75(tokens);
-					botData.populateFeatures0_4(tokens);
-					botData.populateFeatures5_14(tokens);
-					botData.populateFeatures15_30(tokens);
-					botData.populateFeatures31_35(tokens);
-					*/
 					
 					getLineFeatures(botData, bot1, i);
 
@@ -171,6 +170,10 @@ public class Stylometry {
 		trainingBufferedWriter.close();
 	}
 	
+	/*
+	 * This function creates the test files taking as inputs the fold number 
+	 * and the two authors Bot1 and Bot2
+	 */
 	public void populateTestFile(int testNo, int bot1, int bot2) throws IOException {
 
 		int testDataLength = constants.getAuthorDataLength() / constants.getNoOfCrossFolds();
@@ -179,7 +182,6 @@ public class Stylometry {
 		
 		/*
 		 * Creates two file: Stylometry.testNo.A_B.tst
-		 * n: language model
 		 * Features taken from both the authors A and B
 		 * But tested on author A
 		 */
@@ -198,19 +200,6 @@ public class Stylometry {
 				botData.defaultInitialization();
 				
 				getLineFeatures(botData, bot1 , i);
-				/*
-				List<String> tokens = tokenize(bot1, i);
-				for (String token : tokens) {
-					botData.populateFeatures76_108(token);
-					botData.populateFeatures36_41(token);
-				}
-
-				botData.populateFeatures42_75(tokens);
-				botData.populateFeatures0_4(tokens);
-				botData.populateFeatures5_14(tokens);
-				botData.populateFeatures15_30(tokens);
-				botData.populateFeatures31_35(tokens);
-				*/
 				double[] lineFeatures = botData.getFeatures();
 				for (int l = 0; l < lineFeatures.length; l++) {
 					if (lineFeatures[l] != 0) {
@@ -230,6 +219,9 @@ public class Stylometry {
 		}
 	}
 
+	/*
+	 * Main function for generating the test and train files
+	 */
 	public static void main(String arg[]) throws FileNotFoundException, IOException {
 		
 		Constants constants = new Constants();

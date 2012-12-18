@@ -1,36 +1,62 @@
 package nlp.idiosyncrasies;
+/*
+ * This class corresponds to each of the feature vectors. Here we populate a double array
+ * for each of the lines of the data set. We then write each of feature vector to a file.
+ */
 
 import java.util.List;
 import java.util.regex.Pattern;
-
-/*import org.xeustechnologies.googleapi.spelling.Configuration;
-import org.xeustechnologies.googleapi.spelling.Language;
-import org.xeustechnologies.googleapi.spelling.SpellChecker;
-import org.xeustechnologies.googleapi.spelling.SpellCorrection;
-import org.xeustechnologies.googleapi.spelling.SpellRequest;
-import org.xeustechnologies.googleapi.spelling.SpellResponse;*/
-
 import nlp.utilities.Constants;
 
 public class StylisticFeatures {
-	private double features[];
-	Constants constants;
+	private double features[];		//variable for populating the feature vector
+	Constants constants;			//Constants class object to access its global variables
 	
+	/*
+	 * No argument constructor to initialize the Object variables
+	 */
 	public StylisticFeatures() {
 		constants = new Constants();
 		features = new double[constants.getNoOfStylometryFeatures()];
 	}
 	
+	/*
+	 * Function assigns a default value of 0 to all the features
+	 */
 	public void defaultInitialization() {
 		for(int i = 0; i < constants.getNoOfStylometryFeatures(); i++) {
 			features[i] = 0;
 		}			
 	}
 	
+	/*
+	 * Getter for accessing the feature vector
+	 */
 	public double[] getFeatures(){
 		return features;
 	}
 	
+	/*
+	 * This function takes a token as input and populates the features starting from
+	 * 76 to 108 as below:
+	 * 76:Count of words starting with “lol” (ignore case) 			 77:lmao
+	 * 78:rofl														 79:ew*
+	 * 80:aw*														 81:osm*
+	 * 82:g8														 83:gr8*
+	 * 84:f9														 85:w8
+	 * 86:v4														 87:b4
+	 * 88:e1														 89:btw
+	 * 90:b/w														 91:btwn
+	 * 92:wtf														 93:wth
+	 * 94:omg														 95:hmm*
+	 * 96:mm*														 97:umm*
+	 * 98:huh														 99:aha
+	 * 100:words of the form o*h*									 101:kk*
+	 * 102:ohk (o*h*kk*)											 103:count of hehe...
+	 * 104:count of haha...											 105:yea
+	 * 106:yeah...													 107:okies
+	 * 108:bbye
+	 */
 	public void populateFeatures76_108(String token){
 		
 				String currentToken = token;
@@ -102,6 +128,12 @@ public class StylisticFeatures {
 					features[108] += 1;
 	}
 	
+	/*
+	 * This function populates the features 36 to 41 which are the following
+	 * 36:count of apostrophes (u’ll, we’ll)				37:count of double quotes ( “..” )
+	 * 38:count of { , }									39:count of ( , )
+	 * 40:count of [ , ]									41:count of < , >
+	 */
 	public void populateFeatures36_41(String currentToken){
 		
 		
@@ -119,8 +151,12 @@ public class StylisticFeatures {
 			features[41] += getCount(currentToken, '<') + getCount(currentToken, '>');		
 	}
 
+	/*
+	 * This function calculates the count of a character in a String
+	 * It takes the String to be searched as input and the character to 
+	 * be searched for as the 2nd input
+	 */
 	private int getCount(String currentToken, char charSearched) {
-		// TODO Auto-generated method stub
 		int count = 0;
 		char[] currentTokenChars = currentToken.toCharArray();
 		for(int i = 0; i < currentTokenChars.length ; i++){
@@ -131,8 +167,16 @@ public class StylisticFeatures {
 		return count;
 	}
 
+	/*
+	 * This function populates the features 42 through 75 which are as follows
+	 * 42:avg extension of ‘.’ (the count of ‘.’ / occurrence of ‘.’)		43:avg extension of ‘,’
+	 * 44:avg extension of ‘!’								45:avg extension of ‘?
+	 * 46:count of words starting or ending with a ‘*’		47:“”””””” - nothing
+	 * 48:count of tokens in a line							49:count of words in a line
+	 * 50 - 75 - extensions of english alphabets a through z
+	 */
 	public void populateFeatures42_75(List<String> tokens) {
-		// TODO Auto-generated method stub
+		
 		int numberDotGroups =0;
 		int dotCount = 0;
 		int numberCommaGroups = 0;
@@ -167,9 +211,6 @@ public class StylisticFeatures {
 			
 			if(! Pattern.matches("[a-zA-Z]*\\p{Punct}+[a-zA-Z]*", token)){
 				features[49] += 1;
-				//totalWords++;
-			//	if(!isDictionaryWord(token))
-			//		features[47] += 1;
 			}
 
 			if(Pattern.matches("[a-z]*aaaa*[a-z]*", token.toLowerCase()))
@@ -239,12 +280,19 @@ public class StylisticFeatures {
 			
 	}
 	
+	/*
+	 * This function populates features 0 through 4 as below
+	 * 0: Words starting with a capital letter (0/1)
+	 * 1: Average no. of words starting with caps
+	 * 2: Average no. of complete words in caps
+	 * 3: Avg no of words ending with caps
+	 * 4: avg no of words having caps in the middle
+	 */
 	public void populateFeatures0_4(List<String> tokens)
 	{
 		int i, j, wordLength = 0;
 		int len = tokens.size();
 		char arr[] = null;
-		//double length = len;
 		
 		boolean startCap = false, midCap = false, endCap = false;
 		int totalStartCaps = 0;
@@ -263,12 +311,10 @@ public class StylisticFeatures {
 				continue;
 			}
 			startCap = endCap = false;
-			//System.out.println(tokens.get(i));
 			arr = tokens.get(i).toCharArray();
 			
 			wordLength = arr.length;
 			
-			//System.out.println(tokens.get(i) + " " +wordLength);
 				if(arr[0] >= 'A' && arr[0] <= 'Z')
 				{
 					startCap = true;
@@ -318,6 +364,10 @@ public class StylisticFeatures {
 		
 	}
 	
+	/*
+	 * This function populates features 5 through 14 which are
+	 * 5 - 14 - count of digits 0 to 9 each
+	 */
 	public void populateFeatures5_14(List<String> tokens)
 	{
 		int i, j, len = tokens.size(), wordLength;
@@ -357,6 +407,17 @@ public class StylisticFeatures {
 		}
 	}
 
+	/*
+	 * This function popualates features 15 through 30
+	 * 15:count of :), :-)							16: :D, :-D
+	 * 17:  :(, :-(									18:x-(, x(
+	 * 19:\m/										20: :P, :-P
+	 * 21: :’( , :’-(								22: ;), ;-)
+	 * 23: :O, :-O									24:  :-/, :/
+	 * 25: <3										26: </3
+	 * 27:B-)										28: V.v.V
+	 * 29: :*, :-*									30:number of smileys
+	 */
 	public void populateFeatures15_30(List<String> tokens)
 	{
 		for(int i = 0; i < tokens.size() ; i++){
@@ -456,6 +517,14 @@ public class StylisticFeatures {
 		}
 	}
 	
+	/*
+	 * Function populates the features 31 to 35
+	 * 31:sentences ending with ‘?’ (0/1)
+	 * 32:sentences ending with ‘!’ (0/1)
+	 * 33:sentences ending with ‘.’ (0/1)
+	 * 34:sentences ending with ‘,’ (0/1)
+	 * 35:sentences ending with ‘%’ (0/1)    
+	 */
 	public void populateFeatures31_35(List<String> tokens)
 	{
 		int i;
@@ -489,29 +558,4 @@ public class StylisticFeatures {
 			}
 		}
 	}
-	
-	/*public boolean isDictionaryWord(String word){
-		 Configuration config = new Configuration();
-		 //config.setProxy( "my_proxy_host", 8080, "http" );
-
-		 SpellChecker checker = new SpellChecker( config );
-		 checker.setOverHttps( true ); // Use https (default true from v1.1)
-		 checker.setLanguage( Language.ENGLISH ); // Use English (default)
-
-		 SpellRequest request = new SpellRequest();
-		 request.setText(word);
-		 request.setIgnoreDuplicates( true ); // Ignore duplicates
-
-		 SpellResponse spellResponse = checker.check( request );
-
-		 try{
-			 for( SpellCorrection sc : spellResponse.getCorrections() )
-			    System.out.println( sc.getValue());
-			 	//System.out.println("not dictionary word");
-			 	return false;
-			 }catch(NullPointerException e){
-				 //System.out.println("is dictionary word");
-				 return true;
-			 }
-	}*/
 }
