@@ -1,7 +1,11 @@
+/*
+ * Constants used for binary classification.
+ */
+
 package nlp.utilities;
 
 public class Constants {
-	private final int noOfBots = 30;
+	private final int noOfBots = 2;
 	private final int n = 4;
 	private final int noOfCrossFolds = 5;
 	private final int authorDataLength = 500;
@@ -9,8 +13,8 @@ public class Constants {
 	private final String inputFilePrefixTweet = "data/tweet/TwBot";
 	private final String inputFilePrefixBlog = "data/blog/Bot";
 	private final String inputFilePrefixChat = "data/chats/Bot";
-	private final String dataSetType = "blog";
-	private final String tempFilePrefix = "/media/Masters/binary/";//"/media/Madey/NLP_Readings/new_binary/";
+	private final String dataSetType = "chats";
+	private final String tempFilePrefix = "/media/DEF8DBF5F8DBC9C3/NLP/combine/";
 	private final String trainFilePrefixNgram = tempFilePrefix + "train/" + dataSetType + "/ngram/";
 	private final String testFilePrefixNgram = tempFilePrefix + "test/" + dataSetType + "/ngram/";
 	private final String trainFilePrefixBow = tempFilePrefix + "train/" + dataSetType + "/bow/";
